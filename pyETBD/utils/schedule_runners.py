@@ -1,5 +1,5 @@
-from pyETBD.schedules.interval_schedule import IntervalSchedule
-from pyETBD.organisms.an_organism import AnOrganism
+from pyETBD.schedules import IntervalSchedule
+from pyETBD.organisms import AnOrganism
 from pyETBD.algorithm import selection, recombination, mutation
 
 

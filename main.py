@@ -1,8 +1,8 @@
 # Example script for running concurrent schedules
 # This script will run phase 1 from McDowell et al., 2008
-from pyETBD.schedules import schedule_runner
+from pyETBD.utils import schedule_runners
 from pyETBD.utils import equations
-from pyETBD.utils import progress_bar
+from pyETBD.utils.progress_bar import ProgressBar
 import pandas as pd
 
 # experiment settings
@@ -52,9 +52,9 @@ def main():
     }
 
     # creating progress bars to track progress in the terminal
-    rep_progress_bar = progress_bar.ProgressBar(10, "Rep:")
-    sched_progress_bar = progress_bar.ProgressBar(len(LEFT_SCHEDS), "Sch:")
-    gen_progress_bar = progress_bar.ProgressBar(20500, "Gen:")
+    rep_progress_bar = ProgressBar(10, "Rep:")
+    sched_progress_bar = ProgressBar(len(LEFT_SCHEDS), "Sch:")
+    gen_progress_bar = ProgressBar(20500, "Gen:")
 
     # looping for the number of reps
     for rep in range(REPS):
@@ -77,7 +77,7 @@ def main():
             )
 
             # creating the concurrent schedule runner for the current set of schedules
-            sched_runner = schedule_runner.ConcurrentSchedRunner(
+            sched_runner = schedule_runners.ConcurrentSchedRunner(
                 left_sched_params, right_sched_params, ORGANISM_PARAMS
             )
 
@@ -120,11 +120,13 @@ def main():
     ]
     # printing the progress bars to the terminal
     print("\n".join(updates))
-    print("\U0001F40E Done Giddyuped! \U0001F40E")
 
     # outputting the data to a csv using pandas
     df = pd.DataFrame(data_dict)
     df.to_csv("data.csv", index=False)
+
+    # printing a message to the terminal
+    print("\U0001F40E Done Giddyuped! \U0001F40E")
 
 
 # running the main function
