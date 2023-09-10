@@ -1,4 +1,4 @@
-import organisms
-import schedules
-import algorithm
-import utils
+from pyETBD import organisms
+from pyETBD import schedules
+from pyETBD.algorithm import selection, recombination, mutation
+from pyETBD.utils import schedule_runners, equations, progress_bar, bin_converter, timer
