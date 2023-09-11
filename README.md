@@ -2,7 +2,7 @@
 
 This is an open-source Python package to implement McDowell's (2004) Evolutionary Theory of Behavior Dynamics.
 
-The package is currently under development and only includes partial functionality. Currently, the core algorithm of the ETBD (selection, recombination, and mutation) is implemented. Concurrent interval schedules are also implemented. Only the typical default settings are available for the moment.
+The package is currently under development and only includes partial functionality. Currently, the core algorithm of the ETBD (selection, recombination, and mutation) is implemented. Concurrent RI schedules are also implemented.
 
 See the main.py file for an example of how to use the package to run concurrent RI schedules.
 
