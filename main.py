@@ -25,6 +25,8 @@ RIGHT_RESPONSE_CLASS_LOWER_BOUND = 512
 RIGHT_RESPONSE_CLASS_UPPER_BOUND = 552
 LEFT_FDF_MEAN = 40
 RIGHT_FDF_MEAN = 40
+LEFT_SCHED_TYPE = "random"
+RIGHT_SCHED_TYPE = "random"
 LEFT_SCHEDS = [20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120]
 RIGHT_SCHEDS = LEFT_SCHEDS[::-1]  # reverse the list
 
@@ -56,14 +58,14 @@ def main():
                 "response_class_lower_bound": LEFT_RESPONSE_CLASS_LOWER_BOUND,
                 "response_class_upper_bound": LEFT_RESPONSE_CLASS_UPPER_BOUND,
                 "interval_mean": LEFT_SCHEDS[i],
-                "interval_type": "random",
+                "interval_type": LEFT_SCHED_TYPE,
                 "fdf_mean": LEFT_FDF_MEAN,
             }
             right_sched_params = {
                 "response_class_lower_bound": RIGHT_RESPONSE_CLASS_LOWER_BOUND,
                 "response_class_upper_bound": RIGHT_RESPONSE_CLASS_UPPER_BOUND,
                 "interval_mean": RIGHT_SCHEDS[i],
-                "interval_type": "random",
+                "interval_type": RIGHT_SCHED_TYPE,
                 "fdf_mean": RIGHT_FDF_MEAN,
             }
 
