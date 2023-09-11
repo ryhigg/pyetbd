@@ -6,7 +6,7 @@ from pyETBD.utils.progress_bar import ProgressBar
 import pandas as pd
 
 # experiment settings
-REPS = 1
+REPS = 10
 
 # dict containing the organism parameters
 ORGANISM_PARAMS = {
