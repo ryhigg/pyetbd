@@ -4,12 +4,15 @@ from pyETBD.algorithm import selection, recombination, mutation
 
 
 class ConcurrentSchedRunner:
-    def __init__(self, left_sched_params, right_sched_params, organism_params):
+    def __init__(
+        self, left_sched_params: dict, right_sched_params: dict, organism_params: dict
+    ):
         """Initializes the ConcurrentSchRunner class.
 
         Args:
-            left_sch_params (tuple): the parameters for the left schedule
-            right_sch_params (tuple): the parameters for the right schedule
+            left_sch_params (dict): the parameters for the left schedule
+            right_sch_params (dict): the parameters for the right schedule
+            organism_params (dict): the parameters for the organism
         """
 
         self.left_sched_params = left_sched_params
@@ -21,9 +24,29 @@ class ConcurrentSchedRunner:
     def set_up(self):
         """Sets up the concurrent schedule runner."""
 
-        self.left_sched = IntervalSchedule(*self.left_sched_params)
-        self.right_sched = IntervalSchedule(*self.right_sched_params)
-        self.organism = AnOrganism(*self.organism_params)
+        self.left_sched = IntervalSchedule(
+            self.left_sched_params["response_class_lower_bound"],
+            self.left_sched_params["response_class_upper_bound"],
+            self.left_sched_params["interval_mean"],
+            self.left_sched_params["interval_type"],
+            self.left_sched_params["fdf_mean"],
+        )
+        self.right_sched = IntervalSchedule(
+            self.right_sched_params["response_class_lower_bound"],
+            self.right_sched_params["response_class_upper_bound"],
+            self.right_sched_params["interval_mean"],
+            self.right_sched_params["interval_type"],
+            self.right_sched_params["fdf_mean"],
+        )
+        self.organism = AnOrganism(
+            self.organism_params["pop_size"],
+            self.organism_params["mut_rate"],
+            self.organism_params["low_pheno"],
+            self.organism_params["high_pheno"],
+            self.organism_params["fdf_type"],
+            self.organism_params["fitness_landscape"],
+            self.organism_params["recombination_method"],
+        )
 
         # dictionary used to store the data
         self.data_dict = {
@@ -34,7 +57,7 @@ class ConcurrentSchedRunner:
             "B2": [],
         }
 
-    def fitness_based_selection(self, schedule):
+    def fitness_based_selection(self, schedule: str):
         """Does fitness-based selection on the organism's population.
 
         Args:

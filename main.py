@@ -6,26 +6,18 @@ from pyETBD.utils.progress_bar import ProgressBar
 import pandas as pd
 
 # experiment settings
-REPS = 10
+REPS = 1
 
-# organism parameters
-POPULATION_SIZE = 100
-MUTATION_RATE = 0.1
-LOW_PHENO = 0
-HIGH_PHENO = 1023
-FDF_TYPE = "linear"
-FITNESS_LANDSCAPE = "circular"
-RECOMBINATION_METHOD = "bitwise"
-# tuple containing the organism parameters
-ORGANISM_PARAMS = (
-    POPULATION_SIZE,
-    MUTATION_RATE,
-    LOW_PHENO,
-    HIGH_PHENO,
-    FDF_TYPE,
-    FITNESS_LANDSCAPE,
-    RECOMBINATION_METHOD,
-)
+# dict containing the organism parameters
+ORGANISM_PARAMS = {
+    "pop_size": 100,
+    "mut_rate": 0.1,
+    "low_pheno": 0,
+    "high_pheno": 1023,
+    "fdf_type": "linear",
+    "fitness_landscape": "circular",
+    "recombination_method": "bitwise",
+}
 
 # schedule parameters
 LEFT_RESPONSE_CLASS_LOWER_BOUND = 471
@@ -51,8 +43,8 @@ def main():
         "B2": [],
     }
 
-    # creating progress bars to track progress in the terminal
-    rep_progress_bar = ProgressBar(10, "Rep:")
+    # creating progress bars to track execution in the terminal
+    rep_progress_bar = ProgressBar(REPS, "Rep:")
     sched_progress_bar = ProgressBar(len(LEFT_SCHEDS), "Sch:")
     gen_progress_bar = ProgressBar(20500, "Gen:")
 
@@ -61,20 +53,20 @@ def main():
         # looping for the number of schedules
         for i in range(len(LEFT_SCHEDS)):
             # updating the left and right schedule parameters
-            left_sched_params = (
-                LEFT_RESPONSE_CLASS_LOWER_BOUND,
-                LEFT_RESPONSE_CLASS_UPPER_BOUND,
-                LEFT_SCHEDS[i],
-                equations.sample_exponential,
-                LEFT_FDF_MEAN,
-            )
-            right_sched_params = (
-                RIGHT_RESPONSE_CLASS_LOWER_BOUND,
-                RIGHT_RESPONSE_CLASS_UPPER_BOUND,
-                RIGHT_SCHEDS[i],
-                equations.sample_exponential,
-                RIGHT_FDF_MEAN,
-            )
+            left_sched_params = {
+                "response_class_lower_bound": LEFT_RESPONSE_CLASS_LOWER_BOUND,
+                "response_class_upper_bound": LEFT_RESPONSE_CLASS_UPPER_BOUND,
+                "interval_mean": LEFT_SCHEDS[i],
+                "interval_type": "random",
+                "fdf_mean": LEFT_FDF_MEAN,
+            }
+            right_sched_params = {
+                "response_class_lower_bound": RIGHT_RESPONSE_CLASS_LOWER_BOUND,
+                "response_class_upper_bound": RIGHT_RESPONSE_CLASS_UPPER_BOUND,
+                "interval_mean": RIGHT_SCHEDS[i],
+                "interval_type": "random",
+                "fdf_mean": RIGHT_FDF_MEAN,
+            }
 
             # creating the concurrent schedule runner for the current set of schedules
             sched_runner = schedule_runners.ConcurrentSchedRunner(
@@ -112,7 +104,7 @@ def main():
             data_dict["R2"].extend(sched_data["R2"])
             data_dict["B2"].extend(sched_data["B2"])
 
-    # updating the progress bars
+    # updating the progress bars when the loop is finished
     updates = [
         gen_progress_bar.update(20500),
         sched_progress_bar.update(len(LEFT_SCHEDS)),
@@ -125,7 +117,7 @@ def main():
     df = pd.DataFrame(data_dict)
     df.to_csv("data.csv", index=False)
 
-    # printing a message to the terminal
+    # printing the finised message to the terminal
     print("\U0001F40E Done Giddyuped! \U0001F40E")
 
 

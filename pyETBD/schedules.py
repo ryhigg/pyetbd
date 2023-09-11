@@ -1,10 +1,13 @@
+from pyETBD.utils import equations
+
+
 class IntervalSchedule:
     def __init__(
         self,
         response_class_lower_bound,
         response_class_upper_bound,
         interval_mean,
-        interval_func,
+        interval_type,
         fdf_mean,
     ):
         """Initializes the IntervalSchedule class.
@@ -13,14 +16,14 @@ class IntervalSchedule:
             response_class_lower_bound (int): lower bound of the response class
             response_class_upper_bound (int: upper bound of the response class
             interval_mean (int): the mean of the interval schedule
-            interval_func (func): the function that generates the intervals
+            interval_type (str): the type of interval schedule (e.g., random, fixed)
             fdf (func): the function that samples from the FDF
             fdf_args (tuple): arguments for the FDF function
         """
         self.response_class_lower_bound = response_class_lower_bound
         self.response_class_upper_bound = response_class_upper_bound
         self.interval_mean = interval_mean
-        self.interval_func = interval_func
+        self.interval_type = interval_type
         self.fdf_mean = fdf_mean
 
         self.set_up()
@@ -28,7 +31,8 @@ class IntervalSchedule:
     def set_up(self):
         """Sets up the interval schedule."""
 
-        self.interval = self.interval_func(self.interval_mean)
+        # used to get the current interval
+        self.update_interval()
 
         # used to keep track of whether reinforcement is available
         self.counter = 0
@@ -58,7 +62,23 @@ class IntervalSchedule:
 
         if self.counter >= self.interval:
             self.counter = 0
-            self.interval = self.interval_func(self.interval_mean)
+            self.update_interval()
             return True
 
         return False
+
+    def update_interval(self):
+        """Updates the interval based on the interval type.
+
+        Raises:
+            NotImplementedError: raised if the interval type is not implemented
+        """
+
+        if self.interval_type == "random":
+            self.interval = equations.sample_exponential(self.interval_mean)
+
+        elif self.interval_type == "fixed":
+            self.interval = self.interval_mean
+
+        else:
+            raise NotImplementedError

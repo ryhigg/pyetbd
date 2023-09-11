@@ -26,18 +26,3 @@ def sample_exponential(mean):
         float: random value drawn from the exponential distribution
     """
     return np.random.exponential(mean)
-
-
-@njit
-def fixed_value(value):
-    """Returns the value passed to it.
-
-        Note: this function is used for fixed schedules since they take a function as an argument.
-
-    Args:
-        value (int): value to return
-
-    Returns:
-        int: the value
-    """
-    return value
