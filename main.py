@@ -1,7 +1,6 @@
 # Example script for running concurrent schedules
 # This script will run phase 1 from McDowell et al., 2008
 from pyETBD.utils import schedule_runners
-from pyETBD.utils import equations
 from pyETBD.utils.progress_bar import ProgressBar
 import pandas as pd
 
