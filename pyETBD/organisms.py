@@ -35,12 +35,3 @@ class AnOrganism:
 
     def replace_population(self, new_population):
         self.population = new_population
-
-    def get_params(self):
-        return (
-            self.pop_size,
-            self.mut_rate,
-            self.low_pheno,
-            self.high_pheno,
-            self.fdf_type,
-        )
