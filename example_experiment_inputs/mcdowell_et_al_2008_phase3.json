@@ -1,0 +1,2104 @@
+{
+    "experiments": [
+        {
+            "file_stub": "phase3_fdf_20_20_mutrate_0.005",
+            "mut_rate": 0.005,
+            "left_sched_fdf_mean": 20,
+            "right_sched_fdf_mean": 20,
+            "repetitions": 10,
+            "schedules": [
+                {
+                    "left_sched": 20,
+                    "right_sched": 120
+                },
+                {
+                    "left_sched": 30,
+                    "right_sched": 110
+                },
+                {
+                    "left_sched": 40,
+                    "right_sched": 100
+                },
+                {
+                    "left_sched": 50,
+                    "right_sched": 90
+                },
+                {
+                    "left_sched": 60,
+                    "right_sched": 80
+                },
+                {
+                    "left_sched": 70,
+                    "right_sched": 70
+                },
+                {
+                    "left_sched": 80,
+                    "right_sched": 60
+                },
+                {
+                    "left_sched": 90,
+                    "right_sched": 50
+                },
+                {
+                    "left_sched": 100,
+                    "right_sched": 40
+                },
+                {
+                    "left_sched": 110,
+                    "right_sched": 30
+                },
+                {
+                    "left_sched": 120,
+                    "right_sched": 20
+                }
+            ]
+        },
+        {
+            "file_stub": "phase3_fdf_20_20_mutrate_0.01",
+            "mut_rate": 0.01,
+            "left_sched_fdf_mean": 20,
+            "right_sched_fdf_mean": 20,
+            "repetitions": 10,
+            "schedules": [
+                {
+                    "left_sched": 20,
+                    "right_sched": 120
+                },
+                {
+                    "left_sched": 30,
+                    "right_sched": 110
+                },
+                {
+                    "left_sched": 40,
+                    "right_sched": 100
+                },
+                {
+                    "left_sched": 50,
+                    "right_sched": 90
+                },
+                {
+                    "left_sched": 60,
+                    "right_sched": 80
+                },
+                {
+                    "left_sched": 70,
+                    "right_sched": 70
+                },
+                {
+                    "left_sched": 80,
+                    "right_sched": 60
+                },
+                {
+                    "left_sched": 90,
+                    "right_sched": 50
+                },
+                {
+                    "left_sched": 100,
+                    "right_sched": 40
+                },
+                {
+                    "left_sched": 110,
+                    "right_sched": 30
+                },
+                {
+                    "left_sched": 120,
+                    "right_sched": 20
+                }
+            ]
+        },
+        {
+            "file_stub": "phase3_fdf_20_20_mutrate_0.02",
+            "mut_rate": 0.02,
+            "left_sched_fdf_mean": 20,
+            "right_sched_fdf_mean": 20,
+            "repetitions": 10,
+            "schedules": [
+                {
+                    "left_sched": 20,
+                    "right_sched": 120
+                },
+                {
+                    "left_sched": 30,
+                    "right_sched": 110
+                },
+                {
+                    "left_sched": 40,
+                    "right_sched": 100
+                },
+                {
+                    "left_sched": 50,
+                    "right_sched": 90
+                },
+                {
+                    "left_sched": 60,
+                    "right_sched": 80
+                },
+                {
+                    "left_sched": 70,
+                    "right_sched": 70
+                },
+                {
+                    "left_sched": 80,
+                    "right_sched": 60
+                },
+                {
+                    "left_sched": 90,
+                    "right_sched": 50
+                },
+                {
+                    "left_sched": 100,
+                    "right_sched": 40
+                },
+                {
+                    "left_sched": 110,
+                    "right_sched": 30
+                },
+                {
+                    "left_sched": 120,
+                    "right_sched": 20
+                }
+            ]
+        },
+        {
+            "file_stub": "phase3_fdf_20_20_mutrate_0.03",
+            "mut_rate": 0.03,
+            "left_sched_fdf_mean": 20,
+            "right_sched_fdf_mean": 20,
+            "repetitions": 10,
+            "schedules": [
+                {
+                    "left_sched": 20,
+                    "right_sched": 120
+                },
+                {
+                    "left_sched": 30,
+                    "right_sched": 110
+                },
+                {
+                    "left_sched": 40,
+                    "right_sched": 100
+                },
+                {
+                    "left_sched": 50,
+                    "right_sched": 90
+                },
+                {
+                    "left_sched": 60,
+                    "right_sched": 80
+                },
+                {
+                    "left_sched": 70,
+                    "right_sched": 70
+                },
+                {
+                    "left_sched": 80,
+                    "right_sched": 60
+                },
+                {
+                    "left_sched": 90,
+                    "right_sched": 50
+                },
+                {
+                    "left_sched": 100,
+                    "right_sched": 40
+                },
+                {
+                    "left_sched": 110,
+                    "right_sched": 30
+                },
+                {
+                    "left_sched": 120,
+                    "right_sched": 20
+                }
+            ]
+        },
+        {
+            "file_stub": "phase3_fdf_20_20_mutrate_0.05",
+            "mut_rate": 0.05,
+            "left_sched_fdf_mean": 20,
+            "right_sched_fdf_mean": 20,
+            "repetitions": 10,
+            "schedules": [
+                {
+                    "left_sched": 20,
+                    "right_sched": 120
+                },
+                {
+                    "left_sched": 30,
+                    "right_sched": 110
+                },
+                {
+                    "left_sched": 40,
+                    "right_sched": 100
+                },
+                {
+                    "left_sched": 50,
+                    "right_sched": 90
+                },
+                {
+                    "left_sched": 60,
+                    "right_sched": 80
+                },
+                {
+                    "left_sched": 70,
+                    "right_sched": 70
+                },
+                {
+                    "left_sched": 80,
+                    "right_sched": 60
+                },
+                {
+                    "left_sched": 90,
+                    "right_sched": 50
+                },
+                {
+                    "left_sched": 100,
+                    "right_sched": 40
+                },
+                {
+                    "left_sched": 110,
+                    "right_sched": 30
+                },
+                {
+                    "left_sched": 120,
+                    "right_sched": 20
+                }
+            ]
+        },
+        {
+            "file_stub": "phase3_fdf_20_20_mutrate_0.075",
+            "mut_rate": 0.075,
+            "left_sched_fdf_mean": 20,
+            "right_sched_fdf_mean": 20,
+            "repetitions": 10,
+            "schedules": [
+                {
+                    "left_sched": 20,
+                    "right_sched": 120
+                },
+                {
+                    "left_sched": 30,
+                    "right_sched": 110
+                },
+                {
+                    "left_sched": 40,
+                    "right_sched": 100
+                },
+                {
+                    "left_sched": 50,
+                    "right_sched": 90
+                },
+                {
+                    "left_sched": 60,
+                    "right_sched": 80
+                },
+                {
+                    "left_sched": 70,
+                    "right_sched": 70
+                },
+                {
+                    "left_sched": 80,
+                    "right_sched": 60
+                },
+                {
+                    "left_sched": 90,
+                    "right_sched": 50
+                },
+                {
+                    "left_sched": 100,
+                    "right_sched": 40
+                },
+                {
+                    "left_sched": 110,
+                    "right_sched": 30
+                },
+                {
+                    "left_sched": 120,
+                    "right_sched": 20
+                }
+            ]
+        },
+        {
+            "file_stub": "phase3_fdf_20_20_mutrate_0.1",
+            "mut_rate": 0.1,
+            "left_sched_fdf_mean": 20,
+            "right_sched_fdf_mean": 20,
+            "repetitions": 10,
+            "schedules": [
+                {
+                    "left_sched": 20,
+                    "right_sched": 120
+                },
+                {
+                    "left_sched": 30,
+                    "right_sched": 110
+                },
+                {
+                    "left_sched": 40,
+                    "right_sched": 100
+                },
+                {
+                    "left_sched": 50,
+                    "right_sched": 90
+                },
+                {
+                    "left_sched": 60,
+                    "right_sched": 80
+                },
+                {
+                    "left_sched": 70,
+                    "right_sched": 70
+                },
+                {
+                    "left_sched": 80,
+                    "right_sched": 60
+                },
+                {
+                    "left_sched": 90,
+                    "right_sched": 50
+                },
+                {
+                    "left_sched": 100,
+                    "right_sched": 40
+                },
+                {
+                    "left_sched": 110,
+                    "right_sched": 30
+                },
+                {
+                    "left_sched": 120,
+                    "right_sched": 20
+                }
+            ]
+        },
+        {
+            "file_stub": "phase3_fdf_20_20_mutrate_0.12",
+            "mut_rate": 0.12,
+            "left_sched_fdf_mean": 20,
+            "right_sched_fdf_mean": 20,
+            "repetitions": 10,
+            "schedules": [
+                {
+                    "left_sched": 20,
+                    "right_sched": 120
+                },
+                {
+                    "left_sched": 30,
+                    "right_sched": 110
+                },
+                {
+                    "left_sched": 40,
+                    "right_sched": 100
+                },
+                {
+                    "left_sched": 50,
+                    "right_sched": 90
+                },
+                {
+                    "left_sched": 60,
+                    "right_sched": 80
+                },
+                {
+                    "left_sched": 70,
+                    "right_sched": 70
+                },
+                {
+                    "left_sched": 80,
+                    "right_sched": 60
+                },
+                {
+                    "left_sched": 90,
+                    "right_sched": 50
+                },
+                {
+                    "left_sched": 100,
+                    "right_sched": 40
+                },
+                {
+                    "left_sched": 110,
+                    "right_sched": 30
+                },
+                {
+                    "left_sched": 120,
+                    "right_sched": 20
+                }
+            ]
+        },
+        {
+            "file_stub": "phase3_fdf_20_20_mutrate_0.2",
+            "mut_rate": 0.2,
+            "left_sched_fdf_mean": 20,
+            "right_sched_fdf_mean": 20,
+            "repetitions": 10,
+            "schedules": [
+                {
+                    "left_sched": 20,
+                    "right_sched": 120
+                },
+                {
+                    "left_sched": 30,
+                    "right_sched": 110
+                },
+                {
+                    "left_sched": 40,
+                    "right_sched": 100
+                },
+                {
+                    "left_sched": 50,
+                    "right_sched": 90
+                },
+                {
+                    "left_sched": 60,
+                    "right_sched": 80
+                },
+                {
+                    "left_sched": 70,
+                    "right_sched": 70
+                },
+                {
+                    "left_sched": 80,
+                    "right_sched": 60
+                },
+                {
+                    "left_sched": 90,
+                    "right_sched": 50
+                },
+                {
+                    "left_sched": 100,
+                    "right_sched": 40
+                },
+                {
+                    "left_sched": 110,
+                    "right_sched": 30
+                },
+                {
+                    "left_sched": 120,
+                    "right_sched": 20
+                }
+            ]
+        },
+        {
+            "file_stub": "phase3_fdf_20_20_mutrate_0.5",
+            "mut_rate": 0.5,
+            "left_sched_fdf_mean": 20,
+            "right_sched_fdf_mean": 20,
+            "repetitions": 10,
+            "schedules": [
+                {
+                    "left_sched": 20,
+                    "right_sched": 120
+                },
+                {
+                    "left_sched": 30,
+                    "right_sched": 110
+                },
+                {
+                    "left_sched": 40,
+                    "right_sched": 100
+                },
+                {
+                    "left_sched": 50,
+                    "right_sched": 90
+                },
+                {
+                    "left_sched": 60,
+                    "right_sched": 80
+                },
+                {
+                    "left_sched": 70,
+                    "right_sched": 70
+                },
+                {
+                    "left_sched": 80,
+                    "right_sched": 60
+                },
+                {
+                    "left_sched": 90,
+                    "right_sched": 50
+                },
+                {
+                    "left_sched": 100,
+                    "right_sched": 40
+                },
+                {
+                    "left_sched": 110,
+                    "right_sched": 30
+                },
+                {
+                    "left_sched": 120,
+                    "right_sched": 20
+                }
+            ]
+        },
+        {
+            "file_stub": "phase3_fdf_40_40_mutrate_0.005",
+            "mut_rate": 0.005,
+            "repetitions": 10,
+            "schedules": [
+                {
+                    "left_sched": 20,
+                    "right_sched": 120
+                },
+                {
+                    "left_sched": 30,
+                    "right_sched": 110
+                },
+                {
+                    "left_sched": 40,
+                    "right_sched": 100
+                },
+                {
+                    "left_sched": 50,
+                    "right_sched": 90
+                },
+                {
+                    "left_sched": 60,
+                    "right_sched": 80
+                },
+                {
+                    "left_sched": 70,
+                    "right_sched": 70
+                },
+                {
+                    "left_sched": 80,
+                    "right_sched": 60
+                },
+                {
+                    "left_sched": 90,
+                    "right_sched": 50
+                },
+                {
+                    "left_sched": 100,
+                    "right_sched": 40
+                },
+                {
+                    "left_sched": 110,
+                    "right_sched": 30
+                },
+                {
+                    "left_sched": 120,
+                    "right_sched": 20
+                }
+            ]
+        },
+        {
+            "file_stub": "phase3_fdf_40_40_mutrate_0.01",
+            "mut_rate": 0.01,
+            "repetitions": 10,
+            "schedules": [
+                {
+                    "left_sched": 20,
+                    "right_sched": 120
+                },
+                {
+                    "left_sched": 30,
+                    "right_sched": 110
+                },
+                {
+                    "left_sched": 40,
+                    "right_sched": 100
+                },
+                {
+                    "left_sched": 50,
+                    "right_sched": 90
+                },
+                {
+                    "left_sched": 60,
+                    "right_sched": 80
+                },
+                {
+                    "left_sched": 70,
+                    "right_sched": 70
+                },
+                {
+                    "left_sched": 80,
+                    "right_sched": 60
+                },
+                {
+                    "left_sched": 90,
+                    "right_sched": 50
+                },
+                {
+                    "left_sched": 100,
+                    "right_sched": 40
+                },
+                {
+                    "left_sched": 110,
+                    "right_sched": 30
+                },
+                {
+                    "left_sched": 120,
+                    "right_sched": 20
+                }
+            ]
+        },
+        {
+            "file_stub": "phase3_fdf_40_40_mutrate_0.02",
+            "mut_rate": 0.02,
+            "repetitions": 10,
+            "schedules": [
+                {
+                    "left_sched": 20,
+                    "right_sched": 120
+                },
+                {
+                    "left_sched": 30,
+                    "right_sched": 110
+                },
+                {
+                    "left_sched": 40,
+                    "right_sched": 100
+                },
+                {
+                    "left_sched": 50,
+                    "right_sched": 90
+                },
+                {
+                    "left_sched": 60,
+                    "right_sched": 80
+                },
+                {
+                    "left_sched": 70,
+                    "right_sched": 70
+                },
+                {
+                    "left_sched": 80,
+                    "right_sched": 60
+                },
+                {
+                    "left_sched": 90,
+                    "right_sched": 50
+                },
+                {
+                    "left_sched": 100,
+                    "right_sched": 40
+                },
+                {
+                    "left_sched": 110,
+                    "right_sched": 30
+                },
+                {
+                    "left_sched": 120,
+                    "right_sched": 20
+                }
+            ]
+        },
+        {
+            "file_stub": "phase3_fdf_40_40_mutrate_0.03",
+            "mut_rate": 0.03,
+            "repetitions": 10,
+            "schedules": [
+                {
+                    "left_sched": 20,
+                    "right_sched": 120
+                },
+                {
+                    "left_sched": 30,
+                    "right_sched": 110
+                },
+                {
+                    "left_sched": 40,
+                    "right_sched": 100
+                },
+                {
+                    "left_sched": 50,
+                    "right_sched": 90
+                },
+                {
+                    "left_sched": 60,
+                    "right_sched": 80
+                },
+                {
+                    "left_sched": 70,
+                    "right_sched": 70
+                },
+                {
+                    "left_sched": 80,
+                    "right_sched": 60
+                },
+                {
+                    "left_sched": 90,
+                    "right_sched": 50
+                },
+                {
+                    "left_sched": 100,
+                    "right_sched": 40
+                },
+                {
+                    "left_sched": 110,
+                    "right_sched": 30
+                },
+                {
+                    "left_sched": 120,
+                    "right_sched": 20
+                }
+            ]
+        },
+        {
+            "file_stub": "phase3_fdf_40_40_mutrate_0.05",
+            "mut_rate": 0.05,
+            "repetitions": 10,
+            "schedules": [
+                {
+                    "left_sched": 20,
+                    "right_sched": 120
+                },
+                {
+                    "left_sched": 30,
+                    "right_sched": 110
+                },
+                {
+                    "left_sched": 40,
+                    "right_sched": 100
+                },
+                {
+                    "left_sched": 50,
+                    "right_sched": 90
+                },
+                {
+                    "left_sched": 60,
+                    "right_sched": 80
+                },
+                {
+                    "left_sched": 70,
+                    "right_sched": 70
+                },
+                {
+                    "left_sched": 80,
+                    "right_sched": 60
+                },
+                {
+                    "left_sched": 90,
+                    "right_sched": 50
+                },
+                {
+                    "left_sched": 100,
+                    "right_sched": 40
+                },
+                {
+                    "left_sched": 110,
+                    "right_sched": 30
+                },
+                {
+                    "left_sched": 120,
+                    "right_sched": 20
+                }
+            ]
+        },
+        {
+            "file_stub": "phase3_fdf_40_40_mutrate_0.075",
+            "mut_rate": 0.075,
+            "repetitions": 10,
+            "schedules": [
+                {
+                    "left_sched": 20,
+                    "right_sched": 120
+                },
+                {
+                    "left_sched": 30,
+                    "right_sched": 110
+                },
+                {
+                    "left_sched": 40,
+                    "right_sched": 100
+                },
+                {
+                    "left_sched": 50,
+                    "right_sched": 90
+                },
+                {
+                    "left_sched": 60,
+                    "right_sched": 80
+                },
+                {
+                    "left_sched": 70,
+                    "right_sched": 70
+                },
+                {
+                    "left_sched": 80,
+                    "right_sched": 60
+                },
+                {
+                    "left_sched": 90,
+                    "right_sched": 50
+                },
+                {
+                    "left_sched": 100,
+                    "right_sched": 40
+                },
+                {
+                    "left_sched": 110,
+                    "right_sched": 30
+                },
+                {
+                    "left_sched": 120,
+                    "right_sched": 20
+                }
+            ]
+        },
+        {
+            "file_stub": "phase3_fdf_40_40_mutrate_0.1",
+            "mut_rate": 0.1,
+            "repetitions": 10,
+            "schedules": [
+                {
+                    "left_sched": 20,
+                    "right_sched": 120
+                },
+                {
+                    "left_sched": 30,
+                    "right_sched": 110
+                },
+                {
+                    "left_sched": 40,
+                    "right_sched": 100
+                },
+                {
+                    "left_sched": 50,
+                    "right_sched": 90
+                },
+                {
+                    "left_sched": 60,
+                    "right_sched": 80
+                },
+                {
+                    "left_sched": 70,
+                    "right_sched": 70
+                },
+                {
+                    "left_sched": 80,
+                    "right_sched": 60
+                },
+                {
+                    "left_sched": 90,
+                    "right_sched": 50
+                },
+                {
+                    "left_sched": 100,
+                    "right_sched": 40
+                },
+                {
+                    "left_sched": 110,
+                    "right_sched": 30
+                },
+                {
+                    "left_sched": 120,
+                    "right_sched": 20
+                }
+            ]
+        },
+        {
+            "file_stub": "phase3_fdf_40_40_mutrate_0.12",
+            "mut_rate": 0.12,
+            "repetitions": 10,
+            "schedules": [
+                {
+                    "left_sched": 20,
+                    "right_sched": 120
+                },
+                {
+                    "left_sched": 30,
+                    "right_sched": 110
+                },
+                {
+                    "left_sched": 40,
+                    "right_sched": 100
+                },
+                {
+                    "left_sched": 50,
+                    "right_sched": 90
+                },
+                {
+                    "left_sched": 60,
+                    "right_sched": 80
+                },
+                {
+                    "left_sched": 70,
+                    "right_sched": 70
+                },
+                {
+                    "left_sched": 80,
+                    "right_sched": 60
+                },
+                {
+                    "left_sched": 90,
+                    "right_sched": 50
+                },
+                {
+                    "left_sched": 100,
+                    "right_sched": 40
+                },
+                {
+                    "left_sched": 110,
+                    "right_sched": 30
+                },
+                {
+                    "left_sched": 120,
+                    "right_sched": 20
+                }
+            ]
+        },
+        {
+            "file_stub": "phase3_fdf_40_40_mutrate_0.2",
+            "mut_rate": 0.2,
+            "repetitions": 10,
+            "schedules": [
+                {
+                    "left_sched": 20,
+                    "right_sched": 120
+                },
+                {
+                    "left_sched": 30,
+                    "right_sched": 110
+                },
+                {
+                    "left_sched": 40,
+                    "right_sched": 100
+                },
+                {
+                    "left_sched": 50,
+                    "right_sched": 90
+                },
+                {
+                    "left_sched": 60,
+                    "right_sched": 80
+                },
+                {
+                    "left_sched": 70,
+                    "right_sched": 70
+                },
+                {
+                    "left_sched": 80,
+                    "right_sched": 60
+                },
+                {
+                    "left_sched": 90,
+                    "right_sched": 50
+                },
+                {
+                    "left_sched": 100,
+                    "right_sched": 40
+                },
+                {
+                    "left_sched": 110,
+                    "right_sched": 30
+                },
+                {
+                    "left_sched": 120,
+                    "right_sched": 20
+                }
+            ]
+        },
+        {
+            "file_stub": "phase3_fdf_40_40_mutrate_0.5",
+            "mut_rate": 0.5,
+            "repetitions": 10,
+            "schedules": [
+                {
+                    "left_sched": 20,
+                    "right_sched": 120
+                },
+                {
+                    "left_sched": 30,
+                    "right_sched": 110
+                },
+                {
+                    "left_sched": 40,
+                    "right_sched": 100
+                },
+                {
+                    "left_sched": 50,
+                    "right_sched": 90
+                },
+                {
+                    "left_sched": 60,
+                    "right_sched": 80
+                },
+                {
+                    "left_sched": 70,
+                    "right_sched": 70
+                },
+                {
+                    "left_sched": 80,
+                    "right_sched": 60
+                },
+                {
+                    "left_sched": 90,
+                    "right_sched": 50
+                },
+                {
+                    "left_sched": 100,
+                    "right_sched": 40
+                },
+                {
+                    "left_sched": 110,
+                    "right_sched": 30
+                },
+                {
+                    "left_sched": 120,
+                    "right_sched": 20
+                }
+            ]
+        },
+        {
+            "file_stub": "phase3_fdf_60_60_mutrate_0.005",
+            "mut_rate": 0.005,
+            "left_sched_fdf_mean": 60,
+            "right_sched_fdf_mean": 60,
+            "repetitions": 10,
+            "schedules": [
+                {
+                    "left_sched": 20,
+                    "right_sched": 120
+                },
+                {
+                    "left_sched": 30,
+                    "right_sched": 110
+                },
+                {
+                    "left_sched": 40,
+                    "right_sched": 100
+                },
+                {
+                    "left_sched": 50,
+                    "right_sched": 90
+                },
+                {
+                    "left_sched": 60,
+                    "right_sched": 80
+                },
+                {
+                    "left_sched": 70,
+                    "right_sched": 70
+                },
+                {
+                    "left_sched": 80,
+                    "right_sched": 60
+                },
+                {
+                    "left_sched": 90,
+                    "right_sched": 50
+                },
+                {
+                    "left_sched": 100,
+                    "right_sched": 40
+                },
+                {
+                    "left_sched": 110,
+                    "right_sched": 30
+                },
+                {
+                    "left_sched": 120,
+                    "right_sched": 20
+                }
+            ]
+        },
+        {
+            "file_stub": "phase3_fdf_60_60_mutrate_0.01",
+            "mut_rate": 0.01,
+            "left_sched_fdf_mean": 60,
+            "right_sched_fdf_mean": 60,
+            "repetitions": 10,
+            "schedules": [
+                {
+                    "left_sched": 20,
+                    "right_sched": 120
+                },
+                {
+                    "left_sched": 30,
+                    "right_sched": 110
+                },
+                {
+                    "left_sched": 40,
+                    "right_sched": 100
+                },
+                {
+                    "left_sched": 50,
+                    "right_sched": 90
+                },
+                {
+                    "left_sched": 60,
+                    "right_sched": 80
+                },
+                {
+                    "left_sched": 70,
+                    "right_sched": 70
+                },
+                {
+                    "left_sched": 80,
+                    "right_sched": 60
+                },
+                {
+                    "left_sched": 90,
+                    "right_sched": 50
+                },
+                {
+                    "left_sched": 100,
+                    "right_sched": 40
+                },
+                {
+                    "left_sched": 110,
+                    "right_sched": 30
+                },
+                {
+                    "left_sched": 120,
+                    "right_sched": 20
+                }
+            ]
+        },
+        {
+            "file_stub": "phase3_fdf_60_60_mutrate_0.02",
+            "mut_rate": 0.02,
+            "left_sched_fdf_mean": 60,
+            "right_sched_fdf_mean": 60,
+            "repetitions": 10,
+            "schedules": [
+                {
+                    "left_sched": 20,
+                    "right_sched": 120
+                },
+                {
+                    "left_sched": 30,
+                    "right_sched": 110
+                },
+                {
+                    "left_sched": 40,
+                    "right_sched": 100
+                },
+                {
+                    "left_sched": 50,
+                    "right_sched": 90
+                },
+                {
+                    "left_sched": 60,
+                    "right_sched": 80
+                },
+                {
+                    "left_sched": 70,
+                    "right_sched": 70
+                },
+                {
+                    "left_sched": 80,
+                    "right_sched": 60
+                },
+                {
+                    "left_sched": 90,
+                    "right_sched": 50
+                },
+                {
+                    "left_sched": 100,
+                    "right_sched": 40
+                },
+                {
+                    "left_sched": 110,
+                    "right_sched": 30
+                },
+                {
+                    "left_sched": 120,
+                    "right_sched": 20
+                }
+            ]
+        },
+        {
+            "file_stub": "phase3_fdf_60_60_mutrate_0.03",
+            "mut_rate": 0.03,
+            "left_sched_fdf_mean": 60,
+            "right_sched_fdf_mean": 60,
+            "repetitions": 10,
+            "schedules": [
+                {
+                    "left_sched": 20,
+                    "right_sched": 120
+                },
+                {
+                    "left_sched": 30,
+                    "right_sched": 110
+                },
+                {
+                    "left_sched": 40,
+                    "right_sched": 100
+                },
+                {
+                    "left_sched": 50,
+                    "right_sched": 90
+                },
+                {
+                    "left_sched": 60,
+                    "right_sched": 80
+                },
+                {
+                    "left_sched": 70,
+                    "right_sched": 70
+                },
+                {
+                    "left_sched": 80,
+                    "right_sched": 60
+                },
+                {
+                    "left_sched": 90,
+                    "right_sched": 50
+                },
+                {
+                    "left_sched": 100,
+                    "right_sched": 40
+                },
+                {
+                    "left_sched": 110,
+                    "right_sched": 30
+                },
+                {
+                    "left_sched": 120,
+                    "right_sched": 20
+                }
+            ]
+        },
+        {
+            "file_stub": "phase3_fdf_60_60_mutrate_0.05",
+            "mut_rate": 0.05,
+            "left_sched_fdf_mean": 60,
+            "right_sched_fdf_mean": 60,
+            "repetitions": 10,
+            "schedules": [
+                {
+                    "left_sched": 20,
+                    "right_sched": 120
+                },
+                {
+                    "left_sched": 30,
+                    "right_sched": 110
+                },
+                {
+                    "left_sched": 40,
+                    "right_sched": 100
+                },
+                {
+                    "left_sched": 50,
+                    "right_sched": 90
+                },
+                {
+                    "left_sched": 60,
+                    "right_sched": 80
+                },
+                {
+                    "left_sched": 70,
+                    "right_sched": 70
+                },
+                {
+                    "left_sched": 80,
+                    "right_sched": 60
+                },
+                {
+                    "left_sched": 90,
+                    "right_sched": 50
+                },
+                {
+                    "left_sched": 100,
+                    "right_sched": 40
+                },
+                {
+                    "left_sched": 110,
+                    "right_sched": 30
+                },
+                {
+                    "left_sched": 120,
+                    "right_sched": 20
+                }
+            ]
+        },
+        {
+            "file_stub": "phase3_fdf_60_60_mutrate_0.075",
+            "mut_rate": 0.075,
+            "left_sched_fdf_mean": 60,
+            "right_sched_fdf_mean": 60,
+            "repetitions": 10,
+            "schedules": [
+                {
+                    "left_sched": 20,
+                    "right_sched": 120
+                },
+                {
+                    "left_sched": 30,
+                    "right_sched": 110
+                },
+                {
+                    "left_sched": 40,
+                    "right_sched": 100
+                },
+                {
+                    "left_sched": 50,
+                    "right_sched": 90
+                },
+                {
+                    "left_sched": 60,
+                    "right_sched": 80
+                },
+                {
+                    "left_sched": 70,
+                    "right_sched": 70
+                },
+                {
+                    "left_sched": 80,
+                    "right_sched": 60
+                },
+                {
+                    "left_sched": 90,
+                    "right_sched": 50
+                },
+                {
+                    "left_sched": 100,
+                    "right_sched": 40
+                },
+                {
+                    "left_sched": 110,
+                    "right_sched": 30
+                },
+                {
+                    "left_sched": 120,
+                    "right_sched": 20
+                }
+            ]
+        },
+        {
+            "file_stub": "phase3_fdf_60_60_mutrate_0.1",
+            "mut_rate": 0.1,
+            "left_sched_fdf_mean": 60,
+            "right_sched_fdf_mean": 60,
+            "repetitions": 10,
+            "schedules": [
+                {
+                    "left_sched": 20,
+                    "right_sched": 120
+                },
+                {
+                    "left_sched": 30,
+                    "right_sched": 110
+                },
+                {
+                    "left_sched": 40,
+                    "right_sched": 100
+                },
+                {
+                    "left_sched": 50,
+                    "right_sched": 90
+                },
+                {
+                    "left_sched": 60,
+                    "right_sched": 80
+                },
+                {
+                    "left_sched": 70,
+                    "right_sched": 70
+                },
+                {
+                    "left_sched": 80,
+                    "right_sched": 60
+                },
+                {
+                    "left_sched": 90,
+                    "right_sched": 50
+                },
+                {
+                    "left_sched": 100,
+                    "right_sched": 40
+                },
+                {
+                    "left_sched": 110,
+                    "right_sched": 30
+                },
+                {
+                    "left_sched": 120,
+                    "right_sched": 20
+                }
+            ]
+        },
+        {
+            "file_stub": "phase3_fdf_60_60_mutrate_0.12",
+            "mut_rate": 0.12,
+            "left_sched_fdf_mean": 60,
+            "right_sched_fdf_mean": 60,
+            "repetitions": 10,
+            "schedules": [
+                {
+                    "left_sched": 20,
+                    "right_sched": 120
+                },
+                {
+                    "left_sched": 30,
+                    "right_sched": 110
+                },
+                {
+                    "left_sched": 40,
+                    "right_sched": 100
+                },
+                {
+                    "left_sched": 50,
+                    "right_sched": 90
+                },
+                {
+                    "left_sched": 60,
+                    "right_sched": 80
+                },
+                {
+                    "left_sched": 70,
+                    "right_sched": 70
+                },
+                {
+                    "left_sched": 80,
+                    "right_sched": 60
+                },
+                {
+                    "left_sched": 90,
+                    "right_sched": 50
+                },
+                {
+                    "left_sched": 100,
+                    "right_sched": 40
+                },
+                {
+                    "left_sched": 110,
+                    "right_sched": 30
+                },
+                {
+                    "left_sched": 120,
+                    "right_sched": 20
+                }
+            ]
+        },
+        {
+            "file_stub": "phase3_fdf_60_60_mutrate_0.2",
+            "mut_rate": 0.2,
+            "left_sched_fdf_mean": 60,
+            "right_sched_fdf_mean": 60,
+            "repetitions": 10,
+            "schedules": [
+                {
+                    "left_sched": 20,
+                    "right_sched": 120
+                },
+                {
+                    "left_sched": 30,
+                    "right_sched": 110
+                },
+                {
+                    "left_sched": 40,
+                    "right_sched": 100
+                },
+                {
+                    "left_sched": 50,
+                    "right_sched": 90
+                },
+                {
+                    "left_sched": 60,
+                    "right_sched": 80
+                },
+                {
+                    "left_sched": 70,
+                    "right_sched": 70
+                },
+                {
+                    "left_sched": 80,
+                    "right_sched": 60
+                },
+                {
+                    "left_sched": 90,
+                    "right_sched": 50
+                },
+                {
+                    "left_sched": 100,
+                    "right_sched": 40
+                },
+                {
+                    "left_sched": 110,
+                    "right_sched": 30
+                },
+                {
+                    "left_sched": 120,
+                    "right_sched": 20
+                }
+            ]
+        },
+        {
+            "file_stub": "phase3_fdf_60_60_mutrate_0.5",
+            "mut_rate": 0.5,
+            "left_sched_fdf_mean": 60,
+            "right_sched_fdf_mean": 60,
+            "repetitions": 10,
+            "schedules": [
+                {
+                    "left_sched": 20,
+                    "right_sched": 120
+                },
+                {
+                    "left_sched": 30,
+                    "right_sched": 110
+                },
+                {
+                    "left_sched": 40,
+                    "right_sched": 100
+                },
+                {
+                    "left_sched": 50,
+                    "right_sched": 90
+                },
+                {
+                    "left_sched": 60,
+                    "right_sched": 80
+                },
+                {
+                    "left_sched": 70,
+                    "right_sched": 70
+                },
+                {
+                    "left_sched": 80,
+                    "right_sched": 60
+                },
+                {
+                    "left_sched": 90,
+                    "right_sched": 50
+                },
+                {
+                    "left_sched": 100,
+                    "right_sched": 40
+                },
+                {
+                    "left_sched": 110,
+                    "right_sched": 30
+                },
+                {
+                    "left_sched": 120,
+                    "right_sched": 20
+                }
+            ]
+        },
+        {
+            "file_stub": "phase3_fdf_80_80_mutrate_0.005",
+            "mut_rate": 0.005,
+            "left_sched_fdf_mean": 80,
+            "right_sched_fdf_mean": 80,
+            "repetitions": 10,
+            "schedules": [
+                {
+                    "left_sched": 20,
+                    "right_sched": 120
+                },
+                {
+                    "left_sched": 30,
+                    "right_sched": 110
+                },
+                {
+                    "left_sched": 40,
+                    "right_sched": 100
+                },
+                {
+                    "left_sched": 50,
+                    "right_sched": 90
+                },
+                {
+                    "left_sched": 60,
+                    "right_sched": 80
+                },
+                {
+                    "left_sched": 70,
+                    "right_sched": 70
+                },
+                {
+                    "left_sched": 80,
+                    "right_sched": 60
+                },
+                {
+                    "left_sched": 90,
+                    "right_sched": 50
+                },
+                {
+                    "left_sched": 100,
+                    "right_sched": 40
+                },
+                {
+                    "left_sched": 110,
+                    "right_sched": 30
+                },
+                {
+                    "left_sched": 120,
+                    "right_sched": 20
+                }
+            ]
+        },
+        {
+            "file_stub": "phase3_fdf_80_80_mutrate_0.01",
+            "mut_rate": 0.01,
+            "left_sched_fdf_mean": 80,
+            "right_sched_fdf_mean": 80,
+            "repetitions": 10,
+            "schedules": [
+                {
+                    "left_sched": 20,
+                    "right_sched": 120
+                },
+                {
+                    "left_sched": 30,
+                    "right_sched": 110
+                },
+                {
+                    "left_sched": 40,
+                    "right_sched": 100
+                },
+                {
+                    "left_sched": 50,
+                    "right_sched": 90
+                },
+                {
+                    "left_sched": 60,
+                    "right_sched": 80
+                },
+                {
+                    "left_sched": 70,
+                    "right_sched": 70
+                },
+                {
+                    "left_sched": 80,
+                    "right_sched": 60
+                },
+                {
+                    "left_sched": 90,
+                    "right_sched": 50
+                },
+                {
+                    "left_sched": 100,
+                    "right_sched": 40
+                },
+                {
+                    "left_sched": 110,
+                    "right_sched": 30
+                },
+                {
+                    "left_sched": 120,
+                    "right_sched": 20
+                }
+            ]
+        },
+        {
+            "file_stub": "phase3_fdf_80_80_mutrate_0.02",
+            "mut_rate": 0.02,
+            "left_sched_fdf_mean": 80,
+            "right_sched_fdf_mean": 80,
+            "repetitions": 10,
+            "schedules": [
+                {
+                    "left_sched": 20,
+                    "right_sched": 120
+                },
+                {
+                    "left_sched": 30,
+                    "right_sched": 110
+                },
+                {
+                    "left_sched": 40,
+                    "right_sched": 100
+                },
+                {
+                    "left_sched": 50,
+                    "right_sched": 90
+                },
+                {
+                    "left_sched": 60,
+                    "right_sched": 80
+                },
+                {
+                    "left_sched": 70,
+                    "right_sched": 70
+                },
+                {
+                    "left_sched": 80,
+                    "right_sched": 60
+                },
+                {
+                    "left_sched": 90,
+                    "right_sched": 50
+                },
+                {
+                    "left_sched": 100,
+                    "right_sched": 40
+                },
+                {
+                    "left_sched": 110,
+                    "right_sched": 30
+                },
+                {
+                    "left_sched": 120,
+                    "right_sched": 20
+                }
+            ]
+        },
+        {
+            "file_stub": "phase3_fdf_80_80_mutrate_0.03",
+            "mut_rate": 0.03,
+            "left_sched_fdf_mean": 80,
+            "right_sched_fdf_mean": 80,
+            "repetitions": 10,
+            "schedules": [
+                {
+                    "left_sched": 20,
+                    "right_sched": 120
+                },
+                {
+                    "left_sched": 30,
+                    "right_sched": 110
+                },
+                {
+                    "left_sched": 40,
+                    "right_sched": 100
+                },
+                {
+                    "left_sched": 50,
+                    "right_sched": 90
+                },
+                {
+                    "left_sched": 60,
+                    "right_sched": 80
+                },
+                {
+                    "left_sched": 70,
+                    "right_sched": 70
+                },
+                {
+                    "left_sched": 80,
+                    "right_sched": 60
+                },
+                {
+                    "left_sched": 90,
+                    "right_sched": 50
+                },
+                {
+                    "left_sched": 100,
+                    "right_sched": 40
+                },
+                {
+                    "left_sched": 110,
+                    "right_sched": 30
+                },
+                {
+                    "left_sched": 120,
+                    "right_sched": 20
+                }
+            ]
+        },
+        {
+            "file_stub": "phase3_fdf_80_80_mutrate_0.05",
+            "mut_rate": 0.05,
+            "left_sched_fdf_mean": 80,
+            "right_sched_fdf_mean": 80,
+            "repetitions": 10,
+            "schedules": [
+                {
+                    "left_sched": 20,
+                    "right_sched": 120
+                },
+                {
+                    "left_sched": 30,
+                    "right_sched": 110
+                },
+                {
+                    "left_sched": 40,
+                    "right_sched": 100
+                },
+                {
+                    "left_sched": 50,
+                    "right_sched": 90
+                },
+                {
+                    "left_sched": 60,
+                    "right_sched": 80
+                },
+                {
+                    "left_sched": 70,
+                    "right_sched": 70
+                },
+                {
+                    "left_sched": 80,
+                    "right_sched": 60
+                },
+                {
+                    "left_sched": 90,
+                    "right_sched": 50
+                },
+                {
+                    "left_sched": 100,
+                    "right_sched": 40
+                },
+                {
+                    "left_sched": 110,
+                    "right_sched": 30
+                },
+                {
+                    "left_sched": 120,
+                    "right_sched": 20
+                }
+            ]
+        },
+        {
+            "file_stub": "phase3_fdf_80_80_mutrate_0.075",
+            "mut_rate": 0.075,
+            "left_sched_fdf_mean": 80,
+            "right_sched_fdf_mean": 80,
+            "repetitions": 10,
+            "schedules": [
+                {
+                    "left_sched": 20,
+                    "right_sched": 120
+                },
+                {
+                    "left_sched": 30,
+                    "right_sched": 110
+                },
+                {
+                    "left_sched": 40,
+                    "right_sched": 100
+                },
+                {
+                    "left_sched": 50,
+                    "right_sched": 90
+                },
+                {
+                    "left_sched": 60,
+                    "right_sched": 80
+                },
+                {
+                    "left_sched": 70,
+                    "right_sched": 70
+                },
+                {
+                    "left_sched": 80,
+                    "right_sched": 60
+                },
+                {
+                    "left_sched": 90,
+                    "right_sched": 50
+                },
+                {
+                    "left_sched": 100,
+                    "right_sched": 40
+                },
+                {
+                    "left_sched": 110,
+                    "right_sched": 30
+                },
+                {
+                    "left_sched": 120,
+                    "right_sched": 20
+                }
+            ]
+        },
+        {
+            "file_stub": "phase3_fdf_80_80_mutrate_0.1",
+            "mut_rate": 0.1,
+            "left_sched_fdf_mean": 80,
+            "right_sched_fdf_mean": 80,
+            "repetitions": 10,
+            "schedules": [
+                {
+                    "left_sched": 20,
+                    "right_sched": 120
+                },
+                {
+                    "left_sched": 30,
+                    "right_sched": 110
+                },
+                {
+                    "left_sched": 40,
+                    "right_sched": 100
+                },
+                {
+                    "left_sched": 50,
+                    "right_sched": 90
+                },
+                {
+                    "left_sched": 60,
+                    "right_sched": 80
+                },
+                {
+                    "left_sched": 70,
+                    "right_sched": 70
+                },
+                {
+                    "left_sched": 80,
+                    "right_sched": 60
+                },
+                {
+                    "left_sched": 90,
+                    "right_sched": 50
+                },
+                {
+                    "left_sched": 100,
+                    "right_sched": 40
+                },
+                {
+                    "left_sched": 110,
+                    "right_sched": 30
+                },
+                {
+                    "left_sched": 120,
+                    "right_sched": 20
+                }
+            ]
+        },
+        {
+            "file_stub": "phase3_fdf_80_80_mutrate_0.12",
+            "mut_rate": 0.12,
+            "left_sched_fdf_mean": 80,
+            "right_sched_fdf_mean": 80,
+            "repetitions": 10,
+            "schedules": [
+                {
+                    "left_sched": 20,
+                    "right_sched": 120
+                },
+                {
+                    "left_sched": 30,
+                    "right_sched": 110
+                },
+                {
+                    "left_sched": 40,
+                    "right_sched": 100
+                },
+                {
+                    "left_sched": 50,
+                    "right_sched": 90
+                },
+                {
+                    "left_sched": 60,
+                    "right_sched": 80
+                },
+                {
+                    "left_sched": 70,
+                    "right_sched": 70
+                },
+                {
+                    "left_sched": 80,
+                    "right_sched": 60
+                },
+                {
+                    "left_sched": 90,
+                    "right_sched": 50
+                },
+                {
+                    "left_sched": 100,
+                    "right_sched": 40
+                },
+                {
+                    "left_sched": 110,
+                    "right_sched": 30
+                },
+                {
+                    "left_sched": 120,
+                    "right_sched": 20
+                }
+            ]
+        },
+        {
+            "file_stub": "phase3_fdf_80_80_mutrate_0.2",
+            "mut_rate": 0.2,
+            "left_sched_fdf_mean": 80,
+            "right_sched_fdf_mean": 80,
+            "repetitions": 10,
+            "schedules": [
+                {
+                    "left_sched": 20,
+                    "right_sched": 120
+                },
+                {
+                    "left_sched": 30,
+                    "right_sched": 110
+                },
+                {
+                    "left_sched": 40,
+                    "right_sched": 100
+                },
+                {
+                    "left_sched": 50,
+                    "right_sched": 90
+                },
+                {
+                    "left_sched": 60,
+                    "right_sched": 80
+                },
+                {
+                    "left_sched": 70,
+                    "right_sched": 70
+                },
+                {
+                    "left_sched": 80,
+                    "right_sched": 60
+                },
+                {
+                    "left_sched": 90,
+                    "right_sched": 50
+                },
+                {
+                    "left_sched": 100,
+                    "right_sched": 40
+                },
+                {
+                    "left_sched": 110,
+                    "right_sched": 30
+                },
+                {
+                    "left_sched": 120,
+                    "right_sched": 20
+                }
+            ]
+        },
+        {
+            "file_stub": "phase3_fdf_80_80_mutrate_0.5",
+            "mut_rate": 0.5,
+            "left_sched_fdf_mean": 80,
+            "right_sched_fdf_mean": 80,
+            "repetitions": 10,
+            "schedules": [
+                {
+                    "left_sched": 20,
+                    "right_sched": 120
+                },
+                {
+                    "left_sched": 30,
+                    "right_sched": 110
+                },
+                {
+                    "left_sched": 40,
+                    "right_sched": 100
+                },
+                {
+                    "left_sched": 50,
+                    "right_sched": 90
+                },
+                {
+                    "left_sched": 60,
+                    "right_sched": 80
+                },
+                {
+                    "left_sched": 70,
+                    "right_sched": 70
+                },
+                {
+                    "left_sched": 80,
+                    "right_sched": 60
+                },
+                {
+                    "left_sched": 90,
+                    "right_sched": 50
+                },
+                {
+                    "left_sched": 100,
+                    "right_sched": 40
+                },
+                {
+                    "left_sched": 110,
+                    "right_sched": 30
+                },
+                {
+                    "left_sched": 120,
+                    "right_sched": 20
+                }
+            ]
+        }
+    ]
+}

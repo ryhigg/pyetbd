@@ -1,0 +1,44 @@
+{
+    "experiments": [
+        {
+            "file_stub": "the file_stub",
+            "repetitions": "the number of repetitions to run",
+            "experiment_type": "the type of schedule arrangement (e.g., concurrent)",
+            "generations": "the number of generations to run",
+            "pop_size": "the organism's population size",
+            "mut_rate": "the organism's mutation rate",
+            "low_pheno": "the organism's low phenotype",
+            "high_pheno": "the organism's high phenotype",
+            "fdf_type": "the form of the fitness density function to use (e.g., linear)",
+            "fitness_landscape": "the fitness landscape to use (e.g., circular)",
+            "recombination_method": "the recombination method to use (e.g., bitwise)",
+            "reinitialize_population": "whether or not to reinitialize the population after each schedule",
+            "schedules": [
+                {
+                    "left_sched_fdf_mean": "the mean of the left schedule's fdf",
+                    "left_sched_response_class_lower_bound": "the lower bound of the left schedule's response class",
+                    "left_sched_response_class_upper_bound": "the upper bound of the left schedule's response class",
+                    "left_sched_interval_type": "the type of interval for the left schedule (e.g., random)",
+                    "left_sched": "the mean of the left schedule",
+                    "right_sched_fdf_mean": "the mean of the right schedule's fdf",
+                    "right_sched_response_class_lower_bound": "the lower bound of the right schedule's response class",
+                    "right_sched_response_class_upper_bound": "the upper bound of the right schedule's response class",
+                    "right_sched_interval_type": "the type of interval for the right schedule (e.g., random)",
+                    "right_sched": "the mean of the right schedule"
+                },
+                {
+                    different schedule settings could go here
+                },
+                {
+                    and more here
+                }
+            ]
+        },
+        {
+            another experiment could go here
+        },
+        {
+            and another here, also any of the schedule settings can also be given to an experiment so that they are applied to all schedules in the experiment
+        }
+    ]
+}

@@ -114,12 +114,22 @@ class ConcurrentSchedRunner:
         self.organism.replace_population(children_phenos)
 
     def return_data(self):
-        """Returns the data dictionary.
+        """Returns and resets the data dictionary.
 
         Returns:
             dict: the data dictionary
         """
-        return self.data_dict
+        return_data = self.data_dict.copy()
+
+        self.data_dict = {
+            "Emissions": [],
+            "R1": [],
+            "B1": [],
+            "R2": [],
+            "B2": [],
+        }
+
+        return return_data
 
     def run(self):
         """Runs the concurrent schedules. (1 generation)"""

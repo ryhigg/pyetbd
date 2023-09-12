@@ -1,0 +1,54 @@
+{
+    "experiments": [
+        {
+            "file_stub": "mcdowell_et_al_2008_phase1",
+            "reps": 10,
+            "schedules": [
+                {
+                    "left_sched": 20,
+                    "right_sched": 120
+                },
+                {
+                    "left_sched": 30,
+                    "right_sched": 110
+                },
+                {
+                    "left_sched": 40,
+                    "right_sched": 100
+                },
+                {
+                    "left_sched": 50,
+                    "right_sched": 90
+                },
+                {
+                    "left_sched": 60,
+                    "right_sched": 80
+                },
+                {
+                    "left_sched": 70,
+                    "right_sched": 70
+                },
+                {
+                    "left_sched": 80,
+                    "right_sched": 60
+                },
+                {
+                    "left_sched": 90,
+                    "right_sched": 50
+                },
+                {
+                    "left_sched": 100,
+                    "right_sched": 40
+                },
+                {
+                    "left_sched": 110,
+                    "right_sched": 30
+                },
+                {
+                    "left_sched": 120,
+                    "right_sched": 20
+                }
+            ]
+        }
+    ]
+}
