@@ -27,15 +27,15 @@ class ConcurrentSchedRunner:
         self.left_sched = IntervalSchedule(
             self.left_sched_params["response_class_lower_bound"],
             self.left_sched_params["response_class_upper_bound"],
-            self.left_sched_params["interval_mean"],
-            self.left_sched_params["interval_type"],
+            self.left_sched_params["sched_mean"],
+            self.left_sched_params["sched_type"],
             self.left_sched_params["fdf_mean"],
         )
         self.right_sched = IntervalSchedule(
             self.right_sched_params["response_class_lower_bound"],
             self.right_sched_params["response_class_upper_bound"],
-            self.right_sched_params["interval_mean"],
-            self.right_sched_params["interval_type"],
+            self.right_sched_params["sched_mean"],
+            self.right_sched_params["sched_type"],
             self.right_sched_params["fdf_mean"],
         )
         self.organism = AnOrganism(

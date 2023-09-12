@@ -58,8 +58,8 @@ class ExperimentBuilder:
         self.recombination_method = self.defaults["recombination_method"]
         self.fdf_mean = self.defaults["fdf_mean"]
         self.reinitialize_population = self.defaults["reinitialize_population"]
-        self.left_sched_interval_type = self.defaults["left_sched_interval_type"]
-        self.right_sched_interval_type = self.defaults["right_sched_interval_type"]
+        self.left_sched_type = self.defaults["left_sched_type"]
+        self.right_sched_type = self.defaults["right_sched_type"]
         self.left_sched_response_class_lower_bound = self.defaults[
             "left_sched_response_class_lower_bound"
         ]
@@ -107,15 +107,15 @@ class ExperimentBuilder:
                 pair["left_sched_params"] = {
                     "response_class_lower_bound": self.left_sched_response_class_lower_bound,
                     "response_class_upper_bound": self.left_sched_response_class_upper_bound,
-                    "interval_mean": self.left_sched,
-                    "interval_type": self.left_sched_interval_type,
+                    "sched_mean": self.left_sched,
+                    "sched_type": self.left_sched_type,
                     "fdf_mean": self.left_sched_fdf_mean,
                 }
                 pair["right_sched_params"] = {
                     "response_class_lower_bound": self.right_sched_response_class_lower_bound,
                     "response_class_upper_bound": self.right_sched_response_class_upper_bound,
-                    "interval_mean": self.right_sched,
-                    "interval_type": self.right_sched_interval_type,
+                    "sched_mean": self.right_sched,
+                    "sched_type": self.right_sched_type,
                     "fdf_mean": self.right_sched_fdf_mean,
                 }
 
@@ -179,8 +179,8 @@ class ExperimentBuilder:
             if "left_sched" in dictionary:
                 self.left_sched = dictionary["left_sched"]
 
-            if "left_sched_interval_type" in dictionary:
-                self.left_sched_interval_type = dictionary["left_sched_interval_type"]
+            if "left_sched_type" in dictionary:
+                self.left_sched_type = dictionary["left_sched_type"]
 
             if "left_sched_fdf_mean" in dictionary:
                 self.left_sched_fdf_mean = dictionary["left_sched_fdf_mean"]
@@ -198,8 +198,8 @@ class ExperimentBuilder:
             if "right_sched" in dictionary:
                 self.right_sched = dictionary["right_sched"]
 
-            if "right_sched_interval_type" in dictionary:
-                self.right_sched_interval_type = dictionary["right_sched_interval_type"]
+            if "right_sched_type" in dictionary:
+                self.right_sched_type = dictionary["right_sched_type"]
 
             if "right_sched_fdf_mean" in dictionary:
                 self.right_sched_fdf_mean = dictionary["right_sched_fdf_mean"]

@@ -154,23 +154,85 @@ class Experiment:
         output_df = pd.DataFrame(self.data_dict)
         output_df.to_csv(self.output_dir + self.file_stub + ".csv", index=False)
 
-        # self.write_experiment_params()
+        self.write_experiment_params()
 
-    # TODO: implement parameter writing
+    def return_experiment_params(self):
+        if self.experiment_type == "concurrent":
+            self.params_dict = {
+                "Repetitions": self.reps,
+                "Generations": self.gens,
+                "File Stub": self.file_stub,
+                "Experiment Type": self.experiment_type,
+                "Reinitialize Population": self.reinitialize_population,
+                "Population Size": self.organism_params["pop_size"],
+                "Mutation Rate": self.organism_params["mut_rate"],
+                "Low Phenotype": self.organism_params["low_pheno"],
+                "High Phenotype": self.organism_params["high_pheno"],
+                "Fitness Landscape": self.organism_params["fitness_landscape"],
+                "FDF Type": self.organism_params["fdf_type"],
+                "Recombination Method": self.organism_params["recombination_method"],
+                "Left Schedule Types": [],
+                "Right Schedule Types": [],
+                "Left Schedule FDF Means": [],
+                "Right Schedule FDF Means": [],
+                "Left Schedule Means": [],
+                "Right Schedule Means": [],
+                "Left Schedule Response Class Lower Bounds": [],
+                "Left Schedule Response Class Upper Bounds": [],
+                "Right Schedule Response Class Lower Bounds": [],
+                "Right Schedule Response Class Upper Bounds": [],
+            }
 
-    # def write_experiment_params(self):
-    #     with open(
-    #         f"{self.output_dir}/{self.file_stub}_params.csv", "w", newline=""
-    #     ) as csvfile:
-    #         writing_dict = self.return_parameter_data()
-    #         concatenated_list = []
-    #         writer = csv.writer(csvfile)
-    #         writer.writerow(["Parameter", "Value"])
-    #         for key, value in writing_dict.items():
-    #             if type(value) != list:
-    #                 writer.writerow([key, value])
-    #             else:
-    #                 key_list = [key]
-    #                 key_list.extend(value)
-    #                 concatenated_list.append(key_list)
-    #                 writer.writerow(item for item in key_list)
+            for sched in self.schedules:
+                self.params_dict["Left Schedule Types"].append(
+                    sched["left_sched_params"]["sched_type"]
+                )
+                self.params_dict["Right Schedule Types"].append(
+                    sched["right_sched_params"]["sched_type"]
+                )
+                self.params_dict["Left Schedule FDF Means"].append(
+                    sched["left_sched_params"]["fdf_mean"]
+                )
+                self.params_dict["Right Schedule FDF Means"].append(
+                    sched["right_sched_params"]["fdf_mean"]
+                )
+                self.params_dict["Left Schedule Means"].append(
+                    sched["left_sched_params"]["sched_mean"]
+                )
+                self.params_dict["Right Schedule Means"].append(
+                    sched["right_sched_params"]["sched_mean"]
+                )
+                self.params_dict["Left Schedule Response Class Lower Bounds"].append(
+                    sched["left_sched_params"]["response_class_lower_bound"]
+                )
+                self.params_dict["Left Schedule Response Class Upper Bounds"].append(
+                    sched["left_sched_params"]["response_class_upper_bound"]
+                )
+                self.params_dict["Right Schedule Response Class Lower Bounds"].append(
+                    sched["right_sched_params"]["response_class_lower_bound"]
+                )
+                self.params_dict["Right Schedule Response Class Upper Bounds"].append(
+                    sched["right_sched_params"]["response_class_upper_bound"]
+                )
+
+            return self.params_dict
+
+        else:
+            raise NotImplementedError
+
+    def write_experiment_params(self):
+        with open(
+            f"{self.output_dir}{self.file_stub}_params.csv", "w", newline=""
+        ) as csvfile:
+            writing_dict = self.return_experiment_params()
+            concatenated_list = []
+            writer = csv.writer(csvfile)
+            writer.writerow(["Parameter", "Value"])
+            for key, value in writing_dict.items():
+                if type(value) != list:
+                    writer.writerow([key, value])
+                else:
+                    key_list = [key]
+                    key_list.extend(value)
+                    concatenated_list.append(key_list)
+                    writer.writerow(item for item in key_list)
