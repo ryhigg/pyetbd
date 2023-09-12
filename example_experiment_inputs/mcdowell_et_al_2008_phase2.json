@@ -2,7 +2,7 @@
     "experiments": [
         {
             "file_stub": "phase2_left_fdf_10",
-            "repetitions": 4,
+            "reps": 4,
             "left_sched_fdf_mean": 10,
             "schedules": [
                 {
@@ -53,7 +53,7 @@
         },
         {
             "file_stub": "phase2_left_fdf_25",
-            "repetitions": 4,
+            "reps": 4,
             "left_sched_fdf_mean": 25,
             "schedules": [
                 {
@@ -104,7 +104,7 @@
         },
         {
             "file_stub": "phase2_left_fdf_55",
-            "repetitions": 4,
+            "reps": 4,
             "left_sched_fdf_mean": 55,
             "schedules": [
                 {
@@ -155,7 +155,7 @@
         },
         {
             "file_stub": "phase2_left_fdf_70",
-            "repetitions": 4,
+            "reps": 4,
             "left_sched_fdf_mean": 70,
             "schedules": [
                 {

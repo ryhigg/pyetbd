@@ -5,7 +5,7 @@
             "mut_rate": 0.005,
             "left_sched_fdf_mean": 20,
             "right_sched_fdf_mean": 20,
-            "repetitions": 10,
+            "reps": 10,
             "schedules": [
                 {
                     "left_sched": 20,
@@ -58,7 +58,7 @@
             "mut_rate": 0.01,
             "left_sched_fdf_mean": 20,
             "right_sched_fdf_mean": 20,
-            "repetitions": 10,
+            "reps": 10,
             "schedules": [
                 {
                     "left_sched": 20,
@@ -111,7 +111,7 @@
             "mut_rate": 0.02,
             "left_sched_fdf_mean": 20,
             "right_sched_fdf_mean": 20,
-            "repetitions": 10,
+            "reps": 10,
             "schedules": [
                 {
                     "left_sched": 20,
@@ -164,7 +164,7 @@
             "mut_rate": 0.03,
             "left_sched_fdf_mean": 20,
             "right_sched_fdf_mean": 20,
-            "repetitions": 10,
+            "reps": 10,
             "schedules": [
                 {
                     "left_sched": 20,
@@ -217,7 +217,7 @@
             "mut_rate": 0.05,
             "left_sched_fdf_mean": 20,
             "right_sched_fdf_mean": 20,
-            "repetitions": 10,
+            "reps": 10,
             "schedules": [
                 {
                     "left_sched": 20,
@@ -270,7 +270,7 @@
             "mut_rate": 0.075,
             "left_sched_fdf_mean": 20,
             "right_sched_fdf_mean": 20,
-            "repetitions": 10,
+            "reps": 10,
             "schedules": [
                 {
                     "left_sched": 20,
@@ -323,7 +323,7 @@
             "mut_rate": 0.1,
             "left_sched_fdf_mean": 20,
             "right_sched_fdf_mean": 20,
-            "repetitions": 10,
+            "reps": 10,
             "schedules": [
                 {
                     "left_sched": 20,
@@ -376,7 +376,7 @@
             "mut_rate": 0.12,
             "left_sched_fdf_mean": 20,
             "right_sched_fdf_mean": 20,
-            "repetitions": 10,
+            "reps": 10,
             "schedules": [
                 {
                     "left_sched": 20,
@@ -429,7 +429,7 @@
             "mut_rate": 0.2,
             "left_sched_fdf_mean": 20,
             "right_sched_fdf_mean": 20,
-            "repetitions": 10,
+            "reps": 10,
             "schedules": [
                 {
                     "left_sched": 20,
@@ -482,7 +482,7 @@
             "mut_rate": 0.5,
             "left_sched_fdf_mean": 20,
             "right_sched_fdf_mean": 20,
-            "repetitions": 10,
+            "reps": 10,
             "schedules": [
                 {
                     "left_sched": 20,
@@ -533,7 +533,7 @@
         {
             "file_stub": "phase3_fdf_40_40_mutrate_0.005",
             "mut_rate": 0.005,
-            "repetitions": 10,
+            "reps": 10,
             "schedules": [
                 {
                     "left_sched": 20,
@@ -584,7 +584,7 @@
         {
             "file_stub": "phase3_fdf_40_40_mutrate_0.01",
             "mut_rate": 0.01,
-            "repetitions": 10,
+            "reps": 10,
             "schedules": [
                 {
                     "left_sched": 20,
@@ -635,7 +635,7 @@
         {
             "file_stub": "phase3_fdf_40_40_mutrate_0.02",
             "mut_rate": 0.02,
-            "repetitions": 10,
+            "reps": 10,
             "schedules": [
                 {
                     "left_sched": 20,
@@ -686,7 +686,7 @@
         {
             "file_stub": "phase3_fdf_40_40_mutrate_0.03",
             "mut_rate": 0.03,
-            "repetitions": 10,
+            "reps": 10,
             "schedules": [
                 {
                     "left_sched": 20,
@@ -737,7 +737,7 @@
         {
             "file_stub": "phase3_fdf_40_40_mutrate_0.05",
             "mut_rate": 0.05,
-            "repetitions": 10,
+            "reps": 10,
             "schedules": [
                 {
                     "left_sched": 20,
@@ -788,7 +788,7 @@
         {
             "file_stub": "phase3_fdf_40_40_mutrate_0.075",
             "mut_rate": 0.075,
-            "repetitions": 10,
+            "reps": 10,
             "schedules": [
                 {
                     "left_sched": 20,
@@ -839,7 +839,7 @@
         {
             "file_stub": "phase3_fdf_40_40_mutrate_0.1",
             "mut_rate": 0.1,
-            "repetitions": 10,
+            "reps": 10,
             "schedules": [
                 {
                     "left_sched": 20,
@@ -890,7 +890,7 @@
         {
             "file_stub": "phase3_fdf_40_40_mutrate_0.12",
             "mut_rate": 0.12,
-            "repetitions": 10,
+            "reps": 10,
             "schedules": [
                 {
                     "left_sched": 20,
@@ -941,7 +941,7 @@
         {
             "file_stub": "phase3_fdf_40_40_mutrate_0.2",
             "mut_rate": 0.2,
-            "repetitions": 10,
+            "reps": 10,
             "schedules": [
                 {
                     "left_sched": 20,
@@ -992,7 +992,7 @@
         {
             "file_stub": "phase3_fdf_40_40_mutrate_0.5",
             "mut_rate": 0.5,
-            "repetitions": 10,
+            "reps": 10,
             "schedules": [
                 {
                     "left_sched": 20,
@@ -1045,7 +1045,7 @@
             "mut_rate": 0.005,
             "left_sched_fdf_mean": 60,
             "right_sched_fdf_mean": 60,
-            "repetitions": 10,
+            "reps": 10,
             "schedules": [
                 {
                     "left_sched": 20,
@@ -1098,7 +1098,7 @@
             "mut_rate": 0.01,
             "left_sched_fdf_mean": 60,
             "right_sched_fdf_mean": 60,
-            "repetitions": 10,
+            "reps": 10,
             "schedules": [
                 {
                     "left_sched": 20,
@@ -1151,7 +1151,7 @@
             "mut_rate": 0.02,
             "left_sched_fdf_mean": 60,
             "right_sched_fdf_mean": 60,
-            "repetitions": 10,
+            "reps": 10,
             "schedules": [
                 {
                     "left_sched": 20,
@@ -1204,7 +1204,7 @@
             "mut_rate": 0.03,
             "left_sched_fdf_mean": 60,
             "right_sched_fdf_mean": 60,
-            "repetitions": 10,
+            "reps": 10,
             "schedules": [
                 {
                     "left_sched": 20,
@@ -1257,7 +1257,7 @@
             "mut_rate": 0.05,
             "left_sched_fdf_mean": 60,
             "right_sched_fdf_mean": 60,
-            "repetitions": 10,
+            "reps": 10,
             "schedules": [
                 {
                     "left_sched": 20,
@@ -1310,7 +1310,7 @@
             "mut_rate": 0.075,
             "left_sched_fdf_mean": 60,
             "right_sched_fdf_mean": 60,
-            "repetitions": 10,
+            "reps": 10,
             "schedules": [
                 {
                     "left_sched": 20,
@@ -1363,7 +1363,7 @@
             "mut_rate": 0.1,
             "left_sched_fdf_mean": 60,
             "right_sched_fdf_mean": 60,
-            "repetitions": 10,
+            "reps": 10,
             "schedules": [
                 {
                     "left_sched": 20,
@@ -1416,7 +1416,7 @@
             "mut_rate": 0.12,
             "left_sched_fdf_mean": 60,
             "right_sched_fdf_mean": 60,
-            "repetitions": 10,
+            "reps": 10,
             "schedules": [
                 {
                     "left_sched": 20,
@@ -1469,7 +1469,7 @@
             "mut_rate": 0.2,
             "left_sched_fdf_mean": 60,
             "right_sched_fdf_mean": 60,
-            "repetitions": 10,
+            "reps": 10,
             "schedules": [
                 {
                     "left_sched": 20,
@@ -1522,7 +1522,7 @@
             "mut_rate": 0.5,
             "left_sched_fdf_mean": 60,
             "right_sched_fdf_mean": 60,
-            "repetitions": 10,
+            "reps": 10,
             "schedules": [
                 {
                     "left_sched": 20,
@@ -1575,7 +1575,7 @@
             "mut_rate": 0.005,
             "left_sched_fdf_mean": 80,
             "right_sched_fdf_mean": 80,
-            "repetitions": 10,
+            "reps": 10,
             "schedules": [
                 {
                     "left_sched": 20,
@@ -1628,7 +1628,7 @@
             "mut_rate": 0.01,
             "left_sched_fdf_mean": 80,
             "right_sched_fdf_mean": 80,
-            "repetitions": 10,
+            "reps": 10,
             "schedules": [
                 {
                     "left_sched": 20,
@@ -1681,7 +1681,7 @@
             "mut_rate": 0.02,
             "left_sched_fdf_mean": 80,
             "right_sched_fdf_mean": 80,
-            "repetitions": 10,
+            "reps": 10,
             "schedules": [
                 {
                     "left_sched": 20,
@@ -1734,7 +1734,7 @@
             "mut_rate": 0.03,
             "left_sched_fdf_mean": 80,
             "right_sched_fdf_mean": 80,
-            "repetitions": 10,
+            "reps": 10,
             "schedules": [
                 {
                     "left_sched": 20,
@@ -1787,7 +1787,7 @@
             "mut_rate": 0.05,
             "left_sched_fdf_mean": 80,
             "right_sched_fdf_mean": 80,
-            "repetitions": 10,
+            "reps": 10,
             "schedules": [
                 {
                     "left_sched": 20,
@@ -1840,7 +1840,7 @@
             "mut_rate": 0.075,
             "left_sched_fdf_mean": 80,
             "right_sched_fdf_mean": 80,
-            "repetitions": 10,
+            "reps": 10,
             "schedules": [
                 {
                     "left_sched": 20,
@@ -1893,7 +1893,7 @@
             "mut_rate": 0.1,
             "left_sched_fdf_mean": 80,
             "right_sched_fdf_mean": 80,
-            "repetitions": 10,
+            "reps": 10,
             "schedules": [
                 {
                     "left_sched": 20,
@@ -1946,7 +1946,7 @@
             "mut_rate": 0.12,
             "left_sched_fdf_mean": 80,
             "right_sched_fdf_mean": 80,
-            "repetitions": 10,
+            "reps": 10,
             "schedules": [
                 {
                     "left_sched": 20,
@@ -1999,7 +1999,7 @@
             "mut_rate": 0.2,
             "left_sched_fdf_mean": 80,
             "right_sched_fdf_mean": 80,
-            "repetitions": 10,
+            "reps": 10,
             "schedules": [
                 {
                     "left_sched": 20,
@@ -2052,7 +2052,7 @@
             "mut_rate": 0.5,
             "left_sched_fdf_mean": 80,
             "right_sched_fdf_mean": 80,
-            "repetitions": 10,
+            "reps": 10,
             "schedules": [
                 {
                     "left_sched": 20,
