@@ -1,4 +1,4 @@
-{
+DEFAULTS = {
     "reps": 1,
     "gens": 20500,
     "experiment_type": "concurrent",
@@ -12,11 +12,11 @@
     "fdf_mean": 40,
     "left_sched_fdf_mean": 40,
     "right_sched_fdf_mean": 40,
-    "reinitialize_population": true,
+    "reinitialize_population": True,
     "left_sched_response_class_lower_bound": 471,
     "left_sched_response_class_upper_bound": 511,
     "right_sched_response_class_lower_bound": 512,
     "right_sched_response_class_upper_bound": 552,
     "left_sched_interval_type": "random",
-    "right_sched_interval_type": "random"
+    "right_sched_interval_type": "random",
 }

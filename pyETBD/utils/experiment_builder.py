@@ -1,5 +1,6 @@
 import json
 from pyETBD.utils.experiment import Experiment
+from pyETBD.utils.defaults import DEFAULTS
 
 
 class ExperimentBuilder:
@@ -18,8 +19,7 @@ class ExperimentBuilder:
         with open(self.input_file) as f:
             self.settings = json.load(f)
 
-        with open("pyETBD/defaults.json") as f:
-            self.defaults = json.load(f)
+        self.defaults = DEFAULTS
 
     def build_experiments(self):
         """Builds the experiments from the json input."""

@@ -157,68 +157,6 @@ class Experiment:
         # self.write_experiment_params()
 
     # TODO: implement parameter writing
-    # def return_parameter_data(self):
-    #     if self.experiment_type == "concurrent":
-    #         return {
-    #             "File Stub": self.file_stub,
-    #             "Population Size": self.organism_params["pop_size"],
-    #             "Mutation Rate": self.organism_params["mut_rate"],
-    #             "Low Phenotype": self.organism_params["low_pheno"],
-    #             "High Phenotype": self.organism_params["high_pheno"],
-    #             "FDF Type": self.organism_params["fdf_type"],
-    #             "Repetitions": self.reps,
-    #             "Generations": self.gens,
-    #             "Recombination Method": self.organism_params["recombination_method"],
-    #             "Fitness Landscape": self.organism_params["fitness_landscape"],
-    #             "Reinitialize Population": self.reinitialize_population,
-    #             "Left Schedule Response Class Lower Bound": [
-    #                 self.schedules[i]["left_sched_params"]["response_class_lower_bound"]
-    #                 for i in self.schedules
-    #             ],
-    #             "Left Schedule Response Class Upper Bound": [
-    #                 self.schedules[i]["left_sched_params"]["response_class_upper_bound"]
-    #                 for i in self.schedules
-    #             ],
-    #             "Left Schedule Interval Mean": [
-    #                 self.schedules[i]["left_sched_params"]["interval_mean"]
-    #                 for i in self.schedules
-    #             ],
-    #             "Left Schedule Interval Type": [
-    #                 self.schedules[i]["left_sched_params"]["interval_type"]
-    #                 for i in self.schedules
-    #             ],
-    #             "Left Schedule FDF Mean": [
-    #                 self.schedules[i]["left_sched_params"]["fdf_mean"]
-    #                 for i in self.schedules
-    #             ],
-    #             "Right Schedule Response Class Lower Bound": [
-    #                 self.schedules[i]["right_sched_params"][
-    #                     "response_class_lower_bound"
-    #                 ]
-    #                 for i in self.schedules
-    #             ],
-    #             "Right Schedule Response Class Upper Bound": [
-    #                 self.schedules[i]["right_sched_params"][
-    #                     "response_class_upper_bound"
-    #                 ]
-    #                 for i in self.schedules
-    #             ],
-    #             "Right Schedule Interval Mean": [
-    #                 self.schedules[i]["right_sched_params"]["interval_mean"]
-    #                 for i in self.schedules
-    #             ],
-    #             "Right Schedule Interval Type": [
-    #                 self.schedules[i]["right_sched_params"]["interval_type"]
-    #                 for i in self.schedules
-    #             ],
-    #             "Right Schedule FDF Mean": [
-    #                 self.schedules[i]["right_sched_params"]["fdf_mean"]
-    #                 for i in self.schedules
-    #             ],
-    #         }
-
-    #     else:
-    #         raise NotImplementedError
 
     # def write_experiment_params(self):
     #     with open(
