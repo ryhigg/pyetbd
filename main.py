@@ -1,22 +1,23 @@
 # this is an example script for running an experiment
 
 # import the ExperimentRunner class from the utils module
-from pyETBD.utils.experiment_runner import ExperimentRunner
+from pyETBD import ExperimentRunner
+
+# the folder containing the input file(s)
+INPUT_FILE_PATH = "example_experiment_inputs/mcdowell_et_al_2008_phase1.json"
+
+# putting an empty string will output the same directory as the main.py file
+OUTPUT_DIR = ""
+
+# if you wanted to output to an 'outputs' directory in the same directory as main.py you would write:
+# OUTPUT_DIR = "outputs/" (be sure to include the trailing slash)
+# Note: the code will not create the directory for you, you must create it yourself
 
 
 # define the main function
 def main():
-    # define the input file and output directory
-    input_file_path = "example_experiment_inputs/mcdowell_et_al_2008_phase1.json"
-
-    # putting an empty string will output the same directory as the main.py file
-    output_dir = ""
-    # if you wanted to output to an 'outputs' directory in the same directory as main.py you would write:
-    # output_dir = "outputs/" (be sure to include the trailing slash)
-    # Note: the code will not create the directory for you, you must create it yourself
-
     # create an instance of the ExperimentRunner class
-    runner = ExperimentRunner(input_file_path, output_dir)
+    runner = ExperimentRunner(INPUT_FILE_PATH, OUTPUT_DIR)
 
     # call the giddyup method to run the experiments
     runner.giddyup()
