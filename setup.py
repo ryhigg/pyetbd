@@ -12,10 +12,10 @@ DESCRIPTION = "A package for implementing Mcdowell's (2004) ETBD"
 
 # Setting up
 setup(
-    name="vidstream",
+    name="pyetbd",
     version=VERSION,
     author="Ryan Higginbotham (ryhigg)",
-    author_email="<ryanhigginbotham@ufl.edu>",
+    author_email="ryanhigginbotham@ufl.edu",
     description=DESCRIPTION,
     packages=find_packages(),
     install_requires=["numpy", "pandas", "numba"],
