@@ -2,9 +2,9 @@
     "experiments": [
         {
             "file_stub": "the file_stub",
-            "repetitions": "the number of repetitions to run",
+            "reps": "the number of repetitions to run",
             "experiment_type": "the type of schedule arrangement (e.g., concurrent)",
-            "generations": "the number of generations to run",
+            "gens": "the number of generations to run",
             "pop_size": "the organism's population size",
             "mut_rate": "the organism's mutation rate",
             "low_pheno": "the organism's low phenotype",
