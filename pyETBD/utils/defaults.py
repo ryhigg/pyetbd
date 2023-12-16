@@ -19,4 +19,9 @@ DEFAULTS = {
     "right_sched_response_class_upper_bound": 552,
     "left_sched_type": "random",
     "right_sched_type": "random",
+    "schedule_type": "random",
+    "interval": 20,
+    "response_class_size": 41,
+    "response_class_lower_bound": 471,
+    "response_class_upper_bound": 512,
 }

@@ -1,10 +1,10 @@
 # this is an example script for running an experiment
 
 # import the ExperimentRunner class from the utils module
-from pyETBD import ExperimentRunner
+from pyETBD.experiment_handler import ExperimentHandler
 
 # the folder containing the input file(s)
-INPUT_FILE_PATH = "example_experiment_inputs/mcdowell_et_al_2008_phase1.json"
+INPUT_FILE_PATH = "example_experiment_inputs/test.json"
 
 # putting an empty string will output the same directory as the main.py file
 OUTPUT_DIR = ""
@@ -16,8 +16,8 @@ OUTPUT_DIR = ""
 
 # define the main function
 def main():
-    # create an instance of the ExperimentRunner class
-    runner = ExperimentRunner(INPUT_FILE_PATH, OUTPUT_DIR)
+    # create an instance of the ExperimentHandler class
+    runner = ExperimentHandler(INPUT_FILE_PATH, OUTPUT_DIR)
 
     # call the giddyup method to run the experiments
     runner.giddyup()
