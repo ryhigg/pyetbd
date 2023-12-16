@@ -1,6 +1,6 @@
 import pandas as pd
 from pyETBD import organisms
-from pyETBD.utils import progress_bar
+from pyETBD.utils import progress_bar, timer
 
 
 class Experiment:
@@ -62,6 +62,7 @@ class Experiment:
         self.sched_progress_bar = progress_bar.ProgressBar(len(schedules), prefix="Sch")
         self.gen_progress_bar = progress_bar.ProgressBar(self.generations, prefix="Gen")
 
+    @timer.timer
     def run(self):
         """Runs the experiment"""
         for rep in range(self.repetitions):
