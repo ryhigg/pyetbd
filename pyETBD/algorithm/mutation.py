@@ -5,11 +5,11 @@ from pyETBD.utils import bin_converter as bc
 
 @njit
 def mutate_population(children_genos, mut_rate):
-    """Takes in an array of children genotypes and applys the mutation rule.
+    """Takes in an array of children genotypes and applies the mutation rule.
 
     Args:
         children_genos (np.ndarray): an array of children genotypes
-        mut_rate (float): the mutation rate
+        mut_rate (float): the mutation rates
 
     Returns:
         np.ndarray: the new population of phenotypes

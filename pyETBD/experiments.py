@@ -28,10 +28,6 @@ class Experiment:
             reinit_pop (bool): whether or not to reinitialize the population between schedule arrangements
             organism (object): the organism object to use for the experiment
         """
-        # check that the schedules are formatted correctly
-        for schedule_arrangement in schedules:
-            if len(schedules[0]) != len(schedule_arrangement):
-                raise ValueError("All schedule arrangements must be the same length.")
 
         self.schedule_arrangement_length = len(schedules[0])
 
@@ -45,16 +41,16 @@ class Experiment:
 
         # dictionary to store the data
         self.data_dict = {
-            "emissions": [],
-            "gen": [],
-            "rep": [],
-            "sched": [],
+            "Emissions": [],
+            "Gen": [],
+            "Rep": [],
+            "Schedule": [],
         }
 
         # create a variable for each schedule
         for i in range(len(schedules[0])):
-            self.data_dict[f"R{i}"] = []
-            self.data_dict[f"B{i}"] = []
+            self.data_dict[f"R{i+1}"] = []
+            self.data_dict[f"B{i+1}"] = []
             # need to add punishment eventually # TODO: add punishment
 
         # create a progress bar
@@ -73,10 +69,10 @@ class Experiment:
                 for gen in range(self.generations):
                     self.organism.emit()
 
-                    self.data_dict["emissions"].append(self.organism.emitted)
-                    self.data_dict["gen"].append(gen)
-                    self.data_dict["rep"].append(rep)
-                    self.data_dict["sched"].append(
+                    self.data_dict["Emissions"].append(self.organism.emitted)
+                    self.data_dict["Gen"].append(gen)
+                    self.data_dict["Rep"].append(rep)
+                    self.data_dict["Schedule"].append(
                         self.schedules.index(schedule_arrangement)
                     )
 
@@ -152,23 +148,97 @@ class Experiment:
         for i in range(self.schedule_arrangement_length):
             if i == response_class:
                 if reinforced:
-                    self.data_dict[f"R{i}"].append(1)
-                    self.data_dict[f"B{i}"].append(1)
+                    self.data_dict[f"R{i+1}"].append(1)
+                    self.data_dict[f"B{i+1}"].append(1)
                 else:
-                    self.data_dict[f"R{i}"].append(0)
-                    self.data_dict[f"B{i}"].append(1)
+                    self.data_dict[f"R{i+1}"].append(0)
+                    self.data_dict[f"B{i+1}"].append(1)
 
             elif i != response_class:
-                self.data_dict[f"R{i}"].append(0)
-                self.data_dict[f"B{i}"].append(0)
+                self.data_dict[f"R{i+1}"].append(0)
+                self.data_dict[f"B{i+1}"].append(0)
 
             else:
                 raise ValueError("Invalid response class.")
 
     def output_data(self, output_dir: str = ""):
         """Saves the data to a csv file"""
+        print("Saving data...")
+
         # create the dataframe
         data_df = pd.DataFrame(self.data_dict)
 
         # save the dataframe to a csv
         data_df.to_csv(f"{output_dir}{self.file_stub}.csv", index=False)
+
+        self.format_data()
+
+    def format_data(self):
+        """Formats the data into bins of 500 generations and outputs to an excel file with the parameters"""
+        df = pd.DataFrame(self.data_dict)
+
+        df["bin"] = df.index // 500
+
+        formatted_df = df.groupby(["Rep", "Schedule", "bin"]).sum().reset_index()
+
+        formatted_df.drop(columns=["Gen", "Emissions", "bin"], inplace=True)
+
+        param_df = pd.DataFrame(self.get_experiment_param_dict())
+
+        # save the data to a .xlsx file where the first sheet is the parameters and the second sheet is the data
+        with pd.ExcelWriter(f"{self.file_stub}.xlsx") as writer:
+            param_df.to_excel(writer, sheet_name="params", index=False)
+            formatted_df.to_excel(writer, sheet_name="data", index=False)
+
+    def get_experiment_param_dict(self):
+        """Returns a dictionary of the experiment parameters"""
+
+        param_dict = {
+            "file_stub": self.file_stub,
+            "repetitions": self.repetitions,
+            "generations": self.generations,
+            "reinit_pop": self.reinit_pop,
+            "population_size": self.organism.pop_size,
+            "low_pheno": self.organism.low_pheno,
+            "high_pheno": self.organism.high_pheno,
+            "mut_rate": self.organism.mut_rate,
+            "fitness_landscape": self.organism.fitness_landscape,
+            "fdf_type": self.organism.fdf_type,
+            "recombination_method": self.organism.recombination_method,
+            "schedule_arrangement": [],
+            "schedule_index_in_arrangement": [],
+            "schedule_type": [],
+            "schedule_fdf_mean": [],
+            "schedule_fdf_type": [],
+            "schedule_interval": [],
+            "schedule_response_class_lower_bound": [],
+            "schedule_response_class_upper_bound": [],
+            "schedule_response_class_size": [],
+            "schedule_response_classes": [],
+        }
+        for schedule_arrangement in self.schedules:
+            for schedule in schedule_arrangement:
+                param_dict["schedule_arrangement"].append(
+                    self.schedules.index(schedule_arrangement)
+                )
+                param_dict["schedule_index_in_arrangement"].append(
+                    schedule_arrangement.index(schedule)
+                )
+                param_dict["schedule_type"].append(schedule.type)
+                param_dict["schedule_fdf_type"].append(schedule.fdf_type)
+                param_dict["schedule_fdf_mean"].append(schedule.fdf_mean)
+                param_dict["schedule_interval"].append(schedule.interval)
+                param_dict["schedule_response_class_lower_bound"].append(
+                    schedule.response_class_lower_bound
+                )
+                param_dict["schedule_response_class_upper_bound"].append(
+                    schedule.response_class_upper_bound
+                )
+                param_dict["schedule_response_class_size"].append(
+                    schedule.response_class_size
+                )
+                param_dict["schedule_response_classes"].append(
+                    schedule.response_class.tolist()
+                )
+
+        return param_dict

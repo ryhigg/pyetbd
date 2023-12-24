@@ -3,7 +3,7 @@ from pyETBD import experiments, organisms, schedules
 # create the organism
 organism = organisms.AnOrganism(
     pop_size=100,
-    mut_rate=0.1,
+    mut_rate=0.5,
     low_pheno=0,
     high_pheno=1023,
     fdf_type="linear",
@@ -22,7 +22,7 @@ for i in range(len(left_intervals)):
         [
             schedules.IntervalSchedule(
                 interval=left_intervals[i],
-                fdf_mean=40,
+                fdf_mean=20,
                 fdf_type="linear",
                 type="random",
                 response_class_lower_bound=471,
@@ -31,7 +31,7 @@ for i in range(len(left_intervals)):
             ),
             schedules.IntervalSchedule(
                 interval=right_intervals[i],
-                fdf_mean=40,
+                fdf_mean=20,
                 fdf_type="linear",
                 type="random",
                 response_class_lower_bound=512,
@@ -43,7 +43,7 @@ for i in range(len(left_intervals)):
 
 # create the experiment
 
-experiment = experiments.Experiment(input_schedules, 1, 20500, True, organism, "test")
+experiment = experiments.Experiment(input_schedules, 10, 20500, True, organism, "test")
 
 
 def main():

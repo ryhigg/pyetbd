@@ -2,7 +2,8 @@
     "experiments": [
         {
             "file_stub": "test_1",
-            "reps": 2,
+            "fdf_mean": 80,
+            "mut_rate": 0.5,
             "schedules": [
                 [
                     {

@@ -21,10 +21,12 @@ class AnOrganism:
         self.fitness_landscape = fitness_landscape
         self.recombination_method = recombination_method
 
-        self.bin_length = len(bin(self.high_pheno)[2:])
-
         self.init_population()
         self.emit()
+
+    @property
+    def bin_length(self):
+        return len(bin(self.high_pheno)[2:])
 
     def init_population(self):
         self.population = np.random.randint(
@@ -37,6 +39,12 @@ class AnOrganism:
     def replace_population(self, new_population):
         self.population = new_population
 
+    def reproduce(self, parents):
+        children = recombination.recombine_parents(
+            parents, self.bin_length, self.recombination_method
+        )
+        return mutation.mutate_population(children, self.mut_rate)
+
     def reinforcement_delivered(self, fdf_mean, fdf_type):
         parents = selection.fitness_search_selection(
             self.population,
@@ -46,18 +54,8 @@ class AnOrganism:
             self.high_pheno,
             self.emitted,
         )
-        children = recombination.recombine_parents(
-            parents, self.bin_length, self.recombination_method
-        )
-        new_population = mutation.mutate_population(children, self.mut_rate)
-
-        self.replace_population(new_population)
+        self.replace_population(self.reproduce(parents))
 
     def no_reinforcement_delivered(self):
         parents = selection.randomly_select_parents(self.population)
-        children = recombination.recombine_parents(
-            parents, self.bin_length, self.recombination_method
-        )
-        new_population = mutation.mutate_population(children, self.mut_rate)
-
-        self.replace_population(new_population)
+        self.replace_population(self.reproduce(parents))

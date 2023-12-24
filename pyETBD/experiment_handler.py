@@ -5,7 +5,7 @@ from pyETBD import organisms, schedules as sched, experiments
 
 class ExperimentHandler:
     def __init__(self, input_file: str, output_dir: str):
-        """Initializes the ExperimentBuilder class. This class is used to build an experiment from a JSON file.
+        """Initializes the ExperimentBuilder class. This class is used to build an experiment from a JSON file and run it.
 
         Args:
             input_file (str): the input file path
@@ -30,6 +30,8 @@ class ExperimentHandler:
         for experiment in self.experiments:
             experiment.run()
             experiment.output_data()
+
+        print("\U0001F434 Done Giddyupped! \U0001F434")
 
     def build_experiments(self):
         """Builds the experiments from the json input."""
@@ -88,7 +90,6 @@ class ExperimentHandler:
             "file_stub": experiment["file_stub"],
             "reps": self.defaults["reps"],
             "gens": self.defaults["gens"],
-            "experiment_type": self.defaults["experiment_type"],
             "pop_size": self.defaults["pop_size"],
             "mut_rate": self.defaults["mut_rate"],
             "low_pheno": self.defaults["low_pheno"],
@@ -129,6 +130,9 @@ class ExperimentHandler:
 
         for i in range(num_schedules):
             for j in range(num_schedules_in_arrangement):
+                self.check_overrides(
+                    experiment, "experiment", built_experiment["schedules"][i][j]
+                )
                 self.check_overrides(
                     experiment["schedules"][i][j],
                     "schedule",
