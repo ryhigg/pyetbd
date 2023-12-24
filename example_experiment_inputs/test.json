@@ -2,15 +2,13 @@
     "experiments": [
         {
             "file_stub": "test_1",
-            "fdf_mean": 80,
-            "mut_rate": 0.5,
             "schedules": [
                 [
                     {
-                        "interval": 20
+                        "mean": 20
                     },
                     {
-                        "interval": 120,
+                        "mean": 120,
                         "response_class_size": 41,
                         "response_class_lower_bound": 512,
                         "response_class_upper_bound": 553
@@ -18,10 +16,10 @@
                 ],
                 [
                     {
-                        "interval": 30
+                        "mean": 30
                     },
                     {
-                        "interval": 110,
+                        "mean": 110,
                         "response_class_size": 41,
                         "response_class_lower_bound": 512,
                         "response_class_upper_bound": 553
@@ -29,10 +27,10 @@
                 ],
                 [
                     {
-                        "interval": 40
+                        "mean": 40
                     },
                     {
-                        "interval": 100,
+                        "mean": 100,
                         "response_class_size": 41,
                         "response_class_lower_bound": 512,
                         "response_class_upper_bound": 553
@@ -40,10 +38,10 @@
                 ],
                 [
                     {
-                        "interval": 50
+                        "mean": 50
                     },
                     {
-                        "interval": 90,
+                        "mean": 90,
                         "response_class_size": 41,
                         "response_class_lower_bound": 512,
                         "response_class_upper_bound": 553
@@ -51,10 +49,10 @@
                 ],
                 [
                     {
-                        "interval": 60
+                        "mean": 60
                     },
                     {
-                        "interval": 80,
+                        "mean": 80,
                         "response_class_size": 41,
                         "response_class_lower_bound": 512,
                         "response_class_upper_bound": 553
@@ -62,10 +60,10 @@
                 ],
                 [
                     {
-                        "interval": 70
+                        "mean": 70
                     },
                     {
-                        "interval": 70,
+                        "mean": 70,
                         "response_class_size": 41,
                         "response_class_lower_bound": 512,
                         "response_class_upper_bound": 553
@@ -73,10 +71,10 @@
                 ],
                 [
                     {
-                        "interval": 80
+                        "mean": 80
                     },
                     {
-                        "interval": 60,
+                        "mean": 60,
                         "response_class_size": 41,
                         "response_class_lower_bound": 512,
                         "response_class_upper_bound": 553
@@ -84,10 +82,10 @@
                 ],
                 [
                     {
-                        "interval": 90
+                        "mean": 90
                     },
                     {
-                        "interval": 50,
+                        "mean": 50,
                         "response_class_size": 41,
                         "response_class_lower_bound": 512,
                         "response_class_upper_bound": 553
@@ -95,10 +93,10 @@
                 ],
                 [
                     {
-                        "interval": 100
+                        "mean": 100
                     },
                     {
-                        "interval": 40,
+                        "mean": 40,
                         "response_class_size": 41,
                         "response_class_lower_bound": 512,
                         "response_class_upper_bound": 553
@@ -106,10 +104,10 @@
                 ],
                 [
                     {
-                        "interval": 110
+                        "mean": 110
                     },
                     {
-                        "interval": 30,
+                        "mean": 30,
                         "response_class_size": 41,
                         "response_class_lower_bound": 512,
                         "response_class_upper_bound": 553
@@ -117,10 +115,10 @@
                 ],
                 [
                     {
-                        "interval": 120
+                        "mean": 120
                     },
                     {
-                        "interval": 20,
+                        "mean": 20,
                         "response_class_size": 41,
                         "response_class_lower_bound": 512,
                         "response_class_upper_bound": 553

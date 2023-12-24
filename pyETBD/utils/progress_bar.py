@@ -14,7 +14,7 @@ class ProgressBar:
         self.clear_terminal()
         percent = ("{:.1f}").format(100 * (iteration / float(self.total)))
         filled_length = int(self.length * iteration // self.total)
-        bar = self.fill * filled_length + "/" * (self.length - filled_length)
+        bar = self.fill * filled_length + "#" * (self.length - filled_length)
         return f"{self.prefix} |{bar}| {percent}% Complete"
 
     def clear_terminal(self):

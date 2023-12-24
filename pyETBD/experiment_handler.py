@@ -38,7 +38,7 @@ class ExperimentHandler:
         self.experiment_dictionaries = []
 
         for experiment in self.settings["experiments"]:
-            self.build_experiment(experiment)
+            self.experiment_dictionaries.append(self.build_experiment(experiment))
 
         for experiment in self.experiment_dictionaries:
             organism = organisms.AnOrganism(
@@ -56,11 +56,12 @@ class ExperimentHandler:
                 schedule_arrangement_list = []
                 for schedule in schedule_arrangement:
                     schedule_arrangement_list.append(
-                        sched.IntervalSchedule(
-                            interval=schedule["interval"],
+                        sched.Schedule(
+                            schedule_type=schedule["schedule_type"],
+                            schedule_subtype=schedule["schedule_subtype"],
+                            mean=schedule["mean"],
                             fdf_mean=schedule["fdf_mean"],
                             fdf_type=schedule["fdf_type"],
-                            type=schedule["type"],
                             response_class_lower_bound=schedule[
                                 "response_class_lower_bound"
                             ],
@@ -99,6 +100,8 @@ class ExperimentHandler:
             "recombination_method": self.defaults["recombination_method"],
             "fdf_mean": self.defaults["fdf_mean"],
             "reinitialize_population": self.defaults["reinitialize_population"],
+            "schedule_type": self.defaults["schedule_type"],
+            "schedule_subtype": self.defaults["schedule_subtype"],
             "schedules": [],
         }
 
@@ -110,10 +113,12 @@ class ExperimentHandler:
             for j in range(num_schedules_in_arrangement):
                 schedule_arrangement.append(
                     {
-                        "interval": self.defaults["interval"],
+                        "schedule_type": self.defaults["schedule_type"],
+                        "schedule_subtype": self.defaults["schedule_subtype"],
+                        "mean": self.defaults["mean"],
                         "fdf_mean": self.defaults["fdf_mean"],
                         "fdf_type": self.defaults["fdf_type"],
-                        "type": self.defaults["schedule_type"],
+                        "schedule_type": self.defaults["schedule_type"],
                         "response_class_size": self.defaults["response_class_size"],
                         "response_class_lower_bound": self.defaults[
                             "response_class_lower_bound"
@@ -139,7 +144,7 @@ class ExperimentHandler:
                     built_experiment["schedules"][i][j],
                 )
 
-        self.experiment_dictionaries.append(built_experiment)
+        return built_experiment
 
     def check_overrides(
         self, exp_or_sched: dict, object_type: str, built_experiment: dict
@@ -192,6 +197,12 @@ class ExperimentHandler:
             if "fdf_mean" in exp_or_sched:
                 built_experiment["fdf_mean"] = exp_or_sched["fdf_mean"]
 
+            if "schedule_type" in exp_or_sched:
+                built_experiment["schedule_type"] = exp_or_sched["schedule_type"]
+
+            if "schedule_subtype" in exp_or_sched:
+                built_experiment["schedule_subtype"] = exp_or_sched["schedule_subtype"]
+
         if object_type == "experiment" or "schedule":
             if "fdf_mean" in exp_or_sched:
                 built_experiment["fdf_mean"] = exp_or_sched["fdf_mean"]
@@ -211,11 +222,14 @@ class ExperimentHandler:
                     "response_class_size"
                 ]
 
-            if "type" in exp_or_sched:
-                built_experiment["type"] = exp_or_sched["type"]
+            if "schedule_type" in exp_or_sched:
+                built_experiment["schedule_type"] = exp_or_sched["schedule_type"]
+
+            if "schedule_subtype" in exp_or_sched:
+                built_experiment["schedule_subtype"] = exp_or_sched["schedule_subtype"]
 
             if "fdf_type" in exp_or_sched:
                 built_experiment["fdf_type"] = exp_or_sched["fdf_type"]
 
-            if "interval" in exp_or_sched:
-                built_experiment["interval"] = exp_or_sched["interval"]
+            if "mean" in exp_or_sched:
+                built_experiment["mean"] = exp_or_sched["mean"]

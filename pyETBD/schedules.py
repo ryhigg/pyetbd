@@ -2,42 +2,82 @@ import numpy as np
 from pyETBD.utils import equations as eq
 
 
-class IntervalSchedule:
-    """A class for interval schedules. Can be fixed or random, variable will be implemented later."""
+class Schedule:
+    """A class for schedules."""
 
     def __init__(
         self,
-        interval: float,
+        schedule_type: str,
+        schedule_subtype: str,
+        mean: float,
         fdf_mean: float,
         fdf_type: str,
-        type: str,
         response_class_lower_bound: int,
         response_class_upper_bound: int,
         response_class_size: int,
     ):
-        """Initializes an interval schedule.
+        """Initializes a schedule.
 
         Args:
-            interval (float): The interval or mean interval
+            schedule_type (str): The type of schedule (fixed, variable, random)
+            schedule_subtype (str): The subtype of schedule (interval, ratio)
+            mean (float): The mean interval or ratio of the schedule
             fdf_mean (float): The magnitude of the FDF for the schedule (reinforcer magnitude)
             fdf_type (str): The type of FDF (linear, exponential, etc.)
-            type (str): The type of schedule (fixed, variable, random)
             response_class (list): A list of the behavior phenotypes that are reinforced by this schedule
         """
-        self.interval = interval
+        self.schedule_type = schedule_type
+        self.schedule_subtype = schedule_subtype
+        self.mean = mean
         self.fdf_mean = fdf_mean
         self.fdf_type = fdf_type
-        self.type = type
         self.response_class_lower_bound = response_class_lower_bound
         self.response_class_upper_bound = response_class_upper_bound
         self.response_class_size = response_class_size
 
-        # initialize the current interval and interval counter
-        self.current_interval = self.get_interval()
-        self.interval_counter = 0
-
-        # generate the response class
+        self.current_count = self.get_schedule_count()
+        self.counter = 0
         self.generate_response_class()
+
+    def in_response_class(self, emitted: int):
+        """Sets whether the emitted response is in the response class.
+
+        Args:
+            emitted (int): The phenotype of the emitted response
+        """
+        return emitted in self.response_class
+
+    def update_counter(self, emitted: int):
+        """Updates the counter for the schedule.
+
+        Args:
+            emitted (int): The phenotype of the emitted response
+        """
+
+        if self.schedule_subtype == "interval":
+            self.counter += 1
+        elif self.schedule_subtype == "ratio":
+            if emitted in self.response_class:
+                self.counter += 1
+
+    def get_schedule_count(self):
+        """Gets the interval for the schedule based on the type.
+
+        Raises:
+            NotImplementedError: variable schedules are not implemented yet # TODO: implement variable schedules
+            ValueError: invalid type for interval schedule
+
+        Returns:
+            float: the interval for the schedule
+        """
+        if self.schedule_type == "fixed":
+            return self.mean
+        elif self.schedule_type == "variable":
+            raise NotImplementedError
+        elif self.schedule_type == "random":
+            return eq.sample_exponential(self.mean)
+        else:
+            raise ValueError("Invalid type for interval schedule.")
 
     def generate_response_class(self):
         """Generates a response class based on the lower bound, upper bound, and size of the response class."""
@@ -51,44 +91,8 @@ class IntervalSchedule:
 
         self.response_class = np.random.choice(possible_values, self.response_class_size, replace=False)  # type: ignore
 
-    def check_response_class(self, emitted: int):
-        """Checks if the emitted response is in the response class.
-
-        Args:
-            emitted (int): The phenotype of the emitted response
-
-        Returns:
-            bool: True if the response is in the response class, False otherwise
-        """
-        # increment the interval counter since this is called each generation
-        self.interval_counter += 1
-
-        if emitted in self.response_class:
-            return True
-        else:
-            return False
-
-    def get_interval(self):
-        """Gets the interval for the schedule based on the type.
-
-        Raises:
-            NotImplementedError: variable schedules are not implemented yet # TODO: implement variable schedules
-            ValueError: invalid type for interval schedule
-
-        Returns:
-            float: the interval for the schedule
-        """
-        if self.type == "fixed":
-            return self.interval
-        elif self.type == "variable":
-            raise NotImplementedError
-        elif self.type == "random":
-            return eq.sample_exponential(self.interval)
-        else:
-            raise ValueError("Invalid type for interval schedule.")
-
     def check_reinforcement(self, emitted: int):
-        """Checks if the response is reinforced.
+        """Runs the schedule.
 
         Args:
             emitted (int): The phenotype of the emitted response
@@ -96,13 +100,12 @@ class IntervalSchedule:
         Returns:
             bool: True if the response is reinforced, False otherwise
         """
-
         # check if the response is in the response class
-        if self.check_response_class(emitted):
-            # check if the interval has elapsed
-            if self.interval_counter >= self.current_interval:
-                self.interval_counter = 0
-                self.current_interval = self.get_interval()
+        if self.in_response_class(emitted):
+            # check if the counter has elapsed
+            if self.counter >= self.current_count:
+                self.counter = 0
+                self.current_count = self.get_schedule_count()
                 return True
 
         # if the response is not reinforced, return False

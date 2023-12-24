@@ -68,6 +68,7 @@ class Experiment:
 
                 for gen in range(self.generations):
                     self.organism.emit()
+                    self.update_schedule_counters(schedule_arrangement)
 
                     self.data_dict["Emissions"].append(self.organism.emitted)
                     self.data_dict["Gen"].append(gen)
@@ -121,6 +122,15 @@ class Experiment:
             f"Exp: {self.file_stub}\n{self.rep_progress_bar.update(rep)}\n{self.sched_progress_bar.update(schedule_arrangement)}\n{self.gen_progress_bar.update(gen)}"
         )
 
+    def update_schedule_counters(self, schedules):
+        """Updates the counters for each schedule in the schedule arrangement
+
+        Args:
+            schedules (list): the current schedule arrangement
+        """
+        for schedule in schedules:
+            schedule.update_counter(self.organism.emitted)
+
     def get_response_class(self, schedules, emitted):
         """Gets the response class for the emitted response
 
@@ -132,7 +142,7 @@ class Experiment:
         """
         response_class = -1
         for i in range(len(schedules)):
-            if schedules[i].check_response_class(emitted):
+            if schedules[i].in_response_class(emitted):
                 response_class = i
                 break
 
@@ -207,10 +217,11 @@ class Experiment:
             "recombination_method": self.organism.recombination_method,
             "schedule_arrangement": [],
             "schedule_index_in_arrangement": [],
-            "schedule_type": [],
             "schedule_fdf_mean": [],
             "schedule_fdf_type": [],
-            "schedule_interval": [],
+            "schedule_type": [],
+            "schedule_subtype": [],
+            "schedule_mean": [],
             "schedule_response_class_lower_bound": [],
             "schedule_response_class_upper_bound": [],
             "schedule_response_class_size": [],
@@ -224,10 +235,11 @@ class Experiment:
                 param_dict["schedule_index_in_arrangement"].append(
                     schedule_arrangement.index(schedule)
                 )
-                param_dict["schedule_type"].append(schedule.type)
+                param_dict["schedule_type"].append(schedule.schedule_type)
+                param_dict["schedule_subtype"].append(schedule.schedule_subtype)
                 param_dict["schedule_fdf_type"].append(schedule.fdf_type)
                 param_dict["schedule_fdf_mean"].append(schedule.fdf_mean)
-                param_dict["schedule_interval"].append(schedule.interval)
+                param_dict["schedule_mean"].append(schedule.mean)
                 param_dict["schedule_response_class_lower_bound"].append(
                     schedule.response_class_lower_bound
                 )
