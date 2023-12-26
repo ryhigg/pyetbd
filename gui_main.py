@@ -1,4 +1,4 @@
-from pyETBD.json_writer import ExperimentGUI
+from pyETBD.experiment_gui import ExperimentGUI
 import tkinter as tk
 
 
