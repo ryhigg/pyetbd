@@ -16,4 +16,6 @@ DEFAULTS = {
     "response_class_size": 41,
     "response_class_lower_bound": 471,
     "response_class_upper_bound": 512,
+    "excluded_lower_bound": 0,
+    "excluded_upper_bound": 0,
 }

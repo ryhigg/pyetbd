@@ -69,6 +69,8 @@ class ExperimentHandler:
                                 "response_class_upper_bound"
                             ],
                             response_class_size=schedule["response_class_size"],
+                            excluded_lower_bound=schedule["excluded_lower_bound"],
+                            excluded_upper_bound=schedule["excluded_upper_bound"],
                         )
                     )
                 schedules.append(schedule_arrangement_list)
@@ -102,6 +104,8 @@ class ExperimentHandler:
             "reinitialize_population": self.defaults["reinitialize_population"],
             "schedule_type": self.defaults["schedule_type"],
             "schedule_subtype": self.defaults["schedule_subtype"],
+            "excluded_lower_bound": self.defaults["excluded_lower_bound"],
+            "excluded_upper_bound": self.defaults["excluded_upper_bound"],
             "schedules": [],
         }
 
@@ -126,6 +130,8 @@ class ExperimentHandler:
                         "response_class_upper_bound": self.defaults[
                             "response_class_upper_bound"
                         ],
+                        "excluded_lower_bound": self.defaults["excluded_lower_bound"],
+                        "excluded_upper_bound": self.defaults["excluded_upper_bound"],
                     }
                 )
 
@@ -203,6 +209,16 @@ class ExperimentHandler:
             if "schedule_subtype" in exp_or_sched:
                 built_experiment["schedule_subtype"] = exp_or_sched["schedule_subtype"]
 
+            if "excluded_lower_bound" in exp_or_sched:
+                built_experiment["excluded_lower_bound"] = exp_or_sched[
+                    "excluded_lower_bound"
+                ]
+
+            if "excluded_upper_bound" in exp_or_sched:
+                built_experiment["excluded_upper_bound"] = exp_or_sched[
+                    "excluded_upper_bound"
+                ]
+
         if object_type == "experiment" or "schedule":
             if "fdf_mean" in exp_or_sched:
                 built_experiment["fdf_mean"] = exp_or_sched["fdf_mean"]
@@ -233,3 +249,13 @@ class ExperimentHandler:
 
             if "mean" in exp_or_sched:
                 built_experiment["mean"] = exp_or_sched["mean"]
+
+            if "excluded_lower_bound" in exp_or_sched:
+                built_experiment["excluded_lower_bound"] = exp_or_sched[
+                    "excluded_lower_bound"
+                ]
+
+            if "excluded_upper_bound" in exp_or_sched:
+                built_experiment["excluded_upper_bound"] = exp_or_sched[
+                    "excluded_upper_bound"
+                ]

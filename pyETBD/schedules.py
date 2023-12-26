@@ -15,6 +15,8 @@ class Schedule:
         response_class_lower_bound: int,
         response_class_upper_bound: int,
         response_class_size: int,
+        excluded_lower_bound: int,
+        excluded_upper_bound: int,
     ):
         """Initializes a schedule.
 
@@ -34,6 +36,8 @@ class Schedule:
         self.response_class_lower_bound = response_class_lower_bound
         self.response_class_upper_bound = response_class_upper_bound
         self.response_class_size = response_class_size
+        self.excluded_lower_bound = excluded_lower_bound
+        self.excluded_upper_bound = excluded_upper_bound
 
         self.current_count = self.get_schedule_count()
         self.counter = 0
@@ -88,6 +92,10 @@ class Schedule:
                 self.response_class_lower_bound, self.response_class_upper_bound
             )
         ]
+
+        # remove excluded values
+        for value in range(self.excluded_lower_bound, self.excluded_upper_bound):
+            possible_values.remove(value)
 
         self.response_class = np.random.choice(possible_values, self.response_class_size, replace=False)  # type: ignore
 
