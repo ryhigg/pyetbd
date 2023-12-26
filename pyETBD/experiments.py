@@ -226,6 +226,7 @@ class Experiment:
             "schedule_response_class_upper_bound": [],
             "schedule_response_class_size": [],
             "schedule_response_classes": [],
+            "schedule_response_class_excluded_values": [],
         }
         for schedule_arrangement in self.schedules:
             for schedule in schedule_arrangement:
@@ -251,6 +252,9 @@ class Experiment:
                 )
                 param_dict["schedule_response_classes"].append(
                     schedule.response_class.tolist()
+                )
+                param_dict["schedule_response_class_excluded_values"].append(
+                    f"{schedule.excluded_lower_bound}-{schedule.excluded_upper_bound}"
                 )
 
         return param_dict
