@@ -15,5 +15,6 @@ setup(
         "numba==0.57.1",
         "numpy==1.24.4",
         "pandas==2.1.0",
+        "openpyxl",
     ],
 )
