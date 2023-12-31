@@ -1,0 +1,43 @@
+{
+    "experiments": [
+        {
+            "file_stub": "example_experiment",
+            "reps": 1,
+            "mut_rate": 0.1,
+            "gens": 20500,
+            "pop_size": 100,
+            "low_pheno": 0,
+            "high_pheno": 1023,
+            "fdf_type": "linear",
+            "fitness_landscape": "circular",
+            "recombination_method": "bitwise",
+            "reinitialize_population": true,
+            "schedules": [
+                [
+                    {
+                        "fdf_mean": 40,
+                        "response_class_lower_bound": 471,
+                        "response_class_upper_bound": 512,
+                        "response_class_size": 41,
+                        "schedule_type": "random",
+                        "schedule_subtype": "interval",
+                        "mean": 20,
+                        "excluded_lower_bound": 0,
+                        "excluded_upper_bound": 0
+                    },
+                    {
+                        "fdf_mean": 40,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "response_class_size": 41,
+                        "schedule_type": "random",
+                        "schedule_subtype": "interval",
+                        "mean": 20,
+                        "excluded_lower_bound": 0,
+                        "excluded_upper_bound": 0
+                    }
+                ]
+            ]
+        }
+    ]
+}

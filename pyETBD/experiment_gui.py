@@ -4,20 +4,12 @@ import json
 from pyETBD import experiment_handler
 
 
-class ExperimentGUI:
-    """Opens a tkinter window that allows the user to build an experiment."""
-
-    def __init__(self, master):
-        self.master = master
-        self.master.title("pyETBD Experiment Writer")
-        self.master.geometry("800x500")
-        self.style = ttk.Style()
-        self.style.theme_use("clam")
-
+class ExperimentGUIData:
+    def __init__(self):
         self.experiments = []
-        self.create_widgets()
-
-        self.experiment_defaults = {
+        self.current_experiment = {}
+        self.schedules = []
+        self.defaults = {
             "file_stub": "example_experiment",
             "reps": 1,
             "mut_rate": 0.1,
@@ -29,105 +21,132 @@ class ExperimentGUI:
             "fitness_landscape": "circular",
             "recombination_method": "bitwise",
             "reinitialize_population": "True",
+            "alt1_response_class_lower_bound": 471,
+            "alt1_response_class_upper_bound": 512,
+            "alt1_response_class_size": 41,
+            "alt2_response_class_lower_bound": 512,
+            "alt2_response_class_upper_bound": 553,
+            "alt2_response_class_size": 41,
+            "response_class_excluded_lower_bound": 0,
+            "response_class_excluded_upper_bound": 0,
+            "schedule_type": "random",
+            "schedule_subtype": "interval",
+            "mean": 20,
+            "fdf_mean": 40,
         }
+        self.defaults["alt1_mean(interval/ratio)"] = self.defaults["mean"]
+        self.defaults["alt2_mean(interval/ratio)"] = self.defaults["mean"]
+        self.defaults["alt1_schedule_type"] = self.defaults["schedule_type"]
+        self.defaults["alt1_schedule_subtype"] = self.defaults["schedule_subtype"]
+        self.defaults["alt2_schedule_type"] = self.defaults["schedule_type"]
+        self.defaults["alt2_schedule_subtype"] = self.defaults["schedule_subtype"]
+        self.defaults["alt1_response_class_excluded_lower_bound"] = self.defaults[
+            "response_class_excluded_lower_bound"
+        ]
+        self.defaults["alt1_response_class_excluded_upper_bound"] = self.defaults[
+            "response_class_excluded_upper_bound"
+        ]
+        self.defaults["alt2_response_class_excluded_lower_bound"] = self.defaults[
+            "response_class_excluded_lower_bound"
+        ]
+        self.defaults["alt2_response_class_excluded_upper_bound"] = self.defaults[
+            "response_class_excluded_upper_bound"
+        ]
+        self.defaults["alt1_fdf_mean"] = self.defaults["fdf_mean"]
+        self.defaults["alt2_fdf_mean"] = self.defaults["fdf_mean"]
 
-    def create_widgets(self):
-        self.master_frame = ttk.Frame(self.master)
-        self.master_frame.pack(padx=10, pady=10)
+        self.experiment_setting_labels = [
+            "file_stub",
+            "reps",
+            "mut_rate",
+            "gens",
+            "pop_size",
+            "low_pheno",
+            "high_pheno",
+            "fdf_type",
+            "fitness_landscape",
+            "recombination_method",
+            "reinitialize_population",
+        ]
 
-        self.enter_experiment_params_button = ttk.Button(
-            self.master_frame,
-            text="Enter Experiment Settings",
-            command=self.enter_experiment_settings,
-        )
-        self.enter_experiment_params_button.grid(row=0, column=0, padx=10, pady=10)
+        self.schedule_setting_labels = [
+            "alt1_mean(interval/ratio)",
+            "alt2_mean(interval/ratio)",
+            "alt1_fdf_mean",
+            "alt2_fdf_mean",
+            "alt1_schedule_type",
+            "alt1_schedule_subtype",
+            "alt2_schedule_type",
+            "alt2_schedule_subtype",
+            "alt1_response_class_lower_bound",
+            "alt1_response_class_upper_bound",
+            "alt2_response_class_excluded_lower_bound",
+            "alt2_response_class_excluded_upper_bound",
+            "alt1_response_class_size",
+            "alt1_response_class_excluded_lower_bound",
+            "alt1_response_class_excluded_upper_bound",
+            "alt2_response_class_lower_bound",
+            "alt2_response_class_upper_bound",
+            "alt2_response_class_size",
+        ]
 
-        self.save_experiments_button = ttk.Button(
-            self.master_frame, text="Save Experiments", command=self.save_experiments
-        )
-        self.save_experiments_button.grid(row=0, column=1, padx=10, pady=10)
+    def format_data(self):
+        formatted_experiments = []
+        for experiment in self.experiments:
+            formatted_experiments.append(self.format_experiment(experiment))
 
-        self.launch_experiment_runner_button = ttk.Button(
-            self.master_frame,
-            text="Launch Experiment Runner",
-            command=self.launch_experiment_runner,
-        )
-        self.launch_experiment_runner_button.grid(row=0, column=2, padx=10, pady=10)
+        return formatted_experiments
 
-    def launch_experiment_runner(self):
-        self.runner_frame = tk.Toplevel(self.master)
-        self.runner_frame.title("Experiment Runner")
+    def format_schedules(self, schedules):
+        formatted_schedules = []
+        for schedule in schedules:
+            alt1_schedule = {}
+            alt2_schedule = {}
+            alt1_schedule["mean"] = int(schedule["alt1_mean(interval/ratio)"])
+            alt1_schedule["fdf_mean"] = int(schedule["alt1_fdf_mean"])
+            alt1_schedule["schedule_type"] = schedule["alt1_schedule_type"]
+            alt1_schedule["schedule_subtype"] = schedule["alt1_schedule_subtype"]
+            alt1_schedule["response_class_lower_bound"] = int(
+                schedule["alt1_response_class_lower_bound"]
+            )
+            alt1_schedule["response_class_upper_bound"] = int(
+                schedule["alt1_response_class_upper_bound"]
+            )
+            alt1_schedule["response_class_size"] = int(
+                schedule["alt1_response_class_size"]
+            )
+            alt1_schedule["excluded_lower_bound"] = int(
+                schedule["alt1_response_class_excluded_lower_bound"]
+            )
+            alt1_schedule["excluded_upper_bound"] = int(
+                schedule["alt1_response_class_excluded_upper_bound"]
+            )
 
-        self.experiment_file_label = ttk.Label(
-            self.runner_frame, text="Experiment File:"
-        )
-        self.experiment_file_label.grid(row=0, column=0, sticky=tk.E)
+            alt2_schedule["mean"] = int(schedule["alt2_mean(interval/ratio)"])
+            alt2_schedule["fdf_mean"] = int(schedule["alt2_fdf_mean"])
+            alt2_schedule["schedule_type"] = schedule["alt2_schedule_type"]
+            alt2_schedule["schedule_subtype"] = schedule["alt2_schedule_subtype"]
+            alt2_schedule["response_class_lower_bound"] = int(
+                schedule["alt2_response_class_lower_bound"]
+            )
+            alt2_schedule["response_class_upper_bound"] = int(
+                schedule["alt2_response_class_upper_bound"]
+            )
+            alt2_schedule["response_class_size"] = int(
+                schedule["alt2_response_class_size"]
+            )
+            alt2_schedule["excluded_lower_bound"] = int(
+                schedule["alt2_response_class_excluded_lower_bound"]
+            )
+            alt2_schedule["excluded_upper_bound"] = int(
+                schedule["alt2_response_class_excluded_upper_bound"]
+            )
 
-        self.experiment_file_entry = ttk.Entry(self.runner_frame)
-        self.experiment_file_entry.grid(row=0, column=1)
-        self.experiment_file_entry.insert(0, "experiments.json")
+            formatted_schedules.append([alt1_schedule, alt2_schedule])
 
-        self.run_experiment_button = ttk.Button(
-            self.runner_frame, text="Run Experiment", command=self.run_experiment
-        )
-        self.run_experiment_button.grid(row=1, column=0, columnspan=2)
+        return formatted_schedules
 
-    def run_experiment(self):
-        experiment_file = self.experiment_file_entry.get()
-        runner = experiment_handler.ExperimentHandler(experiment_file, "")
-        progress_label = ttk.Label(self.runner_frame, text="Running Experiment...")
-        progress_label.grid(row=2, column=0, columnspan=2)
-        runner.giddyup()
-        progress_label.config(text="Done Giddyupped!")
-
-    def save_experiments(self):
-        experiments = {"experiments": self.experiments}
-        with open("experiments.json", "w") as outfile:
-            json.dump(experiments, outfile, indent=4)
-
-        # add a label to the master frame that says "experiments saved"
-        self.experiments_saved_label = ttk.Label(
-            self.master_frame, text="Experiments Saved!"
-        )
-        self.experiments_saved_label.grid(row=1, column=0, columnspan=3)
-
-    def enter_experiment_settings(self):
-        self.exp_frame = tk.Toplevel(self.master)
-        self.exp_frame.title("Experiment Settings")
-
-        row = 0
-        for key, default_value in self.experiment_defaults.items():
-            ttk.Label(
-                self.exp_frame, text=f"{key.replace('_', ' ').capitalize()}:"
-            ).grid(row=row, column=0, sticky=tk.E)
-            entry = ttk.Entry(self.exp_frame)
-            entry.insert(0, default_value)
-            entry.grid(row=row, column=1)
-            self.experiment_defaults[key] = entry
-            row += 1
-
-        self.schedule_settings_button = ttk.Button(
-            self.exp_frame,
-            text="Enter Schedule Data",
-            command=self.enter_schedule_settings,
-        )
-        self.schedule_settings_button.grid(row=row, column=0)
-        self.save_experiment_button = ttk.Button(
-            self.exp_frame, text="Save Experiment", command=self.save_experiment
-        )
-        self.save_experiment_button.grid(row=row, column=1)
-
-    def save_experiment(self):
-        self.current_experiment = self.format_experiment_settings(
-            self.current_experiment
-        )
-        self.experiments.append(self.current_experiment)
-        self.experiment_label = ttk.Label(
-            self.master, text=self.current_experiment["file_stub"]
-        )
-        self.experiment_label.pack()
-
-    def format_experiment_settings(self, experiment):
+    def format_experiment(self, experiment):
         formatted_experiment = {}
         for key, value in experiment.items():
             if key == "reps":
@@ -164,446 +183,349 @@ class ExperimentGUI:
 
         return formatted_experiment
 
-    def format_schedules(self, schedules):
-        formatted_schedules = []
-        for schedule_pair in schedules:
-            formatted_schedule_pair = []
-            for schedule in schedule_pair:
-                formatted_schedule = {}
-                for key, value in schedule.items():
-                    if key == "fdf_mean":
-                        formatted_schedule["fdf_mean"] = int(value)
-                    elif key == "response_class_lower_bound":
-                        formatted_schedule["response_class_lower_bound"] = int(value)
-                    elif key == "response_class_upper_bound":
-                        formatted_schedule["response_class_upper_bound"] = int(value)
-                    elif key == "response_class_size":
-                        formatted_schedule["response_class_size"] = int(value)
-                    elif key == "schedule_type":
-                        formatted_schedule["schedule_type"] = value
-                    elif key == "schedule_subtype":
-                        formatted_schedule["schedule_subtype"] = value
-                    elif key == "mean":
-                        formatted_schedule["mean"] = int(value)
-                    elif key == "excluded_lower_bound":
-                        formatted_schedule["excluded_lower_bound"] = int(value)
-                    elif key == "excluded_upper_bound":
-                        formatted_schedule["excluded_upper_bound"] = int(value)
-                formatted_schedule_pair.append(formatted_schedule)
-            formatted_schedules.append(formatted_schedule_pair)
+    def save(self, filename):
+        output = {"experiments": self.format_data()}
+        with open(f"{filename}.json", "w") as f:
+            json.dump(output, f, indent=4)
 
-        return formatted_schedules
 
-    def enter_schedule_settings(self):
-        self.schedule_frame = tk.Toplevel(self.exp_frame)
-        self.schedule_frame.title("Schedule Settings")
-        self.create_schedule_display(self.schedule_frame)
-        self.current_experiment = self.get_experiment_settings()
+class ExperimentGUI:
+    def __init__(self):
+        # Create the root window
+        root = tk.Tk()
+        self.master = root
+        self.master.title("pyETBD")
+        self.master.geometry("900x900")
 
-        # first alt response class lower bound
-        self.first_alt_response_class_lower_bound_label = ttk.Label(
-            self.schedule_frame, text="First Alternative Response Class Lower Bound:"
-        )
-        self.first_alt_response_class_lower_bound_label.grid(
-            row=0, column=0, sticky=tk.E
-        )
-        self.first_alt_response_class_lower_bound_entry = ttk.Entry(self.schedule_frame)
-        self.first_alt_response_class_lower_bound_entry.grid(row=0, column=1)
-        self.first_alt_response_class_lower_bound_entry.insert(0, "471")
+        # Set up attributes
+        self.data_obj = ExperimentGUIData()
+        self.entry_dict = {}
 
-        # first alt response class upper bound
-        self.first_alt_response_class_upper_bound_label = ttk.Label(
-            self.schedule_frame, text="First Alternative Response Class Upper Bound:"
-        )
-        self.first_alt_response_class_upper_bound_label.grid(
-            row=1, column=0, sticky=tk.E
-        )
-        self.first_alt_response_class_upper_bound_entry = ttk.Entry(self.schedule_frame)
-        self.first_alt_response_class_upper_bound_entry.grid(row=1, column=1)
-        self.first_alt_response_class_upper_bound_entry.insert(0, "512")
+        # Call methods
+        self.create_widgets()
 
-        # first alt response class size
-        self.first_alt_response_class_size_label = ttk.Label(
-            self.schedule_frame, text="First Alternative Response Class Size:"
-        )
-        self.first_alt_response_class_size_label.grid(row=2, column=0, sticky=tk.E)
-        self.first_alt_response_class_size_entry = ttk.Entry(self.schedule_frame)
-        self.first_alt_response_class_size_entry.grid(row=2, column=1)
-        self.first_alt_response_class_size_entry.insert(0, "41")
+    def run(self):
+        self.master.mainloop()
 
-        # First Alternative FDF
-        self.first_alt_fdf_label = ttk.Label(
-            self.schedule_frame, text="First Alternative FDF:"
-        )
-        self.first_alt_fdf_label.grid(row=3, column=0, sticky=tk.E)
-        self.first_alt_fdf_entry = ttk.Entry(self.schedule_frame)
-        self.first_alt_fdf_entry.grid(row=3, column=1)
-        self.first_alt_fdf_entry.insert(0, "40")
+    # Widget Creation
 
-        # First alt schedule type
-        self.schedule_type_label = ttk.Label(self.schedule_frame, text="Schedule Type:")
-        self.schedule_type_label.grid(row=4, column=0, sticky=tk.E)
-        self.schedule_type_entry = ttk.Entry(self.schedule_frame)
-        self.schedule_type_entry.grid(row=4, column=1)
-        self.schedule_type_entry.insert(0, "random")
+    def create_widgets(self):
+        # Create the notebook
+        self.notebook = ttk.Notebook(self.master)
+        self.notebook.pack(fill="both", expand=True)
 
-        # First alt schedule subtype
-        self.schedule_subtype_label = ttk.Label(
-            self.schedule_frame, text="Schedule Subtype:"
-        )
-        self.schedule_subtype_label.grid(row=5, column=0, sticky=tk.E)
-        self.schedule_subtype_entry = ttk.Entry(self.schedule_frame)
-        self.schedule_subtype_entry.grid(row=5, column=1)
-        self.schedule_subtype_entry.insert(0, "interval")
+        # Create the tabs
+        self.create_experiment_tab()
+        self.create_runner_tab()
 
-        # First alt mean
-        self.mean_label = ttk.Label(
-            self.schedule_frame, text="Mean (interval or ratio):"
-        )
-        self.mean_label.grid(row=6, column=0, sticky=tk.E)
-        self.mean_entry = ttk.Entry(self.schedule_frame)
-        self.mean_entry.grid(row=6, column=1)
+    def create_experiment_tab(self):
+        # Create the tab
+        tab = ttk.Frame(self.notebook)
+        self.notebook.add(tab, text="Experiment Builder")
 
-        # first alt excluded lower bound
-        self.first_alt_excluded_lower_bound_label = ttk.Label(
-            self.schedule_frame, text="First Alternative Excluded Lower Bound:"
-        )
-        self.first_alt_excluded_lower_bound_label.grid(row=7, column=0, sticky=tk.E)
-        self.first_alt_excluded_lower_bound_entry = ttk.Entry(self.schedule_frame)
-        self.first_alt_excluded_lower_bound_entry.grid(row=7, column=1)
-        self.first_alt_excluded_lower_bound_entry.insert(0, "0")
+        # Create the widgets
+        self.create_schedule_experiment_frame(tab)
+        self.create_schedule_tree(tab)
 
-        # first alt excluded upper bound
-        self.first_alt_excluded_upper_bound_label = ttk.Label(
-            self.schedule_frame, text="First Alternative Excluded Upper Bound:"
-        )
-        self.first_alt_excluded_upper_bound_label.grid(row=8, column=0, sticky=tk.E)
-        self.first_alt_excluded_upper_bound_entry = ttk.Entry(self.schedule_frame)
-        self.first_alt_excluded_upper_bound_entry.grid(row=8, column=1)
-        self.first_alt_excluded_upper_bound_entry.insert(0, "0")
+    def create_runner_tab(self):
+        # Create the tab
+        tab = ttk.Frame(self.notebook)
+        self.notebook.add(tab, text="Experiment Runner")
 
-        # second alt response class lower bound
-        self.second_alt_response_class_lower_bound_label = ttk.Label(
-            self.schedule_frame, text="Second Alternative Response Class Lower Bound:"
-        )
-        self.second_alt_response_class_lower_bound_label.grid(
-            row=0, column=2, sticky=tk.E
-        )
-        self.second_alt_response_class_lower_bound_entry = ttk.Entry(
-            self.schedule_frame
-        )
-        self.second_alt_response_class_lower_bound_entry.grid(row=0, column=3)
-        self.second_alt_response_class_lower_bound_entry.insert(0, "512")
+        # Create the widgets
+        self.create_runner_widgets(tab)
 
-        # second alt response class upper bound
-        self.second_alt_response_class_upper_bound_label = ttk.Label(
-            self.schedule_frame, text="Second Alternative Response Class Upper Bound:"
-        )
-        self.second_alt_response_class_upper_bound_label.grid(
-            row=1, column=2, sticky=tk.E
-        )
-        self.second_alt_response_class_upper_bound_entry = ttk.Entry(
-            self.schedule_frame
-        )
-        self.second_alt_response_class_upper_bound_entry.grid(row=1, column=3)
-        self.second_alt_response_class_upper_bound_entry.insert(0, "553")
+    def create_schedule_experiment_frame(self, tab):
+        # Create the frame
+        frame = ttk.Frame(tab)
+        frame.pack(fill="both", expand=True)
 
-        # second alt response class size
-        self.second_alt_response_class_size_label = ttk.Label(
-            self.schedule_frame, text="Second Alternative Response Class Size:"
-        )
-        self.second_alt_response_class_size_label.grid(row=2, column=2, sticky=tk.E)
-        self.second_alt_response_class_size_entry = ttk.Entry(self.schedule_frame)
-        self.second_alt_response_class_size_entry.grid(row=2, column=3)
-        self.second_alt_response_class_size_entry.insert(0, "41")
+        # Create the widgets
+        self.create_experiment_widgets(frame)
+        self.create_schedule_widgets(frame)
 
-        # second alt fdf
-        self.second_alt_fdf_label = ttk.Label(
-            self.schedule_frame, text="Second Alternative FDF:"
-        )
-        self.second_alt_fdf_label.grid(row=3, column=2, sticky=tk.E)
-        self.second_alt_fdf_entry = ttk.Entry(self.schedule_frame)
-        self.second_alt_fdf_entry.grid(row=3, column=3)
-        self.second_alt_fdf_entry.insert(0, "40")
+    def create_runner_widgets(self, tab):
+        # Create a widget frame
+        frame = ttk.Frame(tab)
+        frame.pack()
 
-        # second alt schedule type
-        self.second_schedule_type_label = ttk.Label(
-            self.schedule_frame, text="Schedule Type:"
-        )
-        self.second_schedule_type_label.grid(row=4, column=2, sticky=tk.E)
-        self.second_schedule_type_entry = ttk.Entry(self.schedule_frame)
-        self.second_schedule_type_entry.grid(row=4, column=3)
-        self.second_schedule_type_entry.insert(0, "random")
+        # Create the widgets
+        runner_entry_label = ttk.Label(frame, text="Experiment File:")
+        runner_entry_label.grid(row=0, column=0, sticky="e")
+        self.runner_entry = ttk.Entry(frame)
+        self.runner_entry.grid(row=0, column=1, sticky="w")
 
-        # second alt schedule subtype
-        self.second_schedule_subtype_label = ttk.Label(
-            self.schedule_frame, text="Schedule Subtype:"
+        # Create a button to run the experiments
+        run_experiments_button = ttk.Button(
+            frame, text="Run", command=self.run_experiments
         )
-        self.second_schedule_subtype_label.grid(row=5, column=2, sticky=tk.E)
-        self.second_schedule_subtype_entry = ttk.Entry(self.schedule_frame)
-        self.second_schedule_subtype_entry.grid(row=5, column=3)
-        self.second_schedule_subtype_entry.insert(0, "interval")
+        run_experiments_button.grid(row=1, column=0, columnspan=2)
 
-        # second alt mean
-        self.second_mean_label = ttk.Label(
-            self.schedule_frame, text="Mean (interval or ratio):"
-        )
-        self.second_mean_label.grid(row=6, column=2, sticky=tk.E)
-        self.second_mean_entry = ttk.Entry(self.schedule_frame)
-        self.second_mean_entry.grid(row=6, column=3)
+        # Create an info frame
+        info_frame = ttk.Frame(tab)
+        info_frame.pack()
 
-        # second alt excluded lower bound
-        self.second_alt_excluded_lower_bound_label = ttk.Label(
-            self.schedule_frame, text="Second Alternative Excluded Lower Bound:"
+        # Create a label for the info frame
+        info_label = ttk.Label(
+            info_frame,
+            text="Info: Please enter the name of the experiment file to run. Be sure to include the '.json' extension.\nClick the 'Run' button to run the experiments.",
         )
-        self.second_alt_excluded_lower_bound_label.grid(row=7, column=2, sticky=tk.E)
-        self.second_alt_excluded_lower_bound_entry = ttk.Entry(self.schedule_frame)
-        self.second_alt_excluded_lower_bound_entry.grid(row=7, column=3)
-        self.second_alt_excluded_lower_bound_entry.insert(0, "0")
+        info_label.pack(fill="both", expand=True)
 
-        # second alt excluded upper bound
-        self.second_alt_excluded_upper_bound_label = ttk.Label(
-            self.schedule_frame, text="Second Alternative Excluded Upper Bound:"
-        )
-        self.second_alt_excluded_upper_bound_label.grid(row=8, column=2, sticky=tk.E)
-        self.second_alt_excluded_upper_bound_entry = ttk.Entry(self.schedule_frame)
-        self.second_alt_excluded_upper_bound_entry.grid(row=8, column=3)
-        self.second_alt_excluded_upper_bound_entry.insert(0, "0")
+    def create_experiment_widgets(self, frame):
+        # Create the widgets for the experiment settings
+        for i, label in enumerate(self.data_obj.experiment_setting_labels):
+            self.create_label_entry(
+                frame,
+                label.replace("_", " ").title(),
+                self.data_obj.defaults[label],
+                i,
+                0,
+            )
 
-        # Add schedule button
-        self.add_schedule_button = ttk.Button(
-            self.schedule_frame, text="Add Schedule", command=self.add_schedule
+        row = len(self.data_obj.experiment_setting_labels)
+        # Create a button to add an experiment
+        self.add_experiment_button = ttk.Button(
+            frame, text="Add Experiment", command=self.add_experiment
         )
-        self.add_schedule_button.grid(row=9, column=0, columnspan=2)
-        self.delete_schedule_button = ttk.Button(
-            self.schedule_frame, text="Delete Schedule", command=self.delete_schedule
-        )
-        self.delete_schedule_button.grid(row=9, column=2, columnspan=2)
+        self.add_experiment_button.grid(row=row, column=0, columnspan=2)
 
-        # Done button
-        self.done_button = ttk.Button(
-            self.schedule_frame, text="Done", command=self.schedule_frame.destroy
+        # Create an entry for the experiment file
+        self.experiment_file_label = ttk.Label(frame, text="File Name:")
+        self.experiment_file_label.grid(row=row + 1, column=0, sticky="e")
+        self.experiment_file_entry = ttk.Entry(frame)
+        self.experiment_file_entry.insert(0, "experiments")
+        self.experiment_file_entry.grid(row=row + 1, column=1)
+
+        # Create a listbox to display the experiments
+        self.experiments_label = ttk.Label(frame, text="Experiments:")
+        self.experiments_label.grid(row=row + 2, column=0, columnspan=2)
+
+        self.experiments_listbox = tk.Listbox(frame)
+        self.experiments_listbox.grid(
+            row=row + 3, column=0, sticky="nsew", columnspan=2, rowspan=10
         )
-        self.done_button.grid(row=10, column=0, columnspan=4)
+        # Create a button to save the experiments
+        self.save_experiments_button = ttk.Button(
+            frame, text="Save Experiments", command=self.save_experiments
+        )
+        self.save_experiments_button.grid(row=row + 13, column=0, columnspan=2)
+
+        # Create a button to clear the experiments
+        self.clear_experiments_button = ttk.Button(
+            frame, text="Clear Experiments", command=self.clear_experiments
+        )
+        self.clear_experiments_button.grid(row=row + 14, column=0, columnspan=2)
+
+    def create_schedule_widgets(self, frame):
+        # Create the widgets for the schedule settings
+        for i, label in enumerate(self.data_obj.schedule_setting_labels):
+            self.create_label_entry(
+                frame,
+                label.replace("_", " ").title(),
+                self.data_obj.defaults[label],
+                i,
+                2,
+            )
+
+        row = len(self.data_obj.schedule_setting_labels)
+        # Create a button to add a schedule
+        add_schedule_button = ttk.Button(
+            frame, text="Add Schedule", command=self.add_schedule
+        )
+        add_schedule_button.grid(row=row, column=2, columnspan=2)
+        # Create a button to delete a schedule
+        delete_schedule_button = ttk.Button(
+            frame, text="Delete Schedule", command=self.delete_schedule
+        )
+        delete_schedule_button.grid(row=row + 1, column=2, columnspan=2)
+        # Create a button to clear the schedules
+        clear_schedules_button = ttk.Button(
+            frame, text="Clear Schedules", command=self.clear_schedules
+        )
+        clear_schedules_button.grid(row=row + 2, column=2, columnspan=2)
+
+    def create_schedule_tree(self, tab):
+        # Create the frame
+        frame = ttk.Frame(tab)
+        frame.pack(fill="both", expand=True)
+
+        # Create the tree
+        tree = ttk.Treeview(
+            frame,
+            columns=[
+                label.replace("_", " ").title()
+                for label in self.data_obj.schedule_setting_labels
+            ],
+            show="headings",
+        )
+        # Set column headings
+        for label in self.data_obj.schedule_setting_labels:
+            tree.heading(
+                label.replace("_", " ").title(), text=label.replace("_", " ").title()
+            )
+            tree.column(label.replace("_", " ").title(), width=200)
+
+        # Add a vertical and horizontal scrollbar
+        v_scrollbar = ttk.Scrollbar(frame, orient="vertical", command=tree.yview)
+        h_scrollbar = ttk.Scrollbar(frame, orient="horizontal", command=tree.xview)
+        tree.configure(yscrollcommand=v_scrollbar.set, xscrollcommand=h_scrollbar.set)
+
+        # Grid the Treeview and scrollbar
+        tree.grid(row=0, column=0, sticky="nsew")
+        v_scrollbar.grid(row=0, column=1, sticky="ns")
+        h_scrollbar.grid(row=1, column=0, sticky="ew")
+
+        # Configure the frame's grid to expand properly
+        frame.grid_rowconfigure(0, weight=1)
+        frame.grid_columnconfigure(0, weight=1)
+
+    def create_label_entry(self, frame, label_text, entry_text, row, column):
+        label = ttk.Label(frame, text=label_text)
+        entry = ttk.Entry(frame)
+        entry.insert(0, entry_text)
+        label.grid(row=row, column=column, sticky="e")
+        entry.grid(row=row, column=column + 1, sticky="w")
+
+        self.entry_dict[label_text] = entry
+
+    # Commands
 
     def add_schedule(self):
-        current_row = self.schedule_display.grid_size()[1]
-        # get first alt data
-        first_alt_fdf = self.first_alt_fdf_entry.get()
-        first_alt_schedule_type = self.schedule_type_entry.get()
-        first_alt_schedule_subtype = self.schedule_subtype_entry.get()
-        first_alt_mean = self.mean_entry.get()
-        first_alt_response_class_lower_bound = (
-            self.first_alt_response_class_lower_bound_entry.get()
-        )
+        # Get the values from the entry widgets
+        schedule = {}
+        for label in self.data_obj.schedule_setting_labels:
+            schedule[label] = self.get_entry(label)
 
-        first_alt_response_class_upper_bound = (
-            self.first_alt_response_class_upper_bound_entry.get()
-        )
+        # Add the schedule to the data object
+        self.data_obj.schedules.append(schedule)
 
-        first_alt_response_class_size = self.first_alt_response_class_size_entry.get()
-        first_alt_excluded_lower_bound = self.first_alt_excluded_lower_bound_entry.get()
-        first_alt_excluded_upper_bound = self.first_alt_excluded_upper_bound_entry.get()
-
-        # get second alt data
-        second_alt_fdf = self.second_alt_fdf_entry.get()
-        second_alt_schedule_type = self.second_schedule_type_entry.get()
-        second_alt_schedule_subtype = self.second_schedule_subtype_entry.get()
-        second_alt_mean = self.second_mean_entry.get()
-        second_alt_response_class_lower_bound = (
-            self.second_alt_response_class_lower_bound_entry.get()
+        # Add the schedule to the tree
+        self.add_values_to_tree(
+            self.get_tree(),
+            [schedule[label] for label in self.data_obj.schedule_setting_labels],
         )
-        second_alt_response_class_upper_bound = (
-            self.second_alt_response_class_upper_bound_entry.get()
-        )
-        second_alt_response_class_size = self.second_alt_response_class_size_entry.get()
-        second_alt_excluded_lower_bound = (
-            self.second_alt_excluded_lower_bound_entry.get()
-        )
-
-        second_alt_excluded_upper_bound = (
-            self.second_alt_excluded_upper_bound_entry.get()
-        )
-
-        # add data to schedule display
-        self.first_alt_label = ttk.Label(self.schedule_display, text=first_alt_mean)
-        self.first_alt_label.grid(row=current_row, column=0)
-        self.second_alt_label = ttk.Label(self.schedule_display, text=second_alt_mean)
-        self.second_alt_label.grid(row=current_row, column=1)
-        self.first_alt_fdf_label = ttk.Label(self.schedule_display, text=first_alt_fdf)
-        self.first_alt_fdf_label.grid(row=current_row, column=2)
-        self.second_alt_fdf_label = ttk.Label(
-            self.schedule_display, text=second_alt_fdf
-        )
-        self.second_alt_fdf_label.grid(row=current_row, column=3)
-        self.first_alt_schedule_type_label = ttk.Label(
-            self.schedule_display, text=first_alt_schedule_type
-        )
-        self.first_alt_schedule_type_label.grid(row=current_row, column=4)
-        self.second_alt_schedule_type_label = ttk.Label(
-            self.schedule_display, text=second_alt_schedule_type
-        )
-        self.second_alt_schedule_type_label.grid(row=current_row, column=5)
-        self.first_alt_schedule_subtype_label = ttk.Label(
-            self.schedule_display, text=first_alt_schedule_subtype
-        )
-        self.first_alt_schedule_subtype_label.grid(row=current_row, column=6)
-        self.second_alt_schedule_subtype_label = ttk.Label(
-            self.schedule_display, text=second_alt_schedule_subtype
-        )
-        self.second_alt_schedule_subtype_label.grid(row=current_row, column=7)
-        self.first_alt_resp_class_info_label = ttk.Label(
-            self.schedule_display,
-            text=f"{first_alt_response_class_lower_bound}-{first_alt_response_class_upper_bound} ({first_alt_response_class_size})",
-        )
-        self.first_alt_resp_class_info_label.grid(row=current_row, column=8)
-        self.second_alt_resp_class_info_label = ttk.Label(
-            self.schedule_display,
-            text=f"{second_alt_response_class_lower_bound}-{second_alt_response_class_upper_bound} ({second_alt_response_class_size})",
-        )
-        self.second_alt_resp_class_info_label.grid(row=current_row, column=9)
-
-        self.first_alt_excluded_bounds_label = ttk.Label(
-            self.schedule_display,
-            text=f"{first_alt_excluded_lower_bound}-{first_alt_excluded_upper_bound}",
-        )
-        self.first_alt_excluded_bounds_label.grid(row=current_row, column=10)
-        self.second_alt_excluded_bounds_label = ttk.Label(
-            self.schedule_display,
-            text=f"{second_alt_excluded_lower_bound}-{second_alt_excluded_upper_bound}",
-        )
-        self.second_alt_excluded_bounds_label.grid(row=current_row, column=11)
-
-        # add data to current experiment
-        self.current_experiment["schedules"].append(self.get_schedule_settings())
 
     def delete_schedule(self):
-        current_row = self.schedule_display.grid_size()[1]
-        num_cols = self.schedule_display.grid_size()[0]
-        # delete all columns on the current row
-        for column in range(num_cols):
-            self.schedule_display.grid_slaves(row=current_row - 1, column=column)[
-                0
-            ].destroy()
+        # Get the tree
+        tree = self.get_tree()
 
-        # delete the most recent item in the current experiment schedules list
-        self.current_experiment["schedules"].pop()
+        # Delete the last row
+        tree.delete(tree.get_children()[-1])
 
-    def create_schedule_display(self, parent_frame):
-        self.schedule_display = tk.Toplevel(parent_frame)
-        self.schedule_display.title("Schedule Display")
+        # Delete the last schedule
+        self.data_obj.schedules.pop()
 
-        self.first_alt_label = ttk.Label(
-            self.schedule_display, text="|1st Alt\nInterval/Ratio|"
+    def clear_schedules(self):
+        # Get the tree
+        tree = self.get_tree()
+
+        # Delete all rows
+        for child in tree.get_children():
+            tree.delete(child)
+
+        # Delete all schedules
+        self.data_obj.schedules = []
+
+    def add_experiment(self):
+        if len(self.data_obj.schedules) == 0:
+            frame = tk.Toplevel(self.master)
+            frame.title("Error")
+            frame.geometry("200x100")
+            label = ttk.Label(frame, text="No schedules provided")
+            label.pack()
+
+            return
+
+        # Get the values from the entry widgets
+        self.data_obj.current_experiment = {}
+        for label in self.data_obj.experiment_setting_labels:
+            self.data_obj.current_experiment[label] = self.get_entry(label)
+
+        # Add the schedules to the current experiment
+        self.data_obj.current_experiment["schedules"] = self.data_obj.schedules
+
+        # Add the current experiment to the data object
+        self.data_obj.experiments.append(self.data_obj.current_experiment)
+
+        # Add the current experiment to the listbox
+        self.experiments_listbox.insert(
+            "end", self.data_obj.current_experiment["file_stub"]
         )
-        self.first_alt_label.grid(row=0, column=0)
-        self.second_alt_label = ttk.Label(
-            self.schedule_display, text="|2nd Alt\nInterval/Ratio|"
+
+    def save_experiments(self):
+        if len(self.data_obj.experiments) == 0:
+            frame = tk.Toplevel(self.master)
+            frame.title("Error")
+            frame.geometry("200x100")
+            label = ttk.Label(frame, text="No experiments provided")
+            label.pack()
+
+            return
+        # Get the filename
+        filename = self.experiment_file_entry.get()
+
+        # Save the experiments
+        self.data_obj.save(filename)
+
+        # Let the user know the experiments were saved
+        frame = tk.Toplevel(self.master)
+        frame.title(f"Success")
+        frame.geometry("400x100")
+        label = ttk.Label(frame, text=f"{filename}.json saved in current directory")
+        label.pack()
+
+    def clear_experiments(self):
+        # Clear the listbox
+        self.experiments_listbox.delete(0, "end")
+
+        # Clear the experiments
+        self.data_obj.experiments = []
+
+    def run_experiments(self):
+        # Get the filename
+        file_name = self.runner_entry.get()
+
+        # Let the user know the experiments are running
+        frame = tk.Toplevel(self.master)
+        frame.title(f"Running")
+        frame.geometry("400x100")
+        label = ttk.Label(
+            frame, text=f"Running {file_name}... See terminal for progress"
         )
-        self.second_alt_label.grid(row=0, column=1)
+        label.pack()
+        self.master.update()
 
-        self.first_alt_fdf_label = ttk.Label(
-            self.schedule_display, text="|1st\nAlt FDF|"
-        )
-        self.first_alt_fdf_label.grid(row=0, column=2)
-        self.second_alt_fdf_label = ttk.Label(
-            self.schedule_display, text="|2nd\nAlt FDF|"
-        )
-        self.second_alt_fdf_label.grid(row=0, column=3)
+        # Run the experiments
+        runner = experiment_handler.ExperimentHandler(file_name, "")
+        runner.giddyup()
 
-        self.first_alt_schedule_type_label = ttk.Label(
-            self.schedule_display, text="|1st Alt\nSched Type|"
-        )
-        self.first_alt_schedule_type_label.grid(row=0, column=4)
-        self.second_alt_schedule_type_label = ttk.Label(
-            self.schedule_display, text="|2nd Alt\nSched Type|"
-        )
-        self.second_alt_schedule_type_label.grid(row=0, column=5)
+        # Let the user know the experiments are done
+        frame.title("Success")
+        label.config(text="\U0001F434 Done Giddyupped! \U0001F434")
 
-        self.first_alt_schedule_subtype_label = ttk.Label(
-            self.schedule_display, text="|1st Alt\nSched Subtype|"
-        )
-        self.first_alt_schedule_subtype_label.grid(row=0, column=6)
-        self.second_alt_schedule_subtype_label = ttk.Label(
-            self.schedule_display, text="|2nd Alt\nSched Subtype|"
-        )
-        self.second_alt_schedule_subtype_label.grid(row=0, column=7)
+    # Helpers
 
-        self.first_alt_resp_class_info_label = ttk.Label(
-            self.schedule_display, text="|1st Alt\nResp Class|"
-        )
-        self.first_alt_resp_class_info_label.grid(row=0, column=8)
-        self.second_alt_resp_class_info_label = ttk.Label(
-            self.schedule_display, text="|2nd Alt\nResp Class|"
-        )
-        self.second_alt_resp_class_info_label.grid(row=0, column=9)
+    def add_values_to_tree(self, tree, values):
+        tree.insert("", "end", values=values)
 
-        self.first_alt_excluded_lower_bound_label = ttk.Label(
-            self.schedule_display, text="|1st Alt\nExcl. Bounds|"
-        )
-        self.first_alt_excluded_lower_bound_label.grid(row=0, column=10)
-        self.second_alt_excluded_lower_bound_label = ttk.Label(
-            self.schedule_display, text="|2nd Alt\nExcl. Bounds|"
-        )
-        self.second_alt_excluded_lower_bound_label.grid(row=0, column=11)
+    def get_entry(self, label):
+        return self.entry_dict[label.replace("_", " ").title()].get()
 
-    def get_experiment_settings(self):
-        experiment_settings = {}
-        for key, entry in self.experiment_defaults.items():
-            experiment_settings[key] = entry.get()
+    def get_tree(self) -> ttk.Treeview:  # type: ignore
+        for child in self.master.winfo_children():
+            if isinstance(child, ttk.Notebook):
+                for tab in child.winfo_children():
+                    for frame in tab.winfo_children():
+                        for tree in frame.winfo_children():
+                            if isinstance(tree, ttk.Treeview):
+                                return tree
 
-        experiment_settings["schedules"] = []
 
-        return experiment_settings
+def main():
+    gui = ExperimentGUI()
+    gui.run()
 
-    def get_schedule_settings(self):
-        schedule_settings = []
-        first_alt_settings = {}
-        second_alt_settings = {}
 
-        first_alt_settings["fdf_mean"] = self.first_alt_fdf_entry.get()
-        first_alt_settings[
-            "response_class_lower_bound"
-        ] = self.first_alt_response_class_lower_bound_entry.get()
-        first_alt_settings[
-            "response_class_upper_bound"
-        ] = self.first_alt_response_class_upper_bound_entry.get()
-        first_alt_settings[
-            "response_class_size"
-        ] = self.first_alt_response_class_size_entry.get()
-        first_alt_settings["schedule_type"] = self.schedule_type_entry.get()
-        first_alt_settings["schedule_subtype"] = self.schedule_subtype_entry.get()
-        first_alt_settings["mean"] = self.mean_entry.get()
-        first_alt_settings[
-            "excluded_lower_bound"
-        ] = self.first_alt_excluded_lower_bound_entry.get()
-        first_alt_settings[
-            "excluded_upper_bound"
-        ] = self.first_alt_excluded_upper_bound_entry.get()
-
-        second_alt_settings["fdf_mean"] = self.second_alt_fdf_entry.get()
-        second_alt_settings[
-            "response_class_lower_bound"
-        ] = self.second_alt_response_class_lower_bound_entry.get()
-        second_alt_settings[
-            "response_class_upper_bound"
-        ] = self.second_alt_response_class_upper_bound_entry.get()
-        second_alt_settings[
-            "response_class_size"
-        ] = self.second_alt_response_class_size_entry.get()
-        second_alt_settings["schedule_type"] = self.second_schedule_type_entry.get()
-        second_alt_settings[
-            "schedule_subtype"
-        ] = self.second_schedule_subtype_entry.get()
-        second_alt_settings["mean"] = self.second_mean_entry.get()
-        second_alt_settings[
-            "excluded_lower_bound"
-        ] = self.second_alt_excluded_lower_bound_entry.get()
-        second_alt_settings[
-            "excluded_upper_bound"
-        ] = self.second_alt_excluded_upper_bound_entry.get()
-
-        schedule_settings.append(first_alt_settings)
-        schedule_settings.append(second_alt_settings)
-
-        return schedule_settings
+if __name__ == "__main__":
+    main()
