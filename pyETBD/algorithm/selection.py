@@ -1,6 +1,6 @@
 import numpy as np
 from numba import njit
-from pyETBD.utils import equations
+from pyetbd.utils import equations
 
 
 @njit

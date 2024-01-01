@@ -1,6 +1,6 @@
 import pandas as pd
-from pyETBD import organisms
-from pyETBD.utils import progress_bar, timer
+from pyetbd import organisms
+from pyetbd.utils import progress_bar, timer
 
 
 class Experiment:

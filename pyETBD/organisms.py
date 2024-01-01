@@ -1,5 +1,5 @@
 import numpy as np
-from pyETBD.algorithm import selection, recombination, mutation
+from pyetbd.algorithm import selection, recombination, mutation
 
 
 class AnOrganism:

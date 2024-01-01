@@ -3,6 +3,9 @@
 
 from setuptools import setup, find_packages
 
+with open("README.md", "r") as f:
+    long_description = f.read()
+
 
 setup(
     name="pyetbd",
@@ -10,6 +13,8 @@ setup(
     author="Ryan Higginbotham",
     author_email="ryanhigginbotham@ufl.edu",
     description="McDowell's (2004) ETBD implemented in Python",
+    long_description=long_description,
+    long_description_content_type="text/markdown",
     packages=find_packages(),
     install_requires=[
         "numba==0.57.1",

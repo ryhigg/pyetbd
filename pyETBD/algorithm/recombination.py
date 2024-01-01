@@ -1,6 +1,6 @@
 import numpy as np
 from numba import njit
-from pyETBD.utils import bin_converter as bc
+from pyetbd.utils import bin_converter as bc
 
 
 @njit

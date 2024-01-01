@@ -1,10 +1,10 @@
 # this is an example script for running an experiment
 
 # import the ExperimentRunner class from the utils module
-from pyETBD.experiment_handler import ExperimentHandler
+from pyetbd.experiment_handler import ExperimentHandler
 
 # the folder containing the input file(s)
-INPUT_FILE_PATH = "mcdowell_2008_p1.json"
+INPUT_FILE_PATH = "example_experiment_inputs/mcdowell_et_al_2008_phase1.json"
 
 # putting an empty string will output the same directory as the main.py file
 OUTPUT_DIR = ""

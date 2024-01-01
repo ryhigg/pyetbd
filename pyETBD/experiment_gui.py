@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
 import json
-from pyETBD import experiment_handler
+from pyetbd import experiment_handler
 
 
 class ExperimentGUIData:

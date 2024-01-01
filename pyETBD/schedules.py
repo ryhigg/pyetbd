@@ -1,5 +1,5 @@
 import numpy as np
-from pyETBD.utils import equations as eq
+from pyetbd.utils import equations as eq
 
 
 class Schedule:

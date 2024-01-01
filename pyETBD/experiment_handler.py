@@ -1,6 +1,6 @@
 import json
-from pyETBD.utils import defaults, timer
-from pyETBD import organisms, schedules as sched, experiments
+from pyetbd.utils import defaults, timer
+from pyetbd import organisms, schedules as sched, experiments
 
 
 class ExperimentHandler:
