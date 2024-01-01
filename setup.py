@@ -7,7 +7,7 @@ LONG_DESCRIPTION = "This is an open-source Python package to implement McDowell'
 
 setup(
     name="pyetbd",
-    version="0.1.0",
+    version="0.1.1",
     author="Ryan Higginbotham",
     author_email="ryanhigginbotham@ufl.edu",
     description="McDowell's (2004) ETBD implemented in Python",
