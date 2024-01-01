@@ -3,7 +3,8 @@
 
 from setuptools import setup, find_packages
 
-LONG_DESCRIPTION = "This is an open-source Python package to implement McDowell's (2004) Evolutionary Theory of Behavior Dynamics. The package is currently under development. This version has successfully replicated the results of McDowell et al. (2008). It is not recommended to run experiments for publication until the package has been validated by replicating more results from the literature."
+with open("README.md", "r") as fh:
+    LONG_DESCRIPTION = fh.read()
 
 setup(
     name="pyetbd",
