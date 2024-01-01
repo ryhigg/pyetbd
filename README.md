@@ -1,4 +1,4 @@
-# pyETBD
+# pyetbd
 
 This is an open-source Python package to implement McDowell's (2004) Evolutionary Theory of Behavior Dynamics.
 
