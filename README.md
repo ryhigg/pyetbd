@@ -4,7 +4,7 @@ This is an open-source Python package to implement McDowell's (2004) Evolutionar
 
 The package is currently under development. This version has successfully replicated the results of McDowell et al. (2008). It is not recommended to run experiments for publication until the package has been validated by replicating more results from the literature.
 
-Visit the [pyETBD wiki](https://github.com/ryhigg/pyETBD/wiki) for more info!
+Visit the [pyetbd](https://github.com/ryhigg/pyETBD/wiki) for more info!
 # References
 
 McDowell, J. J. (2004). A COMPUTATIONAL MODEL OF SELECTION BY CONSEQUENCES. Journal of the Experimental Analysis of Behavior, 81(3), 297-317. https://doi.org/10.1901/jeab.2004.81-297
