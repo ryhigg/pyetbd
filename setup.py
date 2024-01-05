@@ -8,7 +8,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name="pyetbd",
-    version="0.1.3",
+    version="0.1.4",
     author="Ryan Higginbotham",
     author_email="ryanhigginbotham@ufl.edu",
     description="McDowell's (2004) ETBD implemented in Python",
@@ -19,6 +19,6 @@ setup(
         "numba==0.57.1",
         "numpy==1.24.4",
         "pandas==2.1.0",
-        "openpyxl",
+        "openpyxl==3.0.10",
     ],
 )
