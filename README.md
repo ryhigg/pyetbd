@@ -10,6 +10,6 @@ Visit the [pyetbd Wiki](https://github.com/ryhigg/pyETBD/wiki) for more info!
 
 # References
 
-McDowell, J. J. (2004). A COMPUTATIONAL MODEL OF SELECTION BY CONSEQUENCES. Journal of the Experimental Analysis of Behavior, 81(3), 297-317. https://doi.org/10.1901/jeab.2004.81-297
+McDowell, J. J (2004). A computational model of selection by consequences. Journal of the Experimental Analysis of Behavior, 81(3), 297-317. https://doi.org/10.1901/jeab.2004.81-297
 
 McDowell, J. J, Caron, M. L., Kulubekova, S., & Berg, J. P. (2008). A computational theory of selection by consequences applied to concurrent schedules. Journal of the Experimental Analysis of Behavior, 90(3), 387-403. https://doi.org/10.1901/jeab.2008.90-387
