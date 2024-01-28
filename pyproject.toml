@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "pyetbd"
+version = "1.0.0"
+description = "McDowell's (2004) ETBD implemented in Python."
+authors = ["ryhigg <ryanhigginbotham@ufl.edu>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "~3.11"
+numba = "0.57.1"
+numpy = "1.24.4"
+pandas = "2.1.0"
+openpyxl = "3.0.10"
+
+
+[tool.poetry.group.dev.dependencies]
+matplotlib = "^3.8.2"
+scipy = "^1.12.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
