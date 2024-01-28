@@ -17,7 +17,7 @@ class Algorithm:
     Attributes:
         ScheduleData: The settings from the schedule running the algorithm.
         Organism: The organism going through the algorithm.
-        StrategyMap: A dictionary that maps the strings from the input '.json' file to the corresponding strategy classes.
+        strategy_map: A dictionary that maps the strings from the input '.json' file to the corresponding strategy classes.
 
     """
 
