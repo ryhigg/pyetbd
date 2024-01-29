@@ -3,9 +3,9 @@ from pyetbd.defaults import DEFAULTS
 
 
 @dataclass
-class ScheduleData:
+class ScheduleSettings:
     """
-    A class representing schedule data.
+    A class representing schedule settings.
     """
 
     gens: int = field(default_factory=lambda: DEFAULTS["gens"])
@@ -48,17 +48,19 @@ class ScheduleData:
 
 
 @dataclass
-class ExperimentData(ScheduleData):
+class ExperimentSettings(ScheduleSettings):
     """
-    A class representing experiment data. This also inlcudes schedule data.
+    A class representing experiment settings. This also includes schedule settings.
 
     Attributes:
+        file_stub (str): The file stub for the output files.
         reps (int): The number of replications.
         pop_size (int): The population size.
         low_pheno (int): The lower bound of the phenotype.
         high_pheno (int): The upper bound of the phenotype.
     """
 
+    file_stub: str = field(default_factory=lambda: DEFAULTS["file_stub"])
     reps: int = field(default_factory=lambda: DEFAULTS["reps"])
     pop_size: int = field(default_factory=lambda: DEFAULTS["pop_size"])
     low_pheno: int = field(default_factory=lambda: DEFAULTS["low_pheno"])

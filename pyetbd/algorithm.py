@@ -1,4 +1,4 @@
-from settings_classes import ScheduleData
+from settings_classes import ScheduleSettings
 from organisms import Organism
 from algorithm_strategies import (
     fdf_sampling_strategies,
@@ -32,7 +32,7 @@ class Algorithm:
         "bit_flip": mutation_strategies.BitFlipMutation,
     }
 
-    def __init__(self, schedule_data: ScheduleData, organism: Organism):
+    def __init__(self, schedule_data: ScheduleSettings, organism: Organism):
         self.schedule_data = schedule_data
         self.organism = organism
         self._set_strategies()

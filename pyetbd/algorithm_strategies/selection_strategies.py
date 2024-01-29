@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 from typing import Callable
 from pyetbd.rules import selection
 from pyetbd.organisms import Organism
-from pyetbd.settings_classes import ScheduleData
+from pyetbd.settings_classes import ScheduleSettings
 from numpy import ndarray
 
 
@@ -12,18 +12,21 @@ class SelectionStrategy(ABC):
     """
 
     def __init__(
-        self, organism: Organism, schedule_data: ScheduleData, sample_func: Callable
+        self,
+        organism: Organism,
+        schedule_settings: ScheduleSettings,
+        sample_func: Callable,
     ):
         """
         The constructor for the SelectionStrategy class.
 
         Parameters:
             organism (Organism): The organism.
-            schedule_data (ScheduleData): The schedule data.
+            schedule_settings (ScheduleSettings): The schedule data.
             sample_func (Callable): The sample function.
         """
         self.organism = organism
-        self.schedule_data = schedule_data
+        self.schedule_settings = schedule_settings
         self.sample_func = sample_func
 
     @abstractmethod
@@ -46,6 +49,6 @@ class FitnessSearchSelection(SelectionStrategy):
         return selection.fitness_search_selection(
             self.organism.population,
             self.organism.fitness_values,
-            self.schedule_data.fdf_mean,
+            self.schedule_settings.fdf_mean,
             self.sample_func,
         )

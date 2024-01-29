@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 from pyetbd.rules import punishment
 from pyetbd.organisms import Organism
-from pyetbd.settings_classes import ScheduleData
+from pyetbd.settings_classes import ScheduleSettings
 from numpy import ndarray
 
 
@@ -10,16 +10,16 @@ class PunishmentStrategy(ABC):
     An abstract class representing a punishment strategy.
     """
 
-    def __init__(self, organism: Organism, schedule_data: ScheduleData):
+    def __init__(self, organism: Organism, schedule_settings: ScheduleSettings):
         """
         The constructor for the PunishmentStrategy class.
 
         Parameters:
             organism (Organism): The organism.
-            schedule_data (ScheduleData): The schedule data.
+            schedule_settings (ScheduleSettings): The schedule data.
         """
         self.organism = organism
-        self.schedule_data = schedule_data
+        self.schedule_settings = schedule_settings
 
     @abstractmethod
     def punish(self) -> ndarray:

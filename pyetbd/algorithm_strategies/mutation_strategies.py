@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 from pyetbd.rules import mutation
 from pyetbd.organisms import Organism
-from pyetbd.settings_classes import ScheduleData
+from pyetbd.settings_classes import ScheduleSettings
 from numpy import ndarray
 
 
@@ -10,16 +10,16 @@ class MutationStrategy(ABC):
     An abstract class representing a mutation strategy.
     """
 
-    def __init__(self, organism: Organism, schedule_data: ScheduleData):
+    def __init__(self, organism: Organism, schedule_settings: ScheduleSettings):
         """
         The constructor for the MutationStrategy class.
 
         Parameters:
             organism (Organism): The organism.
-            schedule_data (ScheduleData): The schedule data.
+            schedule_settings (ScheduleSettings): The schedule data.
         """
         self.organism = organism
-        self.schedule_data = schedule_data
+        self.schedule_settings = schedule_settings
 
     @abstractmethod
     def mutate(self) -> ndarray:
@@ -39,5 +39,5 @@ class BitFlipMutation(MutationStrategy):
         A method for mutating an organism using bit flip mutation.
         """
         return mutation.bit_flip_mutate(
-            self.organism.offspring_genos, self.schedule_data.mut_rate
+            self.organism.offspring_genos, self.schedule_settings.mut_rate
         )

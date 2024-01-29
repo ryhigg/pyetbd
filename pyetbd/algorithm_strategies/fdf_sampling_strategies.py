@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 from pyetbd.rules import fdfs
-from pyetbd.settings_classes import ScheduleData
+from pyetbd.settings_classes import ScheduleSettings
 
 
 class SampleFDF(ABC):
@@ -8,14 +8,15 @@ class SampleFDF(ABC):
     An abstract class representing a sampling strategy for a fitness density function.
     """
 
-    def __init__(self, schedule_data: ScheduleData):
+    def __init__(self, schedule_settings: ScheduleSettings):
         """
         The constructor for the SampleFDF class.
 
         Parameters:
-            schedule_data (ScheduleData): The schedule data.
+            schedule_settings
+            (ScheduleSettings): The schedule data.
         """
-        self.schedule_data = schedule_data
+        self.schedule_settings = schedule_settings
 
     @abstractmethod
     def sample(self) -> float:
@@ -38,7 +39,7 @@ class LinearFDF(SampleFDF):
         Returns:
             float: The sampled value.
         """
-        return fdfs.sample_linear_fdf(self.schedule_data.fdf_mean)
+        return fdfs.sample_linear_fdf(self.schedule_settings.fdf_mean)
 
 
 class ExponentialFDF(SampleFDF):
@@ -53,4 +54,4 @@ class ExponentialFDF(SampleFDF):
         Returns:
             float: The sampled value.
         """
-        return fdfs.sample_exponential_fdf(self.schedule_data.fdf_mean)
+        return fdfs.sample_exponential_fdf(self.schedule_settings.fdf_mean)

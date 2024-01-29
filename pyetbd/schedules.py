@@ -1,12 +1,12 @@
 from abc import ABC, abstractmethod
 import numpy as np
-from settings_classes import ScheduleData
+from settings_classes import ScheduleSettings
 from utils import equations as eq
 
 
 class Schedule(ABC):
-    def __init__(self, schedule_data: ScheduleData):
-        self.data = schedule_data
+    def __init__(self, settings: ScheduleSettings):
+        self.settings = settings
         self._generate_response_class()
 
         self.count = 0
@@ -14,13 +14,13 @@ class Schedule(ABC):
 
     def _generate_response_class(self) -> None:
         possible_values = np.arange(
-            self.data.response_class_lower_bound,
-            self.data.response_class_upper_bound,
+            self.settings.response_class_lower_bound,
+            self.settings.response_class_upper_bound,
             1,
         )
 
         excluded_values = np.arange(
-            self.data.excluded_lower_bound, self.data.excluded_upper_bound, 1
+            self.settings.excluded_lower_bound, self.settings.excluded_upper_bound, 1
         )
 
         possible_values = np.setdiff1d(
@@ -29,7 +29,7 @@ class Schedule(ABC):
 
         try:
             self.response_class = np.random.choice(
-                possible_values, self.data.response_class_size, replace=False
+                possible_values, self.settings.response_class_size, replace=False
             )
 
         except:
@@ -66,21 +66,21 @@ class Schedule(ABC):
 
 
 class FixedSchedule(Schedule, ABC):
-    def __init__(self, schedule_data: ScheduleData):
+    def __init__(self, schedule_data: ScheduleSettings):
         super().__init__(schedule_data)
         self.set_count_requirement()
 
     def set_count_requirement(self) -> None:
-        self.current_count_requirement = self.data.mean
+        self.current_count_requirement = self.settings.mean
 
 
 class RandomSchedule(Schedule, ABC):
-    def __init__(self, schedule_data: ScheduleData):
+    def __init__(self, schedule_data: ScheduleSettings):
         super().__init__(schedule_data)
         self.set_count_requirement()
 
     def set_count_requirement(self) -> None:
-        self.current_count_requirement = eq.sample_exponential(self.data.mean)
+        self.current_count_requirement = eq.sample_exponential(self.settings.mean)
 
 
 class IntervalSchedule(Schedule, ABC):
