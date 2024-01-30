@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 import numpy as np
-from settings_classes import ScheduleSettings
-from utils import equations as eq
+from pyetbd.settings_classes import ScheduleSettings
+from pyetbd.utils import equations as eq
 
 
 class Schedule(ABC):

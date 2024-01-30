@@ -6,7 +6,7 @@ DEFAULTS = {
     "low_pheno": 0,
     "high_pheno": 1023,
     "fdf_type": "linear_fdf",
-    "punishment_:type": "rla",
+    "punishment_type": "rla",
     "selection_type": "fitness_search",
     "fitness_landscape": "circular_landscape",
     "recombination_method": "bitwise",
