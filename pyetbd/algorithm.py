@@ -1,6 +1,6 @@
-from settings_classes import ScheduleSettings
-from organisms import Organism
-from algorithm_strategies import (
+from pyetbd.settings_classes import ScheduleSettings, ExperimentSettings
+from pyetbd.organisms import Organism
+from pyetbd.algorithm_strategies import (
     fdf_sampling_strategies,
     fitness_calculation_strategies,
     mutation_strategies,
@@ -8,7 +8,7 @@ from algorithm_strategies import (
     recombination_strategies,
     selection_strategies,
 )
-from rules import selection
+from pyetbd.rules import selection
 
 
 class Algorithm:
@@ -32,28 +32,41 @@ class Algorithm:
         "bit_flip": mutation_strategies.BitFlipMutation,
     }
 
-    def __init__(self, schedule_data: ScheduleSettings, organism: Organism):
-        self.schedule_data = schedule_data
+    def __init__(self, organism: Organism):
         self.organism = organism
+
+    def set_schedule(
+        self, schedule_settings: ScheduleSettings | ExperimentSettings
+    ) -> None:
+        """Sets the schedule data for the algorithm."""
+        self.schedule_setttings = schedule_settings
         self._set_strategies()
 
     def _set_strategies(self) -> None:
         """Sets the strategies for the algorithm based on the schedule data."""
 
-        self.fdf_sampling_strategy = self.strategy_map[self.schedule_data.fdf_type]()
+        self.fdf_sampling_strategy = self.strategy_map[
+            self.schedule_setttings.fdf_type
+        ](self.schedule_setttings)
         self.fitness_calculation_strategy = self.strategy_map[
-            self.schedule_data.fitness_landscape
-        ]()
-        self.selection_strategy = self.strategy_map[self.schedule_data.selection_type](
-            self.fdf_sampling_strategy.sample
+            self.schedule_setttings.fitness_landscape
+        ](self.organism)
+        self.selection_strategy = self.strategy_map[
+            self.schedule_setttings.selection_type
+        ](
+            self.organism,
+            self.schedule_setttings,
+            self.fdf_sampling_strategy.get_sample_func(),
         )
         self.recombination_strategy = self.strategy_map[
-            self.schedule_data.recombination_method
-        ]()
-        self.mutation_strategy = self.strategy_map[self.schedule_data.mutation_method]()
+            self.schedule_setttings.recombination_method
+        ](self.organism)
+        self.mutation_strategy = self.strategy_map[
+            self.schedule_setttings.mutation_method
+        ](self.organism, self.schedule_setttings)
         self.punishment_strategy = self.strategy_map[
-            self.schedule_data.punishment_type
-        ]()
+            self.schedule_setttings.punishment_type
+        ](self.organism, self.schedule_setttings)
 
     def run_reinforcement(self, reinforced: bool) -> None:
         """Runs the reinforcement algorithm."""
@@ -82,12 +95,24 @@ class Algorithm:
         # perform the punishment on the population
 
         # replace the organism's population with the new population from the punishment strategy
-        ...
+        pass
 
-    def run(self, reinforced: bool, punished: bool) -> None:
+    def run(
+        self,
+        reinforced: bool,
+        punished: bool,
+        reinforcement_schedule_settings: ScheduleSettings,
+        punishment_schedule_settings: ScheduleSettings,
+    ) -> None:
         """Runs the reinforcement and punishment algorithms."""
+        # set the schedule
+        self.set_schedule(reinforcement_schedule_settings)
+
         # run the reinforcement algorithm
         self.run_reinforcement(reinforced)
+
+        # set the schedule
+        self.set_schedule(punishment_schedule_settings)
 
         # run the punishment algorithm
         self.run_punishment(punished)

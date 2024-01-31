@@ -37,11 +37,11 @@ class TestRecombination(unittest.TestCase):
         np.testing.assert_array_equal(actual_child_geno, expected_child_geno)
 
     def test_recombine_parents(self):
-        parents = np.array([[4, 4], [400, 400]], dtype=np.int64)
+        parents = np.array([[4, 4], [981, 981]], dtype=np.int64)
         bin_length = 10
 
         expected_children_genos = np.array(
-            [[0, 0, 0, 0, 0, 0, 0, 1, 0, 0], [0, 1, 1, 0, 0, 1, 0, 0, 0, 0]],
+            [[0, 0, 0, 0, 0, 0, 0, 1, 0, 0], [1, 1, 1, 1, 0, 1, 0, 1, 0, 1]],
             dtype=np.int8,
         )  # based on bitwise_combine
         actual_children_genos = recombine_parents(parents, bin_length, bitwise_combine)

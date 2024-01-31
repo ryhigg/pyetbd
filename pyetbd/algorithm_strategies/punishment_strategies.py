@@ -39,4 +39,4 @@ class RLAPunishment(PunishmentStrategy):
         A method for punishing an organism using the RL algorithm.
         """
 
-        return punishment.rla_punishment()
+        pass

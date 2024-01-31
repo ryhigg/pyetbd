@@ -37,6 +37,6 @@ class BitwiseRecombination(RecombinationStrategy):
         """
         return recombination.recombine_parents(
             self.organism.parents,
-            self.organism.emitted,
+            self.organism.bin_length,
             recombination.bitwise_combine,
         )
