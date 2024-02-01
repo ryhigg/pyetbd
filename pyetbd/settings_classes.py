@@ -58,6 +58,7 @@ class ExperimentSettings(ScheduleSettings):
         pop_size (int): The population size.
         low_pheno (int): The lower bound of the phenotype.
         high_pheno (int): The upper bound of the phenotype.
+        schedules (list): A list of schedule settings.
     """
 
     file_stub: str = field(default_factory=lambda: DEFAULTS["file_stub"])
@@ -65,3 +66,4 @@ class ExperimentSettings(ScheduleSettings):
     pop_size: int = field(default_factory=lambda: DEFAULTS["pop_size"])
     low_pheno: int = field(default_factory=lambda: DEFAULTS["low_pheno"])
     high_pheno: int = field(default_factory=lambda: DEFAULTS["high_pheno"])
+    schedules: list = field(default_factory=list)

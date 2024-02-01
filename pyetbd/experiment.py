@@ -62,6 +62,7 @@ class Experiment:
                     schedule_to_deliver_punishment = self.settings
 
                     for schedule in arrangement:
+                        # update whether the emitted response is in the response class
                         if schedule.in_response_class(self.organism.emitted):
                             self.data_output[f"B{arrangement.index(schedule)}"].append(
                                 1
@@ -72,6 +73,7 @@ class Experiment:
                                 0
                             )
 
+                        # run the schedule and update the data_output if the schedule is a reinforcement schedule
                         if schedule.settings.is_reinforcement_schedule:
                             self.data_output[f"P{arrangement.index(schedule)}"].append(
                                 0
@@ -90,6 +92,7 @@ class Experiment:
                                     f"R{arrangement.index(schedule)}"
                                 ].append(0)
 
+                        # run the schedule and update the data_output if the schedule is a punishment schedule
                         else:
                             self.data_output[f"R{arrangement.index(schedule)}"].append(
                                 0
@@ -108,6 +111,7 @@ class Experiment:
                                     f"P{arrangement.index(schedule)}"
                                 ].append(0)
 
+                    # run the algorithm on the organism
                     self.algorithm.run(
                         reinforcement_available,
                         punishment_available,
@@ -115,6 +119,7 @@ class Experiment:
                         schedule_to_deliver_punishment,
                     )
 
+                    # update the progress of the experiment
                     if gen % 1000 == 0:
                         print(
                             f"Rep: {rep}, Sch: {self.schedule_arrangements.index(arrangement)}, Gen: {gen}, Emission: {self.organism.emitted}"

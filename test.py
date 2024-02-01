@@ -21,7 +21,7 @@ def main():
 
         schedule_arrangements.append([alt1_schedule, alt2_schedule])
 
-    exp_settings = ExperimentSettings(file_stub="test", gens=20500, reps=10)
+    exp_settings = ExperimentSettings(file_stub="test2", gens=20500, reps=10)
     exp = Experiment(exp_settings, schedule_arrangements)
 
     exp.run()
