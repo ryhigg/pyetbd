@@ -8,12 +8,14 @@ from pyetbd.schedules import (
     FixedRatioSchedule,
 )
 from pyetbd.settings_classes import ExperimentSettings, ScheduleSettings
+from pyetbd.utils import timer
 
 
 class ExperimentRunner:
-    def __init__(self, input_file: str, output_dir: str, print_progress: bool = True):
+    def __init__(self, input_file: str, output_dir: str, log_progress: bool = True):
         self.input_file = input_file
         self.output_file = output_dir
+        self.log_progress = log_progress
 
         self._load_input()
 
@@ -27,7 +29,7 @@ class ExperimentRunner:
         for exp in self.settings["experiments"]:
             exp_settings = ExperimentSettings(**exp)
             schedules = self._load_schedules(exp)
-            experiment = Experiment(exp_settings, schedules)
+            experiment = Experiment(exp_settings, schedules, self.log_progress)
             experiments.append(experiment)
 
         return experiments
@@ -57,9 +59,10 @@ class ExperimentRunner:
 
         return schedules
 
+    @timer.timer
     def giddyup(self):
         experiments = self._load_experiments()
         for experiment in experiments:
             experiment.run()
 
-        print("Done Giddyupped!")
+        print("\U0001F434 Done Giddyupped! \U0001F434")

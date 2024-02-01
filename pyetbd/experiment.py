@@ -2,6 +2,7 @@ from pyetbd.organisms import Organism
 from pyetbd.schedules import Schedule
 from pyetbd.settings_classes import ExperimentSettings
 from pyetbd.algorithm import Algorithm
+from pyetbd.utils import progress_logger, timer
 import pandas as pd
 
 
@@ -10,18 +11,27 @@ class Experiment:
         self,
         settings: ExperimentSettings,
         schedule_arrangements: list[list[Schedule]],
+        log_progress: bool,
     ):
         self.settings = settings
         self.schedule_arrangements = schedule_arrangements
+        self.log_progress = log_progress
         self._create_organism()
         self._create_output_dict()
         self._create_algorithm()
+        self._create_progress_logger()
 
     def _create_organism(self):
         self.organism = Organism()
 
     def _create_algorithm(self):
         self.algorithm = Algorithm(self.organism)
+
+    def _create_progress_logger(self):
+        self.progress_logger = progress_logger.ProgressLogger(self.settings.file_stub)
+        self.progress_logger.create_progress_bars(
+            self.settings.reps, len(self.schedule_arrangements), self.settings.gens
+        )
 
     def _create_output_dict(self):
         self.data_output = {
@@ -39,6 +49,7 @@ class Experiment:
         df = pd.DataFrame(self.data_output)
         df.to_csv(f"{self.settings.file_stub}.csv")
 
+    @timer.timer
     def run(self):
         for rep in range(self.settings.reps):
             for arrangement in self.schedule_arrangements:
@@ -120,9 +131,17 @@ class Experiment:
                     )
 
                     # update the progress of the experiment
-                    if gen % 1000 == 0:
-                        print(
-                            f"Rep: {rep}, Sch: {self.schedule_arrangements.index(arrangement)}, Gen: {gen}, Emission: {self.organism.emitted}"
+                    if gen % 1000 == 0 and self.log_progress:
+                        self.progress_logger.log_progress(
+                            rep, self.schedule_arrangements.index(arrangement), gen
                         )
+
+        if self.log_progress:
+            self.progress_logger.log_progress(
+                self.settings.reps,
+                len(self.schedule_arrangements),
+                self.settings.gens,
+                end="\n",
+            )
 
         self._save_data()
