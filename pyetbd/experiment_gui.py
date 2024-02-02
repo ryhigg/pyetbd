@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
 import json
-from pyetbd import experiment_handler
+from pyetbd import experiment_runner
 
 
 class ExperimentGUIData:
@@ -497,7 +497,7 @@ class ExperimentGUI:
         self.master.update()
 
         # Run the experiments
-        runner = experiment_handler.ExperimentHandler(file_name, "")
+        runner = experiment_runner.ExperimentRunner(file_name, "")
         runner.giddyup()
 
         # Let the user know the experiments are done

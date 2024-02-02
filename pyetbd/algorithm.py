@@ -1,5 +1,6 @@
 from pyetbd.settings_classes import ScheduleSettings, ExperimentSettings
 from pyetbd.organisms import Organism
+from pyetbd.rules import selection
 from pyetbd.algorithm_strategies import (
     fdf_sampling_strategies,
     fitness_calculation_strategies,
@@ -8,7 +9,6 @@ from pyetbd.algorithm_strategies import (
     recombination_strategies,
     selection_strategies,
 )
-from pyetbd.rules import selection
 
 
 class Algorithm:
