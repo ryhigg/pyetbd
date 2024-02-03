@@ -1,0 +1,639 @@
+{
+    "experiments": [
+        {
+            "file_stub": "phase2_leftfdf10",
+            "reps": 4,
+            "schedules": [
+                [
+                    {
+                        "mean": 20,
+                        "fdf_mean": 10
+                    },
+                    {
+                        "mean": 120,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553
+                    }
+                ],
+                [
+                    {
+                        "mean": 30,
+                        "fdf_mean": 10
+                    },
+                    {
+                        "mean": 110,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553
+                    }
+                ],
+                [
+                    {
+                        "mean": 40,
+                        "fdf_mean": 10
+                    },
+                    {
+                        "mean": 100,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553
+                    }
+                ],
+                [
+                    {
+                        "mean": 50,
+                        "fdf_mean": 10
+                    },
+                    {
+                        "mean": 90,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553
+                    }
+                ],
+                [
+                    {
+                        "mean": 60,
+                        "fdf_mean": 10
+                    },
+                    {
+                        "mean": 80,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553
+                    }
+                ],
+                [
+                    {
+                        "mean": 70,
+                        "fdf_mean": 10
+                    },
+                    {
+                        "mean": 70,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553
+                    }
+                ],
+                [
+                    {
+                        "mean": 80,
+                        "fdf_mean": 10
+                    },
+                    {
+                        "mean": 60,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553
+                    }
+                ],
+                [
+                    {
+                        "mean": 90,
+                        "fdf_mean": 10
+                    },
+                    {
+                        "mean": 50,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553
+                    }
+                ],
+                [
+                    {
+                        "mean": 100,
+                        "fdf_mean": 10
+                    },
+                    {
+                        "mean": 40,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553
+                    }
+                ],
+                [
+                    {
+                        "mean": 110,
+                        "fdf_mean": 10
+                    },
+                    {
+                        "mean": 30,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553
+                    }
+                ],
+                [
+                    {
+                        "mean": 120,
+                        "fdf_mean": 10
+                    },
+                    {
+                        "mean": 20,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553
+                    }
+                ]
+            ]
+        },
+        {
+            "file_stub": "phase2_leftfdf25",
+            "reps": 4,
+            "schedules": [
+                [
+                    {
+                        "mean": 20,
+                        "fdf_mean": 25
+                    },
+                    {
+                        "mean": 120,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553
+                    }
+                ],
+                [
+                    {
+                        "mean": 30,
+                        "fdf_mean": 25
+                    },
+                    {
+                        "mean": 110,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553
+                    }
+                ],
+                [
+                    {
+                        "mean": 40,
+                        "fdf_mean": 25
+                    },
+                    {
+                        "mean": 100,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553
+                    }
+                ],
+                [
+                    {
+                        "mean": 50,
+                        "fdf_mean": 25
+                    },
+                    {
+                        "mean": 90,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553
+                    }
+                ],
+                [
+                    {
+                        "mean": 60,
+                        "fdf_mean": 25
+                    },
+                    {
+                        "mean": 80,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553
+                    }
+                ],
+                [
+                    {
+                        "mean": 70,
+                        "fdf_mean": 25
+                    },
+                    {
+                        "mean": 70,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553
+                    }
+                ],
+                [
+                    {
+                        "mean": 80,
+                        "fdf_mean": 25
+                    },
+                    {
+                        "mean": 60,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553
+                    }
+                ],
+                [
+                    {
+                        "mean": 90,
+                        "fdf_mean": 25
+                    },
+                    {
+                        "mean": 50,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553
+                    }
+                ],
+                [
+                    {
+                        "mean": 100,
+                        "fdf_mean": 25
+                    },
+                    {
+                        "mean": 40,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553
+                    }
+                ],
+                [
+                    {
+                        "mean": 110,
+                        "fdf_mean": 25
+                    },
+                    {
+                        "mean": 30,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553
+                    }
+                ],
+                [
+                    {
+                        "mean": 120,
+                        "fdf_mean": 25
+                    },
+                    {
+                        "mean": 20,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553
+                    }
+                ]
+            ]
+        },
+        {
+            "file_stub": "phase2_leftfdf40",
+            "reps": 4,
+            "schedules": [
+                [
+                    {
+                        "mean": 20,
+                        "fdf_mean": 40
+                    },
+                    {
+                        "mean": 120,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553
+                    }
+                ],
+                [
+                    {
+                        "mean": 30,
+                        "fdf_mean": 40
+                    },
+                    {
+                        "mean": 110,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553
+                    }
+                ],
+                [
+                    {
+                        "mean": 40,
+                        "fdf_mean": 40
+                    },
+                    {
+                        "mean": 100,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553
+                    }
+                ],
+                [
+                    {
+                        "mean": 50,
+                        "fdf_mean": 40
+                    },
+                    {
+                        "mean": 90,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553
+                    }
+                ],
+                [
+                    {
+                        "mean": 60,
+                        "fdf_mean": 40
+                    },
+                    {
+                        "mean": 80,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553
+                    }
+                ],
+                [
+                    {
+                        "mean": 70,
+                        "fdf_mean": 40
+                    },
+                    {
+                        "mean": 70,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553
+                    }
+                ],
+                [
+                    {
+                        "mean": 80,
+                        "fdf_mean": 40
+                    },
+                    {
+                        "mean": 60,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553
+                    }
+                ],
+                [
+                    {
+                        "mean": 90,
+                        "fdf_mean": 40
+                    },
+                    {
+                        "mean": 50,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553
+                    }
+                ],
+                [
+                    {
+                        "mean": 100,
+                        "fdf_mean": 40
+                    },
+                    {
+                        "mean": 40,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553
+                    }
+                ],
+                [
+                    {
+                        "mean": 110,
+                        "fdf_mean": 40
+                    },
+                    {
+                        "mean": 30,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553
+                    }
+                ],
+                [
+                    {
+                        "mean": 120,
+                        "fdf_mean": 40
+                    },
+                    {
+                        "mean": 20,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553
+                    }
+                ]
+            ]
+        },
+        {
+            "file_stub": "phase2_leftfdf55",
+            "reps": 4,
+            "schedules": [
+                [
+                    {
+                        "mean": 20,
+                        "fdf_mean": 55
+                    },
+                    {
+                        "mean": 120,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553
+                    }
+                ],
+                [
+                    {
+                        "mean": 30,
+                        "fdf_mean": 55
+                    },
+                    {
+                        "mean": 110,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553
+                    }
+                ],
+                [
+                    {
+                        "mean": 40,
+                        "fdf_mean": 55
+                    },
+                    {
+                        "mean": 100,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553
+                    }
+                ],
+                [
+                    {
+                        "mean": 50,
+                        "fdf_mean": 55
+                    },
+                    {
+                        "mean": 90,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553
+                    }
+                ],
+                [
+                    {
+                        "mean": 60,
+                        "fdf_mean": 55
+                    },
+                    {
+                        "mean": 80,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553
+                    }
+                ],
+                [
+                    {
+                        "mean": 70,
+                        "fdf_mean": 55
+                    },
+                    {
+                        "mean": 70,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553
+                    }
+                ],
+                [
+                    {
+                        "mean": 80,
+                        "fdf_mean": 55
+                    },
+                    {
+                        "mean": 60,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553
+                    }
+                ],
+                [
+                    {
+                        "mean": 90,
+                        "fdf_mean": 55
+                    },
+                    {
+                        "mean": 50,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553
+                    }
+                ],
+                [
+                    {
+                        "mean": 100,
+                        "fdf_mean": 55
+                    },
+                    {
+                        "mean": 40,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553
+                    }
+                ],
+                [
+                    {
+                        "mean": 110,
+                        "fdf_mean": 55
+                    },
+                    {
+                        "mean": 30,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553
+                    }
+                ],
+                [
+                    {
+                        "mean": 120,
+                        "fdf_mean": 55
+                    },
+                    {
+                        "mean": 20,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553
+                    }
+                ]
+            ]
+        },
+        {
+            "file_stub": "phase2_leftfdf70",
+            "reps": 4,
+            "schedules": [
+                [
+                    {
+                        "mean": 20,
+                        "fdf_mean": 70
+                    },
+                    {
+                        "mean": 120,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553
+                    }
+                ],
+                [
+                    {
+                        "mean": 30,
+                        "fdf_mean": 70
+                    },
+                    {
+                        "mean": 110,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553
+                    }
+                ],
+                [
+                    {
+                        "mean": 40,
+                        "fdf_mean": 70
+                    },
+                    {
+                        "mean": 100,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553
+                    }
+                ],
+                [
+                    {
+                        "mean": 50,
+                        "fdf_mean": 70
+                    },
+                    {
+                        "mean": 90,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553
+                    }
+                ],
+                [
+                    {
+                        "mean": 60,
+                        "fdf_mean": 70
+                    },
+                    {
+                        "mean": 80,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553
+                    }
+                ],
+                [
+                    {
+                        "mean": 70,
+                        "fdf_mean": 70
+                    },
+                    {
+                        "mean": 70,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553
+                    }
+                ],
+                [
+                    {
+                        "mean": 80,
+                        "fdf_mean": 70
+                    },
+                    {
+                        "mean": 60,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553
+                    }
+                ],
+                [
+                    {
+                        "mean": 90,
+                        "fdf_mean": 70
+                    },
+                    {
+                        "mean": 50,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553
+                    }
+                ],
+                [
+                    {
+                        "mean": 100,
+                        "fdf_mean": 70
+                    },
+                    {
+                        "mean": 40,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553
+                    }
+                ],
+                [
+                    {
+                        "mean": 110,
+                        "fdf_mean": 70
+                    },
+                    {
+                        "mean": 30,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553
+                    }
+                ],
+                [
+                    {
+                        "mean": 120,
+                        "fdf_mean": 70
+                    },
+                    {
+                        "mean": 20,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553
+                    }
+                ]
+            ]
+        }
+    ]
+}

@@ -14,6 +14,8 @@ from pyetbd.algorithm_strategies import (
 class Algorithm:
     """The Algorithm class is responsible for running the reinforcement and punishment algorithms.
 
+    The algorithm class works closely with the modules in the algorithm_strategies package to implement the rules of the ETBD algorithm on the organism.
+
     Attributes:
         ScheduleData: The settings from the schedule running the algorithm.
         Organism: The organism going through the algorithm.

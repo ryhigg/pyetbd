@@ -8,7 +8,6 @@ class ScheduleSettings:
     A class representing schedule settings.
     """
 
-    gens: int = field(default_factory=lambda: DEFAULTS["gens"])
     fdf_type: str = field(default_factory=lambda: DEFAULTS["fdf_type"])
     fdf_mean: float = field(default_factory=lambda: DEFAULTS["fdf_mean"])
     selection_type: str = field(default_factory=lambda: DEFAULTS["selection_type"])
@@ -21,9 +20,7 @@ class ScheduleSettings:
     )
     mut_rate: float = field(default_factory=lambda: DEFAULTS["mut_rate"])
     mutation_method: str = field(default_factory=lambda: DEFAULTS["mutation_method"])
-    reinitialize_population: bool = field(
-        default_factory=lambda: DEFAULTS["reinitialize_population"]
-    )
+
     schedule_type: str = field(default_factory=lambda: DEFAULTS["schedule_type"])
     schedule_subtype: str = field(default_factory=lambda: DEFAULTS["schedule_subtype"])
     mean: int = field(default_factory=lambda: DEFAULTS["mean"])
@@ -61,9 +58,13 @@ class ExperimentSettings(ScheduleSettings):
         schedules (list): A list of schedule settings.
     """
 
+    gens: int = field(default_factory=lambda: DEFAULTS["gens"])
     file_stub: str = field(default_factory=lambda: DEFAULTS["file_stub"])
     reps: int = field(default_factory=lambda: DEFAULTS["reps"])
     pop_size: int = field(default_factory=lambda: DEFAULTS["pop_size"])
     low_pheno: int = field(default_factory=lambda: DEFAULTS["low_pheno"])
     high_pheno: int = field(default_factory=lambda: DEFAULTS["high_pheno"])
+    reinitialize_population: bool = field(
+        default_factory=lambda: DEFAULTS["reinitialize_population"]
+    )
     schedules: list = field(default_factory=list)

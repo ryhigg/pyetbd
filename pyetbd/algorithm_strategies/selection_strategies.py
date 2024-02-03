@@ -9,6 +9,8 @@ from numpy import ndarray
 class SelectionStrategy(ABC):
     """
     An abstract class representing a selection strategy.
+
+    This abstract class is used to ensure that any selection strategy that inherits from it will work in the algorithm class.
     """
 
     def __init__(

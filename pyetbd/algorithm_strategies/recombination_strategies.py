@@ -7,6 +7,8 @@ from numpy import ndarray
 class RecombinationStrategy(ABC):
     """
     An abstract class representing a recombination strategy.
+
+    This abstract class is used to ensure that any recombination strategy that inherits from it will work in the algorithm class.
     """
 
     def __init__(self, organism: Organism):

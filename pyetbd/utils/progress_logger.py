@@ -20,7 +20,7 @@ class ProgressLogger:
         rep_str = self.rep_pb.update(rep)
         sch_str = self.sch_pb.update(sch)
         gen_str = self.gen_pb.update(gen)
-        print(f"{exp_str}\n{rep_str}\n{sch_str}\n{gen_str}", end=end)
+        print(f"{exp_str}\n{rep_str}\n{sch_str}\n{gen_str}\n", end=end)
 
 
 class ProgressBar:

@@ -7,6 +7,8 @@ from numpy import ndarray
 class FitnessCalculationStrategy(ABC):
     """
     An abstract class representing a fitness calculation strategy.
+
+    This abstract class is used to ensure that any fitness calculation strategy that inherits from it will work in the algorithm class.
     """
 
     def __init__(self, organism: Organism):

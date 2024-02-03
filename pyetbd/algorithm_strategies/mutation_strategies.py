@@ -8,6 +8,8 @@ from numpy import ndarray
 class MutationStrategy(ABC):
     """
     An abstract class representing a mutation strategy.
+
+    This abstract class is used to ensure that any mutation strategy that inherits from it will work in the algorithm class.
     """
 
     def __init__(self, organism: Organism, schedule_settings: ScheduleSettings):

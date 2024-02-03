@@ -7,6 +7,8 @@ from pyetbd.settings_classes import ScheduleSettings
 class SampleFDF(ABC):
     """
     An abstract class representing a sampling strategy for a fitness density function.
+
+    This abstract class is used to ensure that any sampling strategy that inherits from it will work in the algorithm class.
     """
 
     def __init__(self, schedule_settings: ScheduleSettings):

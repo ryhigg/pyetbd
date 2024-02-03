@@ -5,6 +5,12 @@ from pyetbd.utils import equations as eq
 
 
 class Schedule(ABC):
+    """
+    An abstract class that represents a schedule.
+
+    This abstract class is the parent class for the different schedule types. It contains the common methods and attributes for the different schedule types.
+    """
+
     def __init__(self, settings: ScheduleSettings):
         self.settings = settings
         self._generate_response_class()
@@ -57,15 +63,19 @@ class Schedule(ABC):
         return False
 
     @abstractmethod
-    def update_counter(self, emitted: int) -> None:
-        ...
+    def update_counter(self, emitted: int) -> None: ...
 
     @abstractmethod
-    def set_count_requirement(self) -> None:
-        ...
+    def set_count_requirement(self) -> None: ...
 
 
 class FixedSchedule(Schedule, ABC):
+    """
+    An abstract class that represents a fixed schedule.
+
+    This class is a child class of the Schedule class. It contains the methods and attributes for a fixed schedule.
+    """
+
     def __init__(self, schedule_data: ScheduleSettings):
         super().__init__(schedule_data)
         self.set_count_requirement()
@@ -75,6 +85,12 @@ class FixedSchedule(Schedule, ABC):
 
 
 class RandomSchedule(Schedule, ABC):
+    """
+    An abstract class that represents a random schedule.
+
+    This class is a child class of the Schedule class. It contains the methods and attributes for a random schedule.
+    """
+
     def __init__(self, schedule_data: ScheduleSettings):
         super().__init__(schedule_data)
         self.set_count_requirement()
@@ -84,27 +100,63 @@ class RandomSchedule(Schedule, ABC):
 
 
 class IntervalSchedule(Schedule, ABC):
+    """
+    An abstract class that represents an interval schedule.
+
+    This class is a child class of the Schedule class. It contains the methods and attributes for an interval schedule.
+    """
+
     def update_counter(self, emitted: int) -> None:
         self.count += 1
 
 
 class RatioSchedule(Schedule, ABC):
+    """
+    An abstract class that represents a ratio schedule.
+
+    This class is a child class of the Schedule class. It contains the methods and attributes for a ratio schedule.
+    """
+
     def update_counter(self, emitted: int) -> None:
         if self.in_response_class(emitted):
             self.count += 1
 
 
 class FixedIntervalSchedule(FixedSchedule, IntervalSchedule):
+    """
+    A concrete class that represents a fixed interval schedule.
+
+    It is a child class of the FixedSchedule and IntervalSchedule classes, so it inherits the methods and attributes from both parent classes.
+    """
+
     ...
 
 
 class FixedRatioSchedule(FixedSchedule, RatioSchedule):
+    """
+    A concrete class that represents a fixed ratio schedule.
+
+    It is a child class of the FixedSchedule and RatioSchedule classes, so it inherits the methods and attributes from both parent classes.
+    """
+
     ...
 
 
 class RandomIntervalSchedule(RandomSchedule, IntervalSchedule):
+    """
+    A concrete class that represents a random interval schedule.
+
+    It is a child class of the RandomSchedule and IntervalSchedule classes, so it inherits the methods and attributes from both parent classes.
+    """
+
     ...
 
 
 class RandomRatioSchedule(RandomSchedule, RatioSchedule):
+    """
+    A concrete class that represents a random ratio schedule.
+
+    It is a child class of the RandomSchedule and RatioSchedule classes, so it inherits the methods and attributes from both parent classes.
+    """
+
     ...

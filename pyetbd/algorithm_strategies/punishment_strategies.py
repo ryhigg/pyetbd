@@ -8,6 +8,8 @@ from numpy import ndarray
 class PunishmentStrategy(ABC):
     """
     An abstract class representing a punishment strategy.
+
+    This abstract class is used to ensure that any punishment strategy that inherits from it will work in the algorithm class.
     """
 
     def __init__(self, organism: Organism, schedule_settings: ScheduleSettings):
