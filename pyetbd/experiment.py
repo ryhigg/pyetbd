@@ -46,19 +46,19 @@ class Experiment:
         self._create_algorithm()
         self._create_progress_logger()
 
-    def _create_organism(self):
+    def _create_organism(self) -> None:
         """
         Creates a new organism and assigns it to the `organism` attribute.
         """
         self.organism = Organism()
 
-    def _create_algorithm(self):
+    def _create_algorithm(self) -> None:
         """
         Creates an instance of the Algorithm class using the current organism. The algorithm class is responsible for implementing the rules of the ETBD algorithm on the organism.
         """
         self.algorithm = Algorithm(self.organism)
 
-    def _create_progress_logger(self):
+    def _create_progress_logger(self) -> None:
         """
         Creates a progress logger object and initializes progress bars.
 
@@ -71,7 +71,7 @@ class Experiment:
             self.settings.reps, len(self.schedule_arrangements), self.settings.gens
         )
 
-    def _create_data_saver(self):
+    def _create_data_saver(self) -> None:
         """
         Creates a DataSaver object and assigns it to the `data_saver` attribute.
         The DataSaver object is initialized with the experiment settings and output directory.
@@ -81,7 +81,7 @@ class Experiment:
         self.data_saver.add_schedule_outputs(len(self.schedule_arrangements[0]))
 
     @timer.timer
-    def run(self):
+    def run(self) -> None:
         """
         Runs the experiment.
 

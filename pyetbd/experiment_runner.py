@@ -1,5 +1,7 @@
 import json
 from pyetbd.experiment import Experiment
+from pyetbd.settings_classes import ExperimentSettings, ScheduleSettings
+from pyetbd.utils import timer
 from pyetbd.schedules import (
     Schedule,
     RandomIntervalSchedule,
@@ -7,8 +9,6 @@ from pyetbd.schedules import (
     FixedIntervalSchedule,
     FixedRatioSchedule,
 )
-from pyetbd.settings_classes import ExperimentSettings, ScheduleSettings
-from pyetbd.utils import timer
 
 
 class ExperimentRunner:
@@ -119,7 +119,7 @@ class ExperimentRunner:
         return schedules
 
     @timer.timer
-    def giddyup(self):
+    def giddyup(self) -> None:
         """
         Runs the experiments.
 
