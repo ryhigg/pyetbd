@@ -6,7 +6,7 @@ The package is currently under development. This version has successfully replic
 
 Visit the [pyetbd Wiki](https://github.com/ryhigg/pyETBD/wiki) for more info!
 
-> **Note**: This package is currently not compatible with Python 3.12. Python 3.11.5 is the recommended version.
+> **Note**: This package is currently not compatible with Python 3.12. Python 3.11.7 is the recommended version.
 
 # References
 
