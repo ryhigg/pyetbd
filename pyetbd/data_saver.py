@@ -73,9 +73,9 @@ class DataSaver:
             None
         """
         for i in range(num_schedules):
-            self.data_output[f"B{i}"] = []
-            self.data_output[f"R{i}"] = []
-            self.data_output[f"P{i}"] = []
+            self.data_output[f"B{i+1}"] = []
+            self.data_output[f"R{i+1}"] = []
+            self.data_output[f"P{i+1}"] = []
 
     def save_data(self) -> None:
         """

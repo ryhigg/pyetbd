@@ -121,19 +121,19 @@ class Experiment:
                         # update whether the emitted response is in the response class
                         if schedule.in_response_class(self.organism.emitted):
                             self.data_saver.data_output[
-                                f"B{arrangement.index(schedule)}"
+                                f"B{arrangement.index(schedule)+1}"
                             ].append(1)
 
                         else:
                             self.data_saver.data_output[
-                                f"B{arrangement.index(schedule)}"
+                                f"B{arrangement.index(schedule)+1}"
                             ].append(0)
 
                         # run the schedule and update the data_output if the schedule is a reinforcement schedule
                         if schedule.settings.is_reinforcement_schedule:
                             # update the data_output to indicate that punishment was not delivered because the schedule is not a punishment schedule
                             self.data_saver.data_output[
-                                f"P{arrangement.index(schedule)}"
+                                f"P{arrangement.index(schedule)+1}"
                             ].append(0)
                             # run the schedule and find out if reinforcement is available
                             reinforced = schedule.run(self.organism.emitted)
@@ -145,20 +145,20 @@ class Experiment:
                                 reinforcement_available = True
                                 # update the data_output to indicate that reinforcement was delivered
                                 self.data_saver.data_output[
-                                    f"R{arrangement.index(schedule)}"
+                                    f"R{arrangement.index(schedule)+1}"
                                 ].append(1)
 
                             else:
                                 # update the data_output to indicate that reinforcement was not delivered
                                 self.data_saver.data_output[
-                                    f"R{arrangement.index(schedule)}"
+                                    f"R{arrangement.index(schedule)+1}"
                                 ].append(0)
 
                         # run the schedule and update the data_output if the schedule is a punishment schedule
                         else:
                             # update the data_output to indicate that reinforcement was not delivered because the schedule is not a reinforcement schedule
                             self.data_saver.data_output[
-                                f"R{arrangement.index(schedule)}"
+                                f"R{arrangement.index(schedule)+1}"
                             ].append(0)
                             # run the schedule and find out if punishment is available
                             punished = schedule.run(self.organism.emitted)
@@ -170,13 +170,13 @@ class Experiment:
                                 punishment_available = True
                                 # update the data_output to indicate that punishment was delivered
                                 self.data_saver.data_output[
-                                    f"P{arrangement.index(schedule)}"
+                                    f"P{arrangement.index(schedule)+1}"
                                 ].append(1)
 
                             else:
                                 # update the data_output to indicate that punishment was not delivered
                                 self.data_saver.data_output[
-                                    f"P{arrangement.index(schedule)}"
+                                    f"P{arrangement.index(schedule)+1}"
                                 ].append(0)
 
                     # run the algorithm on the organism
