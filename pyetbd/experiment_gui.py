@@ -17,8 +17,8 @@ class ExperimentGUIData:
             "pop_size": 100,
             "low_pheno": 0,
             "high_pheno": 1023,
-            "fdf_type": "linear",
-            "fitness_landscape": "circular",
+            "fdf_type": "linear_fdf",
+            "fitness_landscape": "circular_landscape",
             "recombination_method": "bitwise",
             "reinitialize_population": "True",
             "alt1_response_class_lower_bound": 471,
@@ -80,14 +80,14 @@ class ExperimentGUIData:
             "alt2_schedule_subtype",
             "alt1_response_class_lower_bound",
             "alt1_response_class_upper_bound",
-            "alt2_response_class_excluded_lower_bound",
-            "alt2_response_class_excluded_upper_bound",
             "alt1_response_class_size",
-            "alt1_response_class_excluded_lower_bound",
-            "alt1_response_class_excluded_upper_bound",
             "alt2_response_class_lower_bound",
             "alt2_response_class_upper_bound",
             "alt2_response_class_size",
+            "alt1_response_class_excluded_lower_bound",
+            "alt1_response_class_excluded_upper_bound",
+            "alt2_response_class_excluded_lower_bound",
+            "alt2_response_class_excluded_upper_bound",
         ]
 
     def format_data(self):
@@ -520,12 +520,3 @@ class ExperimentGUI:
                         for tree in frame.winfo_children():
                             if isinstance(tree, ttk.Treeview):
                                 return tree
-
-
-def main():
-    gui = ExperimentGUI()
-    gui.run()
-
-
-if __name__ == "__main__":
-    main()
