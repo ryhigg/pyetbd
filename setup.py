@@ -8,7 +8,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name="pyetbd",
-    version="0.2.0",
+    version="0.2.1",
     author="Ryan Higginbotham",
     author_email="ryanhigginbotham@ufl.edu",
     description="McDowell's (2004) ETBD implemented in Python",
