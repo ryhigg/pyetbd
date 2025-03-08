@@ -9,6 +9,7 @@ from pyetbd.schedules import (
     FixedIntervalSchedule,
     FixedRatioSchedule,
 )
+import os
 
 
 class ExperimentRunner:
@@ -22,20 +23,38 @@ class ExperimentRunner:
     """
 
     def __init__(
-        self, input_file: str, output_dir: str = "", log_progress: bool = True
+        self, input_file: str | dict, output_dir: str = "", log_progress: bool = True
     ):
         self.input_file = input_file
-        self.output_dir = output_dir
         self.log_progress = log_progress
 
+        self._set_output_dir(output_dir)
         self._load_input()
 
     def _load_input(self):
         """
         Loads the experiment settings from the input file.
         """
-        with open(self.input_file, "r") as f:
-            self.settings = json.load(f)
+        if isinstance(self.input_file, str):
+            with open(self.input_file, "r") as f:
+                self.settings = json.load(f)
+
+        elif isinstance(self.input_file, dict):
+            self.settings = self.input_file
+
+        else:
+            raise ValueError("Input file must be a string or dictionary")
+
+    def _set_output_dir(self, output_dir: str) -> None:
+        """
+        Creates the output directory if it does not exist, and sets the output_dir attribute.
+        """
+        if output_dir == "":
+            output_dir = ""
+        elif not os.path.exists(output_dir):
+            os.makedirs(output_dir)
+
+        self.output_dir = output_dir
 
     def _load_experiments(self) -> list[Experiment]:
         """
@@ -130,4 +149,4 @@ class ExperimentRunner:
         for experiment in experiments:
             experiment.run()
 
-        print("\U0001F434 Done Giddyupped! \U0001F434")
+        print("\U0001f434 Done Giddyupped! \U0001f434")

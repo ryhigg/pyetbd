@@ -1,5 +1,6 @@
 from pyetbd.settings_classes import ExperimentSettings
 import pandas as pd
+import os
 
 
 class DataSaver:
@@ -88,10 +89,12 @@ class DataSaver:
         two sheets in the Excel file: 'Data' and 'Settings'.
         """
         df = pd.DataFrame(self.data_output)
-        df.to_csv(f"{self.output_dir}{self.settings.file_stub}.csv")
+        df.to_csv(
+            os.path.join(self.output_dir, f"{self.settings.file_stub}.csv"), index=False
+        )
 
         with pd.ExcelWriter(
-            f"{self.output_dir}{self.settings.file_stub}.xlsx"
+            os.path.join(self.output_dir, f"{self.settings.file_stub}.xlsx")
         ) as writer:
             self._format_data().to_excel(writer, sheet_name="Data", index=False)
             self._format_experiment_settings().to_excel(
