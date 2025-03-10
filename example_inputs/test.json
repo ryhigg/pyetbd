@@ -1,27 +1,23 @@
 {
     "experiments": [
         {
-            "file_stub": "fdf_20_mut_rate_0.005",
-            "reps": 10,
-            "mut_rate": 0.005,
-            "fdf_mean": 20,
+            "file_stub": "VI_test",
+            "reps": 1,
+            "mut_rate": 0.1,
+            "fdf_mean": 40,
             "schedules": [
                 [
                     {
-                        "mean": 20
+                        "mean": 20,
+                        "schedule_type": "fixed",
+                        "schedule_subtype": "interval"
+
                     },
                     {
-                        "mean": 120,
-                        "response_class_lower_bound": 512,
-                        "response_class_upper_bound": 553
-                    }
-                ],
-                [
-                    {
-                        "mean": 30
-                    },
-                    {
-                        "mean": 110,
+                        "mean": 20,
+                        "schedule_type": "variable",
+                        "schedule_subtype": "interval",
+                        "num_intervals": 2,
                         "response_class_lower_bound": 512,
                         "response_class_upper_bound": 553
                     }

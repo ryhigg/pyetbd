@@ -8,6 +8,8 @@ from pyetbd.schedules import (
     RandomRatioSchedule,
     FixedIntervalSchedule,
     FixedRatioSchedule,
+    VariableIntervalSchedule,
+    VariableRatioSchedule,
 )
 import os
 
@@ -98,6 +100,10 @@ class ExperimentRunner:
                 "ratio": RandomRatioSchedule,
             },
             "fixed": {"interval": FixedIntervalSchedule, "ratio": FixedRatioSchedule},
+            "variable": {
+                "interval": VariableIntervalSchedule,
+                "ratio": VariableRatioSchedule,
+            },
         }
         schedules = []
 

@@ -42,6 +42,9 @@ class ScheduleSettings:
     is_reinforcement_schedule: bool = field(
         default_factory=lambda: DEFAULTS["is_reinforcement_schedule"]
     )
+    num_intervals: int = field(
+        default_factory=lambda: DEFAULTS["num_intervals"]
+    )  # used for variable schedules
 
 
 @dataclass

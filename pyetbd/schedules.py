@@ -99,6 +99,27 @@ class RandomSchedule(Schedule, ABC):
         self.current_count_requirement = eq.sample_exponential(self.settings.mean)
 
 
+class VariableSchedule(Schedule, ABC):
+    """
+    An abstract class that represents a variable schedule.
+
+    This class is a child class of the Schedule class. It contains the methods and attributes for a variable schedule.
+    """
+
+    def __init__(self, schedule_data: ScheduleSettings):
+        super().__init__(schedule_data)
+        self.progression = self.generate_fleshler_hoffman_progression()
+        self.set_count_requirement()
+
+    def generate_fleshler_hoffman_progression(self) -> np.ndarray:
+        return eq.generate_fleshler_hoffman_progression(
+            self.settings.mean, self.settings.num_intervals
+        )
+
+    def set_count_requirement(self) -> None:
+        self.current_count_requirement = np.random.choice(self.progression)
+
+
 class IntervalSchedule(Schedule, ABC):
     """
     An abstract class that represents an interval schedule.
@@ -157,6 +178,26 @@ class RandomRatioSchedule(RandomSchedule, RatioSchedule):
     A concrete class that represents a random ratio schedule.
 
     It is a child class of the RandomSchedule and RatioSchedule classes, so it inherits the methods and attributes from both parent classes.
+    """
+
+    ...
+
+
+class VariableIntervalSchedule(VariableSchedule, IntervalSchedule):
+    """
+    A concrete class that represents a variable interval schedule.
+
+    It is a child class of the VariableSchedule and IntervalSchedule classes, so it inherits the methods and attributes from both parent classes.
+    """
+
+    ...
+
+
+class VariableRatioSchedule(VariableSchedule, RatioSchedule):
+    """
+    A concrete class that represents a variable ratio schedule.
+
+    It is a child class of the VariableSchedule and RatioSchedule classes, so it inherits the methods and attributes from both parent classes.
     """
 
     ...

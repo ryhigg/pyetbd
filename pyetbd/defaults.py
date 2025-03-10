@@ -22,4 +22,5 @@ DEFAULTS = {
     "excluded_lower_bound": 0,
     "excluded_upper_bound": 0,
     "is_reinforcement_schedule": True,
+    "num_intervals": 20,
 }
