@@ -10,3 +10,8 @@ def sample_linear_fdf(mean: float) -> int:
 @njit
 def sample_exponential_fdf(mean: float) -> int:
     return int(np.random.exponential(mean) + 0.5)
+
+
+@njit
+def sample_uniform_fdf(mean: float) -> int:
+    return int(np.random.uniform(0, 2 * mean) + 0.5)
