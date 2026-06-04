@@ -59,3 +59,18 @@ class ExponentialFDF(SampleFDF):
             Callable: A function that returns a sample from an exponential fdf.
         """
         return fdfs.sample_exponential_fdf
+    
+
+class UniformFDF(SampleFDF):
+    """
+    A class representing a uniform sampling strategy for a fitness density function.
+    """
+
+    def get_sample_func(self) -> Callable:
+        """
+        A method for getting a uniform fdf.
+
+        Returns:
+            Callable: A function that returns a sample from a uniform fdf.
+        """
+        return fdfs.sample_uniform_fdf

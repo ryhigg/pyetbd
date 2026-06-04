@@ -26,6 +26,7 @@ class Algorithm:
     strategy_map = {
         "linear_fdf": fdf_sampling_strategies.LinearFDF,
         "exponential_fdf": fdf_sampling_strategies.ExponentialFDF,
+        "uniform_fdf": fdf_sampling_strategies.UniformFDF,
         "rla": punishment_strategies.RLAPunishment,
         "fitness_search": selection_strategies.FitnessSearchSelection,
         "circular_landscape": fitness_calculation_strategies.CircularFitnessCalculation,
