@@ -8,7 +8,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name="pyetbd",
-    version="0.2.1",
+    version="0.2.2",
     author="Ryan Higginbotham",
     author_email="ryanhigginbotham@ufl.edu",
     description="McDowell's (2004) ETBD implemented in Python",
@@ -16,9 +16,9 @@ setup(
     long_description_content_type="text/markdown",
     packages=find_packages(),
     install_requires=[
-        "numba==0.57.1",
-        "numpy==1.24.4",
-        "pandas==2.1.0",
-        "openpyxl==3.0.10",
+        "numba" = ">=0.65.1"
+        "numpy" = ">=2.4.6"
+        "pandas" = ">=3.0.3"
+        "openpyxl" = ">=3.1.5"
     ],
 )
