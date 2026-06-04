@@ -40,6 +40,40 @@
 
 
 # commented out on 6-4-25
+# name: Upload Python Package
+
+# on:
+#   release:
+#     types: [published]
+
+# permissions:
+#   contents: read
+
+# jobs:
+#   deploy:
+#     runs-on: ubuntu-latest
+
+#     steps:
+#     - uses: actions/checkout@v3
+
+#     - name: Set up Python
+#       uses: actions/setup-python@v3
+#       with:
+#         python-version: '3.x'
+
+#     - name: Install dependencies
+#       run: |
+#         python -m pip install --upgrade pip
+#         pip install build
+
+#     - name: Build package
+#       run: python -m build
+
+#     - name: Publish package
+#       run: |
+#         python -m pip install --upgrade twine
+#         twine upload dist/* --username __token__ --password ${{ secrets.PYPI_API_TOKEN }}
+
 name: Upload Python Package
 
 on:
@@ -52,26 +86,25 @@ permissions:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
 
     - name: Set up Python
-      uses: actions/setup-python@v3
+      uses: actions/setup-python@v5
       with:
-        python-version: '3.x'
+        python-version: '3.12'
 
     - name: Install dependencies
       run: |
-        python -m pip install --upgrade pip
-        pip install build
+        pip install poetry twine
 
     - name: Build package
-      run: python -m build
+      run: poetry build
 
     - name: Publish package
-      run: |
-        python -m pip install --upgrade twine
-        twine upload dist/* --username __token__ --password ${{ secrets.PYPI_API_TOKEN }}
+      run: twine upload dist/*
+      env:
+        TWINE_USERNAME: __token__
+        TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
 
 
