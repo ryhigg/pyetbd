@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pyetbd"
-version = "0.2.1"
+version = "0.2.2"
 description = "McDowell's (2004) ETBD implemented in Python."
 authors = ["ryhigg <ryanhigginbotham@ufl.edu>"]
 license = "MIT"
