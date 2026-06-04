@@ -1,0 +1,1172 @@
+{
+    "experiments": [
+        {
+            "file_stub": "lldelay10_fdfexponential_fdf",
+            "reps": 10,
+            "schedules": [
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 15,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 10,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ],
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 25,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 10,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ],
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 35,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 10,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ],
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 75,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 10,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ],
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 115,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 10,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ],
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 155,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 10,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ],
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 230,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 10,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ],
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 300,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 10,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ],
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 400,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 10,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ],
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 500,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 10,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ]
+            ]
+        },
+        {
+            "file_stub": "lldelay20_fdfexponential_fdf",
+            "reps": 10,
+            "schedules": [
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 15,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 20,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ],
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 25,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 20,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ],
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 35,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 20,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ],
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 75,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 20,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ],
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 115,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 20,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ],
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 155,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 20,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ],
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 230,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 20,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ],
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 300,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 20,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ],
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 400,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 20,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ],
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 500,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 20,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ]
+            ]
+        },
+        {
+            "file_stub": "lldelay30_fdfexponential_fdf",
+            "reps": 10,
+            "schedules": [
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 15,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 30,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ],
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 25,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 30,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ],
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 35,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 30,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ],
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 75,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 30,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ],
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 115,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 30,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ],
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 155,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 30,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ],
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 230,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 30,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ],
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 300,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 30,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ],
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 400,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 30,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ],
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 500,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 30,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ]
+            ]
+        },
+        {
+            "file_stub": "lldelay40_fdfexponential_fdf",
+            "reps": 10,
+            "schedules": [
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 15,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 40,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ],
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 25,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 40,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ],
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 35,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 40,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ],
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 75,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 40,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ],
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 115,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 40,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ],
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 155,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 40,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ],
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 230,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 40,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ],
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 300,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 40,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ],
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 400,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 40,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ],
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 500,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 40,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ]
+            ]
+        },
+        {
+            "file_stub": "lldelay50_fdfexponential_fdf",
+            "reps": 10,
+            "schedules": [
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 15,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 50,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ],
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 25,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 50,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ],
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 35,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 50,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ],
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 75,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 50,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ],
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 115,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 50,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ],
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 155,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 50,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ],
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 230,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 50,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ],
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 300,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 50,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ],
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 400,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 50,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ],
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 500,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 50,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ]
+            ]
+        },
+        {
+            "file_stub": "lldelay60_fdfexponential_fdf",
+            "reps": 10,
+            "schedules": [
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 15,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 60,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ],
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 25,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 60,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ],
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 35,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 60,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ],
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 75,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 60,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ],
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 115,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 60,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ],
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 155,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 60,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ],
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 230,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 60,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ],
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 300,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 60,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ],
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 400,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 60,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ],
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 500,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 60,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ]
+            ]
+        },
+        {
+            "file_stub": "lldelay70_fdfexponential_fdf",
+            "reps": 10,
+            "schedules": [
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 15,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 70,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ],
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 25,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 70,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ],
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 35,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 70,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ],
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 75,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 70,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ],
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 115,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 70,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ],
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 155,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 70,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ],
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 230,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 70,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ],
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 300,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 70,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ],
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 400,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 70,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ],
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 500,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 70,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ]
+            ]
+        },
+        {
+            "file_stub": "lldelay80_fdfexponential_fdf",
+            "reps": 10,
+            "schedules": [
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 15,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 80,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ],
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 25,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 80,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ],
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 35,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 80,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ],
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 75,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 80,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ],
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 115,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 80,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ],
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 155,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 80,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ],
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 230,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 80,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ],
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 300,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 80,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ],
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 400,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 80,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ],
+                [
+                    {
+                        "mean": 1,
+                        "fdf_mean": 500,
+                        "fdf_type": "exponential_fdf"
+                    },
+                    {
+                        "mean": 80,
+                        "fdf_mean": 15,
+                        "response_class_lower_bound": 512,
+                        "response_class_upper_bound": 553,
+                        "fdf_type": "exponential_fdf"
+                    }
+                ]
+            ]
+        }
+    ]
+}
