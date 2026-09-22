@@ -1,13 +1,13 @@
 [tool.poetry]
 name = "pyetbd"
-version = "0.2.2"
+version = "0.2.3"
 description = "McDowell's (2004) ETBD implemented in Python."
 authors = ["ryhigg <ryanhigginbotham@ufl.edu>"]
 license = "MIT"
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "~3.12"
+python = ">=3.11"
 numba = ">=0.65.1"
 numpy = ">=2.4.6"
 pandas = ">=3.0.3"
